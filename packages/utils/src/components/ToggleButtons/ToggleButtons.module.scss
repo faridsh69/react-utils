@@ -1,0 +1,23 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 2px;
+}
+
+.vertical {
+  flex-direction: column;
+}
+.horizontal {
+  flex-direction: row;
+}
+
+.sameWidthOptions {
+  button {
+    flex: 1;
+  }
+}

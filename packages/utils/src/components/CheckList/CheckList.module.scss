@@ -1,0 +1,41 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  background-color: var(--grey-100);
+  overflow: hidden;
+}
+
+.NoBg {
+  background-color: transparent;
+  padding-left: 0px !important;
+}
+
+@mixin size($size) {
+  border-radius: var(--general-size#{$size}-borderradius);
+  padding-right: var(--general-size#{$size}-margin-h);
+  padding-left: var(--general-size#{$size}-margin-h);
+  gap: var(--general-size#{$size}-spacing-elements);
+}
+.size-24 {
+  @include size(24);
+}
+.size-34 {
+  @include size(34);
+}
+.size-48 {
+  @include size(48);
+}
+
+.vertical {
+  flex-direction: column;
+  gap: 0;
+}
+.horizontal {
+  flex-direction: row;
+}

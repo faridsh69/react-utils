@@ -1,0 +1,137 @@
+@use 'scss/theme';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  min-width: 100px;
+  border: 1px solid var(--grey-500);
+  overflow-y: auto;
+  background-color: var(--white);
+
+  .optionsVirualWrapper {
+    height: 100%;
+    overflow-y: auto;
+    @include theme.scroll;
+
+    .optionsVirualList {
+      position: relative;
+
+      .optionsVirualOption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    cursor: pointer;
+    user-select: none;
+
+    .label {
+      flex: 1;
+      width: 0;
+    }
+
+    .okIcon {
+      color: var(--main-light);
+    }
+
+    &:hover {
+      background: var(--main-transparent);
+    }
+
+    &:active {
+      background: var(--main-light);
+      color: var(--white);
+
+      .okIcon {
+        color: var(--white);
+      }
+    }
+  }
+
+  .hasBorderTop {
+    border-top: 1px solid var(--grey-300-grad);
+  }
+
+  .group {
+    padding: 8px 6px;
+  }
+
+  .disabled {
+    pointer-events: none;
+  }
+
+  .onlySelected {
+    border-bottom: 1px solid var(--grey-500);
+  }
+
+  .isLoading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+
+  .nothingFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+}
+
+@mixin size($size) {
+  border-radius: var(--general-size#{$size}-borderradius);
+
+  .option {
+    gap: var(--general-size#{$size}-margin-h);
+    padding: 0 var(--general-size#{$size}-margin-h);
+    height: #{$size}px;
+    min-height: #{$size}px;
+  }
+
+  .onlySelected {
+    font: var(--general-size#{$size}-font);
+    padding: var(--general-size#{$size}-margin-h);
+  }
+}
+
+.size-24 {
+  @include size(24);
+}
+.size-34 {
+  @include size(34);
+}
+.size-48 {
+  @include size(48);
+}
+
+.trigger {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  input {
+    background-color: var(--white) !important;
+  }
+}
+
+.isSearchable {
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+  border-top: unset;
+}

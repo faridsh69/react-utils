@@ -1,0 +1,139 @@
+@use 'scss/theme';
+
+.wrapper {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  user-select: none;
+  overflow-x: auto;
+  @include theme.scroll;
+
+  .button {
+    background-color: transparent;
+    border: unset;
+    outline: unset;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: var(--general-size-m-margin-h);
+    border-radius: 6px;
+    cursor: pointer;
+    gap: 10px;
+
+    .label {
+      font: var(--general-size-m-font);
+      min-width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .icon {
+      color: var(--grey-600);
+      min-width: 24px !important;
+      width: 24px;
+      height: 24px;
+      min-height: 24px;
+    }
+
+    .floatRight {
+      flex: 1;
+    }
+
+    .status {
+      float: right;
+      width: 14px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+
+    .statusSuccess {
+      color: var(--success-light);
+      background: #e9ede2;
+    }
+
+    .statusError {
+      background: #efdfe2;
+
+      svg {
+        color: var(--danger-light);
+      }
+    }
+
+    &:hover {
+      color: white;
+      background: var(--main-dark);
+
+      .icon {
+        color: var(--white) !important;
+      }
+    }
+
+    &[data-focus] {
+      outline-width: var(--general-outline-width);
+      outline-style: var(--general-outline-style);
+      outline-color: var(--primary-blue-t20);
+    }
+
+    &[data-active] {
+      color: var(--white);
+      background: var(--main-light) !important;
+
+      .icon {
+        color: var(--white);
+      }
+    }
+  }
+
+  .active {
+    background: var(--main-transparent);
+    color: var(--main-light);
+
+    .label {
+      font-weight: 700;
+    }
+    .icon {
+      color: var(--main-light);
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    color: var(--grey-500);
+
+    .icon {
+      color: var(--grey-500);
+    }
+  }
+
+  .title {
+    width: 100%;
+    padding: 10px;
+    padding-left: 0px;
+    font: var(--font-header-22);
+  }
+}
+
+.background {
+  padding: 10px;
+  background: var(--grey-100-grad);
+  border-radius: 20px;
+}
+
+.vertical {
+  padding: 20px;
+  flex-direction: column;
+
+  button {
+    width: 100%;
+  }
+}
+.horizontal {
+  flex-direction: row;
+}

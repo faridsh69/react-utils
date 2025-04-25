@@ -1,0 +1,16 @@
+.totalRow {
+  background-color: var(--grey-100-grad);
+  border-radius: 8px;
+  padding-right: 50px;
+  padding-left: 50px;
+  height: 44px;
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.active {
+  background-color: var(--main-transparent);
+}

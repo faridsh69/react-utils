@@ -1,0 +1,47 @@
+{
+  "name": "@faridsh69/react-utils",
+  "version": "0.0.1",
+  "license": "ISC",
+  "author": "Farid Shahidi <farid.sh69@gmail.com>",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "lib",
+    "scss"
+  ],
+  "scripts": {
+    "build": "node builder.js"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.3",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@hookform/resolvers": "^3.9.1",
+    "@tanstack/react-query": "^5.0.0",
+    "@tanstack/react-virtual": "^3.13.0",
+    "axios": "^1.8.4",
+    "clsx": "^2.1.1",
+    "i18next": "^24.2.2",
+    "react-hook-form": "^7.54.2",
+    "react-i18next": "^15.4.0",
+    "react-loading-skeleton": "^3.5.0",
+    "react-toastify": "^11.0.5",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=18.15.0 <19.0.0",
+    "npm": ">=9.5.0 <10.0.0"
+  }
+}

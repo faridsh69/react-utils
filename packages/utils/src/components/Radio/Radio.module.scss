@@ -1,0 +1,108 @@
+.wrapper {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    .radio {
+      border-color: var(--main-light);
+    }
+
+    .circle {
+      background: var(--white);
+    }
+  }
+}
+
+.label {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.radio {
+  background-color: var(--white);
+  border: 1px solid var(--grey-500);
+  cursor: pointer;
+
+  &[data-focus] {
+    outline: var(--general-outline-width) var(--general-outline-style) var(--primary-blue-t20);
+  }
+
+  &[data-active] {
+    background-color: var(--main-dark);
+    border-color: var(--main-dark) !important;
+
+    .circle {
+      background-color: var(--main-dark);
+    }
+  }
+}
+
+.circle {
+  margin-left: 2px;
+  border-radius: 9999px;
+}
+
+.checked {
+  .radio {
+    border-color: var(--main-light);
+
+    &[data-active] {
+      background-color: var(--main-light) !important;
+      border-color: var(--main-light) !important;
+
+      .circle {
+        background-color: var(--white);
+      }
+    }
+
+    &:disabled {
+      border-color: transparent;
+      background-color: var(--grey-100) !important;
+    }
+  }
+
+  &:hover {
+    .radio {
+      background-color: var(--main-dark);
+      border-color: var(--main-dark);
+    }
+  }
+
+  .circle {
+    background-color: var(--main-light);
+  }
+}
+
+.disabled {
+  .circle {
+    background-color: var(--grey-500) !important;
+  }
+
+  .radio {
+    background-color: var(--grey-100) !important;
+    border-color: var(--grey-500) !important;
+  }
+}
+
+@mixin size($size) {
+  padding: var(--general-size#{$size}-margin-h);
+}
+
+.size-24 {
+  @include size(24);
+}
+.size-34 {
+  @include size(34);
+}
+.size-48 {
+  @include size(48);
+}
+
+.hasBackground {
+  background-color: var(--grey-100-grad);
+}

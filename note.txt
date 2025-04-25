@@ -1,0 +1,204 @@
+1) micro frontend container
+2) micro frontend service
+3) package
+	components
+		+ 1 button
+		+ 2 input
+		+ 5 checkbox
+		+ 4 tooltip
+		+ 6 radio
+		+ 7 menu
+		+ 8 popover
+		+ 9 select
+		10 form
+		+ 11 label
+		+ 12 modal
+		+ 13 loading
+		14 table
+		+ 15 textarea
+		+ 16 toast => use toaster 
+		+ 17 skeleton => use skeleton
+		+ 18 toggle
+		+ 19 NotFound
+		+ 20 Error boundry
+		+ 21 Confirm
+		+ 22 Image
+		+ 23 suspender
+	helpers
+		1 usecrud: handle create/read/update/delete, do optimistic update, toast messages, handle exceptions, do caching, manage query keys
+		2 createApiInstance: manipulating response, injecting bearer tokan, do refresh token, having types
+		3 Bootstrap grid system
+		4 custom hooks: helper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Goal: finding the best practices for final enterprise react/ frontend application
+
+1 react application that has microfrontend structure (mother)
+2 one microfrontend (child)
+3 create the best practices in react
+
+****************************************** YOUTUBE ******************************************
+
+1) initial config for a react app
+    1.1 eslint (check your code and show you some error)
+    1.2 prettier
+    huskey
+    env
+    meta
+    modulas scss
+    i18next
+2) the best solution for apis in react
+    react query
+    useCrud (list, single, create, update, delete)
+        toast, error handler, optimistic update, fast implementation, onSuccess and onError,
+            do caching, manage query keys - createApiInstance, auto bearer inject, auto response change - auto error handling - refresh token - having types
+3) having small and intelligent version of grid in your app: SimpleTable
+4) creating your first npm package
+        create package using vit for ui and utils
+            basic ones:
+                button, text input, checkbox, radio, checklist, radiolist, chip
+            tooltip
+            Loader
+            PageNotFound
+            DataNotFound
+            ErrorBoundry
+            Suspender
+            Label (auto size and ...) 100px SimpleLabel
+            Image
+            Modal
+            Confirm
+            Popover:
+                different between names
+                    popover => small div floating in ui
+                    context menu => what ever we let user to have actions seleting
+                    select => select input
+                    dialog => popover with close button and actions
+                    dropdown => what ever will open, its not a good name for any of components
+            Select
+                add virtualization
+            Context menu
+            SimpleFilters
+        utils:
+            all custom hooks
+            all helper methods
+            managing all local storage keys
+            storing all images in one place
+5) the best solution for forms in react: Form
+    all the controllers
+    validation bar
+    array handling
+    custom (actually has controller inside)
+    onChange handling
+6) micro frontend
+    implement using vit, cons pros
+    implement using pure react
+    implement using craco
+    implement using other tools
+    implement full version with handling
+        react router dom
+        language i18
+7) benfits of NexJs
+8) implement poker game with react + nestJs
+9) learn nestJs app
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****************************************** YOUTUBE ******************************************
+
+1) initial config for a react app
+    eslint
+    prettier
+    huskey
+    env
+    meta
+    modulas scss
+    i18next
+2) the best solution for apis in react
+    react query
+    useCrud
+        toast, error handler, optimistic update, fast implementation, onSuccess and onError,
+            do caching, manage query keys - createApiInstance, auto bearer inject, auto response change - auto error handling - refresh token - having types
+3) having small and intelligent version of grid in your app
+4)  creating your first npm package
+        create package using vit for ui and utils
+            basic ones:
+                button, text input, checkbox, radio, checklist, radiolist, chip
+            tooltip
+            Loader
+            PageNotFound
+            DataNotFound
+            ErrorBoundry
+            Suspender
+            Label (auto size and ...)
+            Image
+            Modal
+            Confirm
+            Popover:
+                different between names
+                    dropdown => what ever will open, its not a good name for any of components
+                    context menu => what ever we let user to have actions seleting
+                    select => select input
+                    popover => small div floating in ui
+                    dialog => popover with close button and actions
+                     => what ever open in big size
+            Select
+                add virtualization
+            Context menu
+            simpleFilters
+        utils:
+            all custom hooks
+            all helper methods
+            managing all local storage keys
+            storing all images in one place
+5) the best solution for forms in react: Form
+    all the controllers
+    validation bar
+    array handling
+    custom (actually has controller inside)
+    onChange handling
+6) micro frontend
+    implement using vit, cons pros
+    implement using pure react
+    implement using craco
+    implement using other tools
+    implement full version with handling
+        react router dom
+        language i18
+7) benfits of NexJs
+8) implement poker game with react + nestJs
+9) learn next js app

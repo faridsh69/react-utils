@@ -1,0 +1,38 @@
+{
+  "exclude": ["**/node_modules/", ".idea", "dist", "**/*.spec.ts"],
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "ESNext",
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["react", "react-dom"],
+    "removeComments": true,
+    "outDir": "lib",
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "baseUrl": "./src",
+    "paths": {
+      "scss/*": ["./scss/*"],
+      "i18n/*": ["./i18n/*"],
+      "enums/*": ["./enums/*"],
+      "types/*": ["./types/*"],
+      "hooks/*": ["./hooks/*"],
+      "helpers/*": ["./helpers/*"],
+      "services/*": ["./services/*"],
+      "constants/*": ["./constants/*"],
+      "components/*": ["./components/*"]
+    }
+  },
+  "include": ["src"]
+}

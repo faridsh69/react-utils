@@ -1,0 +1,53 @@
+{
+  "name": "react-utils",
+  "private": true,
+  "author": "Farid Shahidi <farid.sh69@gmail.com>",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npx lerna run build",
+    "build:dev": "NODE_ENV=development npx lerna run build",
+    "build:prod": "npm run build -w packages/",
+    "lerna:clean": "rm -rf ./node_modules && npx lerna clean --yes",
+    "lint": "eslint packages/utils/src --config packages/utils/eslint.config.mjs",
+    "prepare": "husky",
+    "prettier": "prettier --config packages/utils/src/constants/.prettierrc.json packages/utils/src --write",
+    "serve": "vite build && serve ./dist",
+    "start": "vite",
+    "ts": "npx tsc --noEmit -p packages/utils/tsconfig.json",
+    "yalc": "cd ./packages/utils && node builder.js && yalc publish --push"
+  },
+  "prettier": "./packages/utils/src/constants/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "packages/utils/eslint.config.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@types/react": "^18.3.20",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "husky": "^9.1.7",
+    "lerna": "^8.1.9",
+    "prettier": "^2.8.8",
+    "prettier-plugin-packagejson": "^2.5.8",
+    "sass-embedded": "^1.83.4",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.20.0",
+    "vite-plugin-dts": "^4.5.0",
+    "vite-plugin-lib-inject-css": "^2.2.1",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "engines": {
+    "node": ">=18.15.0 <19.0.0",
+    "npm": ">=9.5.0 <10.0.0"
+  }
+}

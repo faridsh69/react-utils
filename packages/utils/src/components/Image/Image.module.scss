@@ -1,0 +1,17 @@
+.wrapper {
+  .image {
+    max-width: 100%;
+    user-select: none;
+    transition: opacity 0.4s;
+  }
+
+  .loading {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+
+  .cached {
+    transition: none;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "npmClient": "npm",
+  "version": "independent",
+  "packages": ["packages/*"],
+  "stream": true,
+  "ignoreChanges": [
+    "**/node_modules/**",
+    "**/package.json",
+    "**/package-lock.json",
+    "lerna.json",
+    ".npmrc",
+    ".husky/**",
+    "**/*.md",
+    "**/*.config.js"
+  ]
+}

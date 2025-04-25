@@ -1,0 +1,88 @@
+@use 'scss/theme';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .modal {
+    max-width: 95vw;
+    max-height: 90vh;
+    min-height: 300px;
+
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+
+    .main {
+      min-width: 400px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--grey-500);
+      border-radius: 20px;
+      background: var(--white);
+
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px;
+        padding-left: 40px;
+        padding-right: 40px;
+        height: 82px;
+        min-height: 82px;
+        border-bottom: 1px solid var(--grey-500);
+
+        .title {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+
+          .icon {
+            color: var(--main-light);
+          }
+        }
+      }
+
+      .body {
+        flex: 1;
+        overflow: auto;
+
+        @include theme.scroll;
+      }
+
+      .bodyPadding {
+        padding: 40px;
+      }
+
+      .footer {
+        height: 74px;
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 20px;
+        background-color: var(--grey-100);
+        border-radius: 0px 0px 20px 20px;
+      }
+
+      .actionsCenter {
+        justify-content: center;
+        padding-right: 0px;
+      }
+    }
+  }
+}

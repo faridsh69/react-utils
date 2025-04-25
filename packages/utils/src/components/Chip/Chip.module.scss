@@ -1,0 +1,49 @@
+.wrapper {
+  color: var(--main-light);
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  background-color: color-mix(in oklab, currentColor 10%, white 90%);
+
+  .icon {
+    color: currentColor;
+  }
+  .label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .close {
+    color: currentColor;
+    cursor: pointer;
+  }
+
+  &.bold {
+    .label {
+      font-weight: bold;
+    }
+  }
+}
+
+@mixin size($size, $borderRadius) {
+  gap: var(--general-size#{$size}-margin-h);
+  border-radius: $borderRadius;
+  padding: 0 var(--general-size#{$size}-margin-h);
+  height: #{$size}px;
+  min-height: #{$size}px;
+
+  .label {
+    font: var(--general-size#{$size}-font);
+  }
+}
+
+.size-24 {
+  @include size(24, 12px);
+}
+.size-34 {
+  @include size(34, 17px);
+}
+.size-48 {
+  @include size(48, 24px);
+}

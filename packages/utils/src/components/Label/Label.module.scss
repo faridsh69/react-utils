@@ -1,0 +1,51 @@
+.wrapper {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+
+  .text {
+    display: inline-block;
+  }
+
+  .oneLine {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .multiLines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--lines-count);
+    line-clamp: var(--lines-count);
+  }
+
+  .disabled {
+    color: var(--grey-600);
+  }
+
+  .active {
+    color: var(--main-light);
+  }
+
+  .hasError {
+    color: var(--danger-light) !important;
+  }
+
+  .hint {
+    color: var(--grey-500);
+  }
+
+  .required {
+    width: 14px;
+    color: var(--danger-light);
+  }
+}
+
+.textAlignRight {
+  justify-content: flex-end;
+}

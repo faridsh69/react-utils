@@ -1,0 +1,269 @@
+@use 'scss/theme';
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  @include theme.scroll;
+
+  .table {
+    width: 100%;
+    border-spacing: 0px 3px;
+    border-collapse: separate;
+
+    thead {
+      position: sticky;
+      top: 0px;
+      background: white;
+      z-index: 2;
+
+      .th {
+        .thCell {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          height: 24px;
+          padding: 6px 12px;
+          border-radius: 8px;
+          cursor: pointer;
+          text-align: left;
+          text-transform: uppercase;
+          color: var(--main-light);
+          font: var(--font-text-12);
+
+          &:hover {
+            background-color: var(--grey-100);
+          }
+        }
+
+        .sortableCell {
+          justify-content: space-between;
+
+          .sort {
+            display: none;
+            align-items: center;
+            padding-left: 5px;
+            margin-right: -7px;
+            border-left: 1px solid var(--primary-blue-t40);
+            height: 24px;
+
+            svg {
+              color: var(--grey-500);
+            }
+          }
+
+          &:hover {
+            .sort {
+              display: flex;
+            }
+          }
+        }
+      }
+
+      .thAction {
+        position: sticky;
+        z-index: 2;
+        right: 0px;
+        background-color: var(--white);
+        width: 50px;
+        min-width: 50px;
+
+        .actionCell {
+          text-align: center;
+
+          svg {
+            color: var(--grey-500);
+          }
+
+          &:hover {
+            svg {
+              color: var(--main-light);
+            }
+          }
+        }
+      }
+    }
+
+    .td {
+      position: relative;
+      background-color: var(--grey-100);
+      padding: 6px 12px;
+      height: 50px;
+      max-height: 50px !important;
+
+      .tdCell {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .cellIcon {
+        color: var(--grey-500);
+      }
+
+      &:first-child {
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        overflow: hidden;
+      }
+
+      .custom {
+        height: 50px;
+        margin: -10px 0px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include theme.scroll;
+      }
+
+      .fileCellWrapper {
+        padding: 0px 10px;
+        cursor: pointer;
+        display: flex;
+        gap: 5px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .tdAction {
+      position: sticky;
+      z-index: 1;
+      right: 0px;
+      background-color: var(--grey-100);
+      width: 50px;
+      min-width: 50px;
+      max-width: 50px;
+      padding: 0px;
+      border-left: 1px solid var(--primary-blue-t20);
+      text-align: center;
+      cursor: pointer;
+
+      .actionCellWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        min-width: 47px;
+
+        svg {
+          color: var(--main-light);
+        }
+      }
+
+      &:hover {
+        background-color: #e0ebef !important;
+      }
+
+      .actionCellDisabled:hover {
+        background-color: var(--grey-200) !important;
+        cursor: no-drop;
+      }
+
+      .actionCellNotClickable {
+        cursor: no-drop;
+      }
+
+      .hasBoxShadow {
+        &::before {
+          background: linear-gradient(
+            90deg,
+            rgba(204, 204, 204, 0.1) 0%,
+            rgba(204, 204, 204, 0.2) 25%,
+            rgba(204, 204, 204, 0.3) 50%,
+            rgba(204, 204, 204, 0.4) 75%,
+            rgba(204, 204, 204, 0.5) 100%
+          );
+          content: '';
+          height: 100%;
+          pointer-events: none;
+          position: absolute;
+          left: -8px;
+          top: 0px;
+          width: 8px;
+        }
+      }
+    }
+
+    .separatorLine {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0%;
+        height: 100%;
+        width: 2px;
+        background-color: var(--grey-200-grad);
+      }
+    }
+
+    .separatorHalfLine {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 20%;
+        height: 60%;
+        width: 2px;
+        background-color: var(--grey-200-grad);
+      }
+    }
+  }
+
+  .insideForm {
+    th {
+      background-color: var(--grey-100) !important;
+    }
+
+    td {
+      background-color: #efefef !important;
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: var(--main-light);
+  }
+}
+
+.titleCell {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceCell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+
+  .cellIcon {
+    color: var(--grey-500);
+  }
+}
+
+.avatarTitle {
+  flex: 1;
+  overflow: hidden;
+}
+
+.textAlignRight {
+  justify-content: flex-end;
+}

@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+@mixin size($size) {
+  padding: var(--general-size#{$size}-margin-h);
+}
+
+.size-24 {
+  @include size(24);
+}
+.size-34 {
+  @include size(34);
+}
+.size-48 {
+  @include size(48);
+}
