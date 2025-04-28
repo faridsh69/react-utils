@@ -23,7 +23,6 @@ export const ContextMenu = (props: ContextMenuProps) => {
     isOpen: propIsOpen = false,
     setIsOpen: propSetIsOpen,
     width,
-    triggerWrapperClassName,
   } = props
 
   const isActionRightClick = triggerOnAction === ActionsEnum.OnContextMenu || showAtClickPoint
@@ -56,19 +55,18 @@ export const ContextMenu = (props: ContextMenuProps) => {
       offset={isActionRightClick ? 0 : propsOffset}
       isOpen={isOpen}
       setIsOpen={setIsOpen}
-      children={
-        <div className={clsx(triggerWrapperClassName, styles.triggerWrapper)}>
-          <Trigger
-            triggerNode={triggerNode}
-            triggerButtonProps={triggerButtonProps}
-            isOpen={isOpen}
-            disabled={disabled}
-          />
-        </div>
-      }
       overlay={
         <Menu options={options} handleCloseMenu={handleCloseMenu} width={width} zIndex={zIndex} />
       }
-    />
+    >
+      <div className={clsx(styles.triggerWrapper)}>
+        <Trigger
+          triggerNode={triggerNode}
+          triggerButtonProps={triggerButtonProps}
+          isOpen={isOpen}
+          disabled={disabled}
+        />
+      </div>
+    </Popover>
   )
 }

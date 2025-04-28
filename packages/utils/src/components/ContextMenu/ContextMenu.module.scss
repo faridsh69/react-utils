@@ -170,7 +170,9 @@
 .triggerWrapper {
   display: flex;
   flex-direction: row;
+  max-width: fit-content;
 }
+
 .labelWrapper {
   overflow: hidden;
 }

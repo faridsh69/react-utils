@@ -22,7 +22,6 @@ export const Form = (props: FormProps) => {
     hiddenSubmitButtonId,
     submitButtonProps,
     label,
-    subLabel,
     icon,
     width = '100%',
     height,

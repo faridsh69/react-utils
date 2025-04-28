@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { Icon } from 'components/Icon/Icon'
 
 import { ButtonProps } from './Button.types'
@@ -11,7 +12,14 @@ export const Button = (props: ButtonProps) => {
       style={{ color, height: size }}
       disabled={disabled}
       onClick={onClick}
-      className={styles.button}
+      className={clsx(
+        styles.button,
+        styles[`variant-${variant}`],
+        styles[`size-${size}`],
+        styles[`color-${color}`],
+        active && styles.active,
+        noRadius && styles.noRadius,
+      )}
     >
       <Icon icon={icon} />
       {label}

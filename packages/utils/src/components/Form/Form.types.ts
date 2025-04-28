@@ -59,7 +59,6 @@ export type FormInput =
 export type FormProps = {
   inputs: FormInput[]
   label?: string
-  subLabel?: string
   icon?: IconsEnum
   background?: boolean
   width?: number | string

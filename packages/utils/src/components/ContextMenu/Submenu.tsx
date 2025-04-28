@@ -15,10 +15,9 @@ export const Submenu = (props: SubmenuProps) => {
       disabled={false}
       zIndex={zIndex}
       offset={4}
-      children={
-        <MenuOption option={option} handleCloseMenu={handleCloseMenu} canHasSubmenu={false} />
-      }
       overlay={<Menu options={subOptions} handleCloseMenu={handleCloseMenu} />}
-    />
+    >
+      <MenuOption option={option} handleCloseMenu={handleCloseMenu} canHasSubmenu={false} />
+    </Popover>
   )
 }
