@@ -32,8 +32,6 @@
   gap: var(--size-#{$size}-space);
   border-radius: 100px;
   padding: var(--size-#{$size}-space);
-  height: #{$size}px;
-  min-height: #{$size}px;
 }
 
 .size-s {

@@ -16,23 +16,6 @@
   @mixin size($size) {
     width: var(--size-#{$size}-size);
     height: var(--size-#{$size}-size);
-
-    // .option {
-    //   gap: var(--size-#{$size}-space);
-    //   padding: 0 var(--size-#{$size}-space);
-    //   height: var(--size-#{$size}-size);
-    //   min-height: var(--size-#{$size}-size);
-    // }
-
-    // .group {
-    //   height: var(--size-#{$size}-size);
-    //   min-height: var(--size-#{$size}-size);
-    // }
-
-    // .onlySelected {
-    //   font: var(--size-#{$size}-font);
-    //   padding: var(--size-#{$size}-space);
-    // }
   }
 
   .size-s {

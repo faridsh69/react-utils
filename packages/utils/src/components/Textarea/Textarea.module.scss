@@ -65,17 +65,11 @@
 
 @mixin size($size, $height) {
   .textarea {
-    font: var(--size-#{$size}-font);
     height: $height;
-    padding: var(--size-#{$size}-margin-v);
     border-radius: var(--size-#{$size}-borderradius);
   }
-
-  .counter {
-    font: var(--size-#{$size}-font);
-    height: #{$size}px;
-  }
 }
+
 .size-s {
   @include size(24, 100px);
 }

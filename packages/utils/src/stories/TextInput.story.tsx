@@ -51,7 +51,12 @@ export const TextInputStory = () => {
       <TextInput {...props} size={SizesEnum.M} label='Medium' />
       <TextInput {...props} size={SizesEnum.L} icon={undefined} label='large' />
 
-      <TextInput {...props} active label='active' />
+      <TextInput
+        {...props}
+        active
+        label='active'
+        value={'ASDasd asd asd dasf asdf asdf asdf asdf asdf asdf asdf asdf sadf asdf ssaf asdf '}
+      />
       <TextInput {...props} errorText='sad' label='errorText' />
       <TextInput {...props} readOnly label='readOnly' />
       <TextInput {...props} disabled label='disabled' />

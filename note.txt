@@ -1,14 +1,13 @@
 + 1) fix issue width 100%
-2) fix input height
++ 2) fix input height
 3) fix button colors, sizes, border radiuses, variants, active, disabled
-4) fix icons add all missing icons
++ 4) fix icons add all missing icons
 7) finish with eslint 
-    5) implement date picker
-    6) start implementing tests
-    8) implement a url for crud
-    9) context button triggeresh width 100% dare
-    10) table fix kon
-    11) implement tests using unit test & other tests
+9) context button triggeresh width 100% dare
+8) implement a url for crud
+        5) implement date picker
+        6) start implementing tests
+        10) table fix kon
 
 1) micro frontend container
 2) micro frontend service

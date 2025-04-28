@@ -92,16 +92,11 @@
 }
 
 @mixin size($size) {
-  .label {
-    font: var(--labels-label-#{$size}-font);
-  }
-
   .input {
     border-radius: var(--size-#{$size}-borderradius);
     padding: 0 var(--size-#{$size}-space);
-    font: var(--size-#{$size}-font);
-    height: #{$size}px;
-    min-height: #{$size}px;
+    height: var(--size-#{$size}-size);
+    min-height: var(--size-#{$size}-size);
 
     &::placeholder {
       font: var(--size-#{$size}-font);
@@ -122,19 +117,19 @@
   }
 
   .paddingLeft {
-    padding-left: #{$size}px;
+    padding-left: var(--size-#{$size}-size);
   }
 
   .singlePaddingRight {
-    padding-right: #{$size}px;
+    padding-right: var(--size-#{$size}-size);
   }
 
   .doublePaddingRight {
-    // padding-right: #{2 * $size}px;
+    padding-right: var(--size-#{$size}-size);
   }
 
   .moveLeft {
-    padding-right: #{$size}px;
+    padding-right: var(--size-#{$size}-size);
   }
 
   .invisible {

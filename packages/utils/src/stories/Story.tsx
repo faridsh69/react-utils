@@ -5,6 +5,7 @@ import { ConfirmStory } from './Confirm.story'
 import { DataNotFoundStory } from './DataNotFound.story'
 import { FormStory } from './Form.story'
 import { I18nextStory } from './I18next.story'
+import { IconsStory } from './IconsStory'
 import { ImageStory } from './Image.story'
 import { LabelStory } from './Label.story'
 import { LoaderStory } from './Loader.story'
@@ -47,6 +48,7 @@ export const Story = () => {
       <TabItemsStory />
       <I18nextStory />
       <TableStory />
+      <IconsStory />
     </div>
   )
 }

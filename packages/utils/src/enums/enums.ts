@@ -122,7 +122,6 @@ export enum IconsEnum {
   Calendar = 'Calendar',
   Edit = 'edit',
   Phone = 'phone',
-  Email = 'email',
   Ok = 'ok',
   Cancel = 'cancel',
   Trash = 'trash',
