@@ -1,10 +1,10 @@
+1) finish with eslint 
+2) fix button colors, sizes, border radiuses, variants, active, disabled
+3) context button triggeresh width 100% dare
+4) implement a url for crud
 + 1) fix issue width 100%
 + 2) fix input height
-3) fix button colors, sizes, border radiuses, variants, active, disabled
 + 4) fix icons add all missing icons
-7) finish with eslint 
-9) context button triggeresh width 100% dare
-8) implement a url for crud
         5) implement date picker
         6) start implementing tests
         10) table fix kon
