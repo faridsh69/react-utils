@@ -1,4 +1,3 @@
-import { Button } from 'components/Button/Button'
 import { FORM_NO_LABEL } from 'components/Form/Form.constants'
 import { FormInput } from 'components/Form/Form.types'
 import { SelectTriggerComponents } from 'components/Select/Select.enums'
@@ -12,7 +11,6 @@ import {
   InputTextMasksEnum,
   PlacementsEnum,
   SizesEnum,
-  VariantsEnum,
 } from 'enums/enums'
 import { generateFakeData } from 'helpers/helpers'
 
@@ -57,7 +55,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
   },
   {
     name: 'Price',
-    columns: 4,
+    columns: 2,
     component: InputComponentsEnum.Text,
     mask: InputTextMasksEnum.PriceDe,
     hint: 'Text hint',
@@ -68,7 +66,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
   },
   {
     name: 'gender',
-    columns: 4,
+    columns: 2,
     component: InputComponentsEnum.Radio,
     options: [
       { value: 'male', label: 'Male' },
@@ -134,17 +132,9 @@ export const SMART_FORM_INPUTS: FormInput[] = [
   },
   {
     name: 'custom',
-    columns: 2,
+    columns: 12,
     component: InputComponentsEnum.Custom,
-    children: (
-      <div style={{ background: 'lightgreen', paddingTop: 20 }}>
-        <Button
-          variant={VariantsEnum.Dark}
-          icon={IconsEnum.Mail}
-          label='children of custom field'
-        />
-      </div>
-    ),
+    children: <div style={{ background: 'lightgreen' }}>children of custom field</div>,
   },
   {
     name: 'group',
@@ -179,19 +169,6 @@ export const SMART_FORM_INPUTS: FormInput[] = [
         hint: 'Text hint',
       },
     ],
-  },
-  {
-    name: 'birth_date',
-    columns: 3,
-    component: InputComponentsEnum.Date,
-    // dateType: InputDateTypesEnum.Date,
-    size: SizesEnum.M,
-    required: true,
-  },
-  {
-    name: 'text input',
-    columns: 2,
-    component: InputComponentsEnum.Text,
   },
   {
     name: 'year_picker',
@@ -233,7 +210,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
   {
     name: 'accept_term_and_conditions',
     label: FORM_NO_LABEL,
-    columns: 4,
+    columns: 6,
     component: InputComponentsEnum.Checklist,
     background: true,
     size: SizesEnum.M,
@@ -250,7 +227,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
   },
   {
     name: 'has_disablity?',
-    columns: 4,
+    columns: 6,
     component: InputComponentsEnum.Checkbox,
     size: SizesEnum.M,
   },

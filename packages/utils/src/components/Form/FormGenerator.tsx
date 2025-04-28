@@ -93,7 +93,7 @@ export const FormGenerator = (props: FormGeneratorProps) => {
           const label = getLabelOfInputs(name, inputLabel)
 
           return (
-            <div key={input.name} className={styles[`col${columns}`]}>
+            <div key={input.name} className={styles[`col-${columns}`]}>
               <InputController
                 control={control}
                 onChangeInput={onChangeInput}

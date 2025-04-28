@@ -91,10 +91,12 @@ export const Form = (props: FormProps) => {
         <div className={styles.header} onClick={() => changeCollapse(true)}>
           <div className={styles.headerTitle}>
             <Icon icon={icon} className={styles.icon} />
-            <div className={styles.label}>
-              <Label label={label} font={FontsEnum.Header22} color={ColorsEnum.BlueDark} />
-              {isCollapsed && <Label label={subLabel} disabled />}
-            </div>
+            <Label
+              label={label}
+              font={FontsEnum.Header22}
+              color={ColorsEnum.BlueDark}
+              className={styles.label}
+            />
           </div>
           {collapsable && (
             <div className={styles.collapse}>

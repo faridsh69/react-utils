@@ -12,7 +12,10 @@ import { ModalStory } from './Modal.story'
 import { PopoverStory } from './Popover.story'
 import { RadioListStory } from './RadioListStory'
 import { SelectStory } from './Select.story'
+import { TabItemsStory } from './TabItems.story'
+import { TableStory } from './Table.story'
 import { TextInputStory } from './TextInput.story'
+import { ToggleButtonStory } from './ToggleButton.story'
 import { UseCrudStory } from './useCrud.story'
 import styles from './Story.module.scss'
 
@@ -40,10 +43,10 @@ export const Story = () => {
       <LoaderStory />
       <DataNotFoundStory />
       <ChipStory />
-      {/* <ToggleButtonStory /> */}
-      {/* <TabItemsStory /> */}
+      <ToggleButtonStory />
+      <TabItemsStory />
       <I18nextStory />
-      {/* <TableStory /> */}
+      <TableStory />
     </div>
   )
 }

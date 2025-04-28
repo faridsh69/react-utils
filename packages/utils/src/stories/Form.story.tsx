@@ -3,7 +3,7 @@ import { Button } from 'components/Button/Button'
 import { Form } from 'components/Form/Form'
 import { TEST_SCHEMA } from 'components/Form/schemas'
 import { Modal } from 'components/Modal/Modal'
-import { VariantsEnum } from 'enums/enums'
+import { IconsEnum, VariantsEnum } from 'enums/enums'
 import { submitFormId } from 'helpers/formHelpers'
 
 import { SMART_FORM_INPUTS } from './extra/storiesData'
@@ -24,6 +24,7 @@ export const FormStory = () => {
       </pre>
       <Form
         label='Register User Form'
+        icon={IconsEnum.Ok}
         subLabel='No item added yet'
         inputs={SMART_FORM_INPUTS}
         schema={TEST_SCHEMA}

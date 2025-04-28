@@ -34,7 +34,7 @@ export const ValidationCollapsed = (props: TypeFormProgress) => {
       <div className={styles.flexRow}>
         <Icon icon={icon} style={{ color: color }} />
         <Label
-          label={isSuccess ? 'Correct' : `${invalids} errors`}
+          label={isSuccess ? 'Completed' : `${invalids} errors`}
           color={color}
           font={FontsEnum.Text14}
         />

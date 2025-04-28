@@ -6,7 +6,7 @@ import styles from './Story.module.scss'
 export const TableStory = () => {
   return (
     <div className={styles.story}>
-      <h4>20 Table</h4>
+      <h4>16 Table</h4>
       <Table
         columns={TABLE_COLUMNS}
         rows={TABLE_ROWS}

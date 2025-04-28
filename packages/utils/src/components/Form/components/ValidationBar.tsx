@@ -38,7 +38,7 @@ export const ValidationBar = (props: TypeFormProgress) => {
       <div className={styles.flexRow}>
         <Icon icon={icon} style={{ fill: color }} />
         <Label
-          label={isSuccess ? 'This section is completed' : 'There are missing fileds'}
+          label={isSuccess ? 'Completed' : `${invalids} errors`}
           color={color}
           font={FontsEnum.Text16}
         />
