@@ -44,7 +44,6 @@ export const FileCell = (props: FileCellProps) => {
 
           {oneDoc && (
             <>
-              <FileIcon type={documents[0].type} />
               <Label label={documents[0].name} />
             </>
           )}
@@ -64,20 +63,4 @@ export const FileCell = (props: FileCellProps) => {
       placement={PlacementsEnum.BottomStart}
     />
   )
-}
-
-const FileIcon = (props: { type: string }) => {
-  const { type } = props
-
-  // if (type === 'pdf') return <PdfFileIcon  />
-  // if (type === 'doc') return <WordFileIcon  />
-  // if (type === 'docx') return <WordFileIcon  />
-  // if (type === 'xlsx') return <ExcelFileIcon  />
-  // if (type === 'xls') return <ExcelFileIcon  />
-  // if (type === 'csv') return <ExcelFileIcon  />
-  // if (type === 'jpeg') return <ImageFileIcon  />
-  // if (type === 'jpg') return <ImageFileIcon  />
-  // if (type === 'png') return <ImageFileIcon  />
-
-  return <Icon icon={IconsEnum.File} />
 }

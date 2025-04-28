@@ -83,7 +83,7 @@ export type TitleCellProps = {
 export type CountCellProps = {
   label?: VALUE
   subLabel?: VALUE
-  icon?: IconsEnum
+  icon?: IconsEnum | null
   bold?: boolean
 }
 

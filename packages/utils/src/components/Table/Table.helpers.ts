@@ -55,7 +55,7 @@ export const getHeaderIcon = (column?: TableColumn) => {
     [TableCellComponents.ViewAction]: IconsEnum.View,
     [TableCellComponents.EditAction]: IconsEnum.Edit,
     [TableCellComponents.DeleteAction]: IconsEnum.Trash,
-    [TableCellComponents.EmailAction]: IconsEnum.Email,
+    [TableCellComponents.EmailAction]: IconsEnum.Mail,
     [TableCellComponents.CallAction]: IconsEnum.Phone,
     [TableCellComponents.MoreAction]: IconsEnum.ThreeDots,
     [TableCellComponents.CustomAction]: column?.icon,

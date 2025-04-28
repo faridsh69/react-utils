@@ -34,7 +34,7 @@ export const Textarea = (props: TextareaProps) => {
   const invalid = hasError || !!errorText || invalidLength
 
   return (
-    <div disabled={disabled} className={clsx(styles.field, wrapperClassName)} style={{ width }}>
+    <div className={clsx(styles.field, wrapperClassName)} style={{ width }}>
       <div>
         <Label
           label={label}
