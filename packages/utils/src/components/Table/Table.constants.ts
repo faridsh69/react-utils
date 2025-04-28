@@ -1,1 +1,1 @@
-export const _TABLE_NO_DATA = '-'
+export const TABLE_NO_DATA = '-'

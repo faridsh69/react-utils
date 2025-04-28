@@ -37,7 +37,7 @@ export const Select = (props: SelectProps) => {
     required,
     hasError,
     hint,
-    hintZIndex = ZINDEXES.tooltip,
+    hintZIndex,
   } = props
 
   const [isOpen, setIsOpen] = useState(propIsOpen)

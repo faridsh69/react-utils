@@ -10,7 +10,7 @@ export const TabItemsStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>18 Tab items </h4>
+      <h4>14 Tab items </h4>
       <TabItems
         value={value}
         onChange={setValue}

@@ -16,7 +16,7 @@ export const ConfirmStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>12 Confirm </h4>
+      <h4>8 Confirm </h4>
       <code>{`<Confirm
           isOpen={isOpen}
           setIsOpen={setIsOpen}

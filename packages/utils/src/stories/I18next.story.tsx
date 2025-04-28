@@ -10,7 +10,7 @@ export const I18nextStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>19 Language (I18 next) story</h4>
+      <h4>13 Language (I18 next) story</h4>
       <Select
         multiple={false}
         size={SizesEnum.S}

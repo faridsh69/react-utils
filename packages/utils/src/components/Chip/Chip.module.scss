@@ -9,11 +9,13 @@
   .icon {
     color: currentColor;
   }
+
   .label {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
   .close {
     color: currentColor;
     cursor: pointer;
@@ -26,24 +28,20 @@
   }
 }
 
-@mixin size($size, $borderRadius) {
+@mixin size($size) {
   gap: var(--size-#{$size}-space);
-  border-radius: $borderRadius;
-  padding: 0 var(--size-#{$size}-space);
+  border-radius: 100px;
+  padding: var(--size-#{$size}-space);
   height: #{$size}px;
   min-height: #{$size}px;
-
-  .label {
-    font: var(--size-#{$size}-font);
-  }
 }
 
 .size-s {
-  @include size(24, 12px);
+  @include size(s);
 }
 .size-m {
-  @include size(34, 17px);
+  @include size(m);
 }
-.size-48 {
-  @include size(48, 24px);
+.size-l {
+  @include size(l);
 }

@@ -70,7 +70,6 @@ import {
   getAuthUser,
   getAuthUserAccessToken,
   getAuthUserOrganizationId,
-  getUserAvatar,
   getUserName,
 } from 'helpers/userMethods'
 import { useDebounceMethod } from 'hooks/useDebounceMethod'
@@ -117,7 +116,6 @@ export {
   getUniqueArrayByPropery,
   getUniqueId,
   getUpperCase,
-  getUserAvatar,
   getUserName,
   getWindowDimensions,
   handleException,
@@ -177,12 +175,12 @@ export {
 }
 
 export { Table } from 'components/Table/Table'
-export { _TABLE_NO_DATA } from 'components/Table/Table.constants'
+export { TABLE_NO_DATA } from 'components/Table/Table.constants'
 export { TableCellComponents, TableSeparators } from 'components/Table/Table.enums'
 export type { TableCell, TableColumn, TableProps, TableRow } from 'components/Table/Table.types'
 
 export { Form } from 'components/Form/Form'
-export { _FORM_NO_LABEL } from 'components/Form/Form.constants'
+export { FORM_NO_LABEL } from 'components/Form/Form.constants'
 export type {
   FormInput,
   FormProps,
@@ -207,9 +205,6 @@ export type { ImageProps } from 'components/Image/Image.types'
 
 export { ErrorBoundry } from 'components/ErrorBoundry/ErrorBoundry'
 export type { ErrorBoundryProps } from 'components/ErrorBoundry/ErrorBoundry.types'
-
-export { PageNotFound } from 'components/PageNotFound/PageNotFound'
-export type { PageNotFoundProps } from 'components/PageNotFound/PageNotFound.types'
 
 export { Loader } from 'components/Loader/Loader'
 export type { LoaderProps } from 'components/Loader/Loader.types'

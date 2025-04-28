@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import { useTrans } from 'hooks/useTrans'
 
 import { LoaderProps } from './Loader.types'
@@ -13,7 +14,7 @@ export const Loader = (props: LoaderProps) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.loader}></div>
+      <div className={clsx(styles.loader, styles[`size-${size}`])}></div>
 
       <div className={styles.texts}>
         <b className={styles.loadingText}>{label}</b>

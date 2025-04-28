@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
+import { SizesPixelEnum } from 'enums/enums'
 
 import { MenuOptionsProps } from '../Select.types'
 import { MenuOption } from './MenuOption'
@@ -13,7 +14,7 @@ export const MenuOptions = (props: MenuOptionsProps) => {
   const rows = useVirtualizer({
     count: options.length,
     getScrollElement: () => optionsVirualRef.current,
-    estimateSize: () => +size,
+    estimateSize: () => +SizesPixelEnum[size],
     overscan: 20,
   })
 

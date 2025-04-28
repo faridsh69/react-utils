@@ -1,4 +1,4 @@
-import { faCoffee, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconsEnum } from 'enums/enums'
 
@@ -8,7 +8,11 @@ export const Icon = (props: IconProps) => {
   const { icon, className, style } = props
 
   if (icon === IconsEnum.Cancel) {
-    return <FontAwesomeIcon className={className} style={style} icon={faCoffee} />
+    return <FontAwesomeIcon className={className} style={style} icon={faXmark} />
+  }
+
+  if (icon === IconsEnum.Ok) {
+    return <FontAwesomeIcon className={className} style={style} icon={faCheck} />
   }
 
   if (icon === IconsEnum.Mail) {
@@ -17,10 +21,6 @@ export const Icon = (props: IconProps) => {
 
   if (icon === IconsEnum.View) {
     return <FontAwesomeIcon icon={faMagnifyingGlass} />
-  }
-
-  if (icon === IconsEnum.Ok) {
-    return <span className={className}>👍</span>
   }
 
   return <span></span>

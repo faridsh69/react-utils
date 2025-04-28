@@ -22,9 +22,12 @@ export const MenuOption = (props: MenuOptionProps) => {
 
   if (isGroupOption) {
     return (
-      <div className={clsx(styles.group, !!index && styles.hasBorderTop)}>
-        <Label label={label} font={FONTS_SIZES_MAP[size]} active />
-      </div>
+      <Label
+        label={label}
+        font={FONTS_SIZES_MAP[size]}
+        active
+        className={clsx(styles.group, !!index && styles.hasBorderTop)}
+      />
     )
   }
 
@@ -32,14 +35,13 @@ export const MenuOption = (props: MenuOptionProps) => {
     <div className={clsx(styles.option, disabled && styles.disabled)} onClick={handleClick}>
       <Icon icon={icon} style={{ color: color }} />
 
-      <div className={styles.label}>
-        <Label
-          label={label}
-          font={isSelected ? BOLD_FONTS_SIZES_MAP[size] : FONTS_SIZES_MAP[size]}
-          disabled={disabled}
-          mouseEnterDelay={1}
-        />
-      </div>
+      <Label
+        label={label}
+        font={isSelected ? BOLD_FONTS_SIZES_MAP[size] : FONTS_SIZES_MAP[size]}
+        disabled={disabled}
+        mouseEnterDelay={1}
+        className={styles.label}
+      />
 
       {multiple && <Checkbox checked={!!isSelected} size={size} color={color} />}
 

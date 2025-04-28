@@ -18,4 +18,5 @@ export type LabelProps = {
   tooltipPlacement?: PlacementsEnum
   className?: string
   htmlFor?: string
+  onClick?: () => void
 }

@@ -42,7 +42,8 @@
 
     .label {
       flex: 1;
-      width: 0;
+      // width: 0;
+      cursor: pointer;
     }
 
     .okIcon {
@@ -68,7 +69,8 @@
   }
 
   .group {
-    padding: 8px 6px;
+    padding-left: 8px;
+    background-color: var(--grey-100);
   }
 
   .disabled {
@@ -100,8 +102,13 @@
   .option {
     gap: var(--size-#{$size}-space);
     padding: 0 var(--size-#{$size}-space);
-    height: #{$size}px;
-    min-height: #{$size}px;
+    height: var(--size-#{$size}-size);
+    min-height: var(--size-#{$size}-size);
+  }
+
+  .group {
+    height: var(--size-#{$size}-size);
+    min-height: var(--size-#{$size}-size);
   }
 
   .onlySelected {
@@ -116,7 +123,7 @@
 .size-m {
   @include size(m);
 }
-.size-48 {
+.size-l {
   @include size(l);
 }
 

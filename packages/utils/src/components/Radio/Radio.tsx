@@ -12,7 +12,6 @@ export const Radio = (props: RadioProps) => {
     onClick,
     disabled,
     label,
-    background,
     hasError,
     required,
     hint,
@@ -27,16 +26,7 @@ export const Radio = (props: RadioProps) => {
   }, [disabled, onClick])
 
   return (
-    <div
-      className={clsx(
-        styles.wrapper,
-        styles[`size-${size}`],
-        checked && styles.checked,
-        disabled && styles.disabled,
-        !checked && disabled && styles.disabledUnChecked,
-        background && styles.hasBackground,
-      )}
-    >
+    <div className={clsx(styles.wrapper, styles[`size-${size}`])}>
       <input
         type='radio'
         checked={checked}
@@ -44,17 +34,17 @@ export const Radio = (props: RadioProps) => {
         onChange={onclickHandler}
         className={styles.radio}
       />
-      <div className={styles.label} onClick={onclickHandler}>
-        <Label
-          label={label}
-          font={FontsEnum.Text14}
-          required={required}
-          hasError={hasError}
-          hint={hint}
-          hintZIndex={hintZIndex}
-          disabled={disabled}
-        />
-      </div>
+      <Label
+        label={label}
+        font={FontsEnum.Text14}
+        required={required}
+        hasError={hasError}
+        hint={hint}
+        hintZIndex={hintZIndex}
+        disabled={disabled}
+        className={styles.label}
+        onClick={onclickHandler}
+      />
     </div>
   )
 }

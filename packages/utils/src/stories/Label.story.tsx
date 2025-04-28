@@ -18,6 +18,13 @@ export const LabelStory = () => {
             key={font}
           />
         ))}
+        <div style={{ width: 300 }}>
+          <Label
+            label='A long long label wrapped in a div with max 100px size'
+            color={ColorsEnum.BlueDark}
+            font={FontsEnum.Header18}
+          />
+        </div>
       </div>
     </div>
   )

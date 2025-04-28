@@ -3,7 +3,7 @@ import { Icon } from 'components/Icon/Icon'
 import { Image } from 'components/Image/Image'
 import { Label } from 'components/Label/Label'
 import { Loader } from 'components/Loader/Loader'
-import { FontsEnum } from 'enums/enums'
+import { FontsEnum, SizesEnum } from 'enums/enums'
 import { useTrans } from 'hooks/useTrans'
 
 import { DataNotFoundProps } from './DataNotFound.types'
@@ -19,7 +19,7 @@ export const DataNotFound = (props: DataNotFoundProps) => {
 
   return (
     <div className={clsx(styles.wrapper, className)}>
-      {isLoading && <Loader label='' subLabel='' />}
+      {isLoading && <Loader label='' subLabel='' size={SizesEnum.S} />}
       {!isLoading && !image && <Icon icon={icon} className={styles.icon} />}
       {!isLoading && image && <Image src={image} />}
       <Label label={label} font={FontsEnum.Text14} disabled />

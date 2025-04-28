@@ -30,7 +30,7 @@ export const SelectStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>10 Select</h4>
+      <h4>6 Select</h4>
 
       <h5>A Select component that can be single or multiple</h5>
 

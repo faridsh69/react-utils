@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react'
+import { useState } from 'react'
 import { clsx } from 'clsx'
 import { Label } from 'components/Label/Label'
 import { SizesEnum } from 'enums/enums'
@@ -7,7 +7,7 @@ import { getUniqueId } from 'helpers/helpers'
 import { CheckboxProps } from './Checkbox.types'
 import styles from './Checkbox.module.scss'
 
-export const Checkbox = forwardRef<HTMLInputElement | null, CheckboxProps>((props, ref) => {
+export const Checkbox = (props: CheckboxProps) => {
   const {
     checked,
     onChange,
@@ -15,21 +15,19 @@ export const Checkbox = forwardRef<HTMLInputElement | null, CheckboxProps>((prop
     disabled = false,
     required = false,
     hasError = false,
-    width,
     hint = '',
-    hintZIndex = 1,
+    hintZIndex,
     size = SizesEnum.M,
   } = props
 
   const [htmlFor] = useState(getUniqueId())
 
   return (
-    <div className={clsx(styles.wrapper, styles[`size-${size}`])} style={{ width }}>
+    <div className={clsx(styles.wrapper, styles[`size-${size}`])}>
       <input
         type='checkbox'
         checked={!!checked}
         onChange={e => onChange?.(e.target.checked)}
-        className={styles.field__checkbox}
         id={htmlFor}
       />
       <Label
@@ -43,4 +41,4 @@ export const Checkbox = forwardRef<HTMLInputElement | null, CheckboxProps>((prop
       />
     </div>
   )
-})
+}

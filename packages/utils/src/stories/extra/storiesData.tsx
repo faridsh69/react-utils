@@ -363,7 +363,7 @@ const columnIds = {
   mail: 'mail',
 }
 
-export const _TABLE_COLUMNS: TableColumn[] = [
+export const TABLE_COLUMNS: TableColumn[] = [
   {
     id: columnIds.customer,
     label: 'customer',
@@ -456,7 +456,7 @@ export const _TABLE_COLUMNS: TableColumn[] = [
   },
 ]
 
-export const _TABLE_ROWS: TableRow[] = [
+export const TABLE_ROWS: TableRow[] = [
   {
     id: 1,
     cells: [

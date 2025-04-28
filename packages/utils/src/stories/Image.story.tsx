@@ -5,7 +5,7 @@ import { IMAGE_URLS } from 'constants/constants'
 import styles from './Story.module.scss'
 
 const bigSizeImage =
-  'https://static.vecteezy.com/system/resources/previews/047/005/018/non_2x/big-tree-growing-in-the-grass-scientific-name-albizia-saman-common-name-rain-tree-photo.jpg'
+  'https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?cs=srgb&dl=pexels-dominikagregus-672532.jpg&fm=jpg'
 
 export const ImageStory = () => {
   const propsArray: ImageProps[] = []
@@ -19,7 +19,7 @@ export const ImageStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>13 Image </h4>
+      <h4>9 Image </h4>
       <code> {'<Image src={IMAGE_URLS.trash} />'}</code>
       <h5>Load image with default loading skeleton before image is loading</h5>
       <div className={styles.Image}>

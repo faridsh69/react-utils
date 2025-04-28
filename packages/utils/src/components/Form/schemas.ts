@@ -60,19 +60,9 @@ export const TEST_SCHEMA: FormSchemaType = yup.object({
   //   .required(),
 })
 
-export const IO_SCHEMA: FormSchemaType = yup.object({
-  sample: SCHEMAS.requiredString,
-})
-
-export const PD_SCHEMA: FormSchemaType = yup.object({
-  project: SCHEMAS.requiredString,
-  date: SCHEMAS.requiredString,
-  vat: SCHEMAS.requiredString,
-})
-
-export const INSTALLMENTS_SCHEMA = yup.object({
+export const ARRAY_SCHEMA = yup.object({
   validation: SCHEMAS.requiredString,
-  installments: yup
+  arrayOfInputs: yup
     .array()
     .of(
       yup.object().shape({
@@ -89,61 +79,4 @@ export const INSTALLMENTS_SCHEMA = yup.object({
 
       return total === 100
     }),
-})
-
-export const TEMPLATES_SCHEMAS = yup.object({
-  template_variables: yup
-    .array()
-    .of(
-      yup
-        .object()
-        .shape({
-          value: SCHEMAS.requiredString,
-        })
-        .required(),
-    )
-    .required(),
-})
-
-export const VARIABLES_SCHEMA = yup.object({
-  templateVariables: yup
-    .array()
-    .of(
-      yup.object().shape({
-        value: yup.string().required(),
-      }),
-    )
-    .required(),
-})
-
-export const INVOICE_ITEMS_SCHEMA: FormSchemaType = yup.object({
-  validation: SCHEMAS.requiredString,
-  items: yup
-    .array()
-    .of(
-      yup.object().shape({
-        quantity: yup.number().required().min(1),
-        unit_price: yup.number().required().min(1),
-      }),
-    )
-    .required(),
-})
-
-export const ARRAY_TEST_SCHEMA = yup.object({
-  contracts: yup
-    .array()
-    .of(
-      yup.object().shape({
-        qualification_group_id: yup.string().required(),
-      }),
-    )
-    .required(),
-})
-
-export const FORM1_TEST_SCHEMA = yup.object({
-  name: SCHEMAS.requiredString,
-})
-
-export const FORM2_TEST_SCHEMA = yup.object({
-  country: SCHEMAS.requiredString,
 })

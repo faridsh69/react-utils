@@ -1,5 +1,5 @@
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
 }
 
@@ -27,38 +27,41 @@ input {
 
   --white: #fff;
   --black: #000;
-  --grey-100: #f4f4f4;
-  --grey-200: #efefef;
-  --grey-400: #eee;
-  --grey-500: #ddd;
-  --grey-600: #aaa;
-  --grey-900: #888;
+  --grey-100: #eeeeee;
+  --grey-200: #dddddd;
+  --grey-400: #aaaaaa;
+  --grey-500: #888888;
+  --grey-600: #777777;
+  --grey-900: #333333;
   --grey-100-grad: rgba(0, 0, 0, 0.1);
   --grey-200-grad: rgba(0, 0, 0, 0.2);
   --grey-300-grad: rgba(0, 0, 0, 0.3);
 
-  --font-text-12: normal 400 12px/14px Roboto;
-  --font-text-14: normal 400 14px/16px Roboto;
-  --font-text-16: normal 400 16px/18px Roboto;
+  --font-text-12: normal 400 12px/14px sans-serif;
+  --font-text-14: normal 400 14px/16px sans-serif;
+  --font-text-16: normal 400 16px/18px sans-serif;
 
-  --font-header-12: normal 700 12px/18px Roboto;
-  --font-header-14: normal 700 14px/21px Roboto;
-  --font-header-16: normal 700 16px/24px Roboto;
-  --font-header-18: normal 700 18px/20px Roboto;
-  --font-header-20: normal 700 20px/22px Roboto;
-  --font-header-22: normal 700 22px/26px Roboto;
-  --font-header-26: normal 700 26px/28px Roboto;
-  --font-header-30: normal 700 30px/34px Roboto;
+  --font-header-12: normal 700 12px/18px sans-serif;
+  --font-header-14: normal 700 14px/21px sans-serif;
+  --font-header-16: normal 700 16px/24px sans-serif;
+  --font-header-18: normal 700 18px/20px sans-serif;
+  --font-header-20: normal 700 20px/22px sans-serif;
+  --font-header-22: normal 700 22px/26px sans-serif;
+  --font-header-26: normal 700 26px/28px sans-serif;
+  --font-header-30: normal 700 30px/34px sans-serif;
 
   --general-outline-width: 3px;
   --general-outline-style: solid;
 
+  --size-s-size: 30px;
   --size-s-space: 6px;
   --size-s-borderradius: 4px;
 
+  --size-m-size: 40px;
   --size-m-space: 10px;
   --size-m-borderradius: 6px;
 
+  --size-l-size: 50px;
   --size-l-space: 16px;
   --size-l-borderradius: 8px;
 }

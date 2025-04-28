@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { clsx } from 'clsx'
 import { Label } from 'components/Label/Label'
 import { Radio } from 'components/Radio/Radio'
-import { ZINDEXES } from 'constants/constants'
 import { DirectionsEnum, FontsEnum, SizesEnum } from 'enums/enums'
 import { OptionValueType } from 'types/types'
 
@@ -20,13 +19,14 @@ export const RadioList = (props: RadioListProps) => {
     required,
     hasError,
     hint,
-    hintZIndex = ZINDEXES.tooltip,
+    hintZIndex,
     disabled,
-    background = false,
+    background = true,
     width,
   } = props
 
   const [value, setValue] = useState<OptionValueType>(propsValue)
+
   useEffect(() => {
     setValue(prevValue => (propsValue === prevValue ? prevValue : propsValue))
   }, [propsValue])
@@ -55,7 +55,7 @@ export const RadioList = (props: RadioListProps) => {
           styles.wrapper,
           styles[`size-${size}`],
           styles[direction],
-          !background && styles.NoBg,
+          background && styles.background,
         )}
       >
         {options.map(option => {

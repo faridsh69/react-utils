@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { clsx } from 'clsx'
 import { Checkbox } from 'components/Checkbox/Checkbox'
 import { Label } from 'components/Label/Label'
-import { ZINDEXES } from 'constants/constants'
 import { DirectionsEnum, FontsEnum, SizesEnum } from 'enums/enums'
 import { OptionValueType } from 'types/types'
 
@@ -20,13 +19,14 @@ export const CheckList = (props: CheckListProps) => {
     required,
     hasError,
     hint,
-    hintZIndex = ZINDEXES.tooltip,
+    hintZIndex,
     disabled,
     background = false,
     width,
   } = props
 
   const [value, setValue] = useState<OptionValueType[]>(propsValue)
+
   useEffect(() => {
     setValue(prevValue => (propsValue === prevValue ? prevValue : propsValue))
   }, [propsValue])
@@ -57,7 +57,7 @@ export const CheckList = (props: CheckListProps) => {
           styles.wrapper,
           styles[`size-${size}`],
           styles[direction],
-          !background && styles.NoBg,
+          background && styles.background,
         )}
       >
         {options.map(option => {

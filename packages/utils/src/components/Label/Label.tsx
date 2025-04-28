@@ -19,7 +19,7 @@ export const Label = (props: LabelProps) => {
     hint = '',
     zIndex = ZINDEXES.tooltip,
     hintZIndex = ZINDEXES.tooltip,
-    mouseEnterDelay = 0.1,
+    mouseEnterDelay = 0.3,
     forceTooltip = false,
     color,
     textAlignRight = false,
@@ -27,6 +27,7 @@ export const Label = (props: LabelProps) => {
     tooltipPlacement = PlacementsEnum.Top,
     className,
     htmlFor,
+    onClick,
   } = props
 
   const { isFit, textRef } = useIsTextFit()
@@ -35,8 +36,9 @@ export const Label = (props: LabelProps) => {
 
   return (
     <label
-      className={clsx(styles.wrapper, textAlignRight && styles.textAlignRight)}
+      className={clsx(styles.wrapper, className, textAlignRight && styles.textAlignRight)}
       htmlFor={htmlFor}
+      onClick={onClick}
     >
       <Tooltip
         overlay={label}
@@ -49,13 +51,11 @@ export const Label = (props: LabelProps) => {
           ref={textRef}
           className={clsx(
             styles.text,
-
             disabled && styles.disabled,
             active && styles.active,
             hasError && styles.hasError,
             linesCount === 1 && styles.oneLine,
             linesCount > 1 && styles.multiLines,
-            className,
           )}
           style={{
             font: `var(${font})`,

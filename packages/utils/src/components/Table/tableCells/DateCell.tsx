@@ -4,7 +4,7 @@ import { Label } from 'components/Label/Label'
 import { IconsEnum, SizesEnum } from 'enums/enums'
 import { getDiffTimeColor, getGermanDate, getRelativeTime } from 'helpers/dateHelpers'
 
-import { _TABLE_NO_DATA } from '../Table.constants'
+import { TABLE_NO_DATA } from '../Table.constants'
 import { DateCellProps } from '../Table.types'
 import styles from '../Table.module.scss'
 
@@ -18,7 +18,7 @@ export const DateCell = (props: DateCellProps) => {
   return (
     <div className={styles.tdCell}>
       <Icon icon={icon} className={styles.cellIcon} />
-      {showDate && <Label label={date || _TABLE_NO_DATA} />}
+      {showDate && <Label label={date || TABLE_NO_DATA} />}
       {label && showDateDiff && <Chip label={diff} size={SizesEnum.S} color={color} />}
     </div>
   )

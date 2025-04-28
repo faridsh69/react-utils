@@ -2,37 +2,32 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
 
-.wrapper {
-  display: flex;
-  width: 100%;
-  background-color: var(--grey-100);
-}
+  .wrapper {
+    display: flex;
+    width: 100%;
+  }
 
-.NoBg {
-  background-color: transparent;
-  margin-left: -10px;
-}
+  .background {
+    background-color: var(--grey-100);
+  }
 
-@mixin size($size) {
-  border-radius: var(--size-#{$size}-borderradius);
-  padding-right: var(--size-#{$size}-space);
-}
-.size-s {
-  @include size(s);
-}
-.size-m {
-  @include size(m);
-}
-.size-48 {
-  @include size(l);
-}
+  .vertical {
+    flex-direction: column;
+    gap: 0;
+  }
 
-.vertical {
-  flex-direction: column;
-  gap: 0;
-}
-.horizontal {
-  flex-direction: row;
+  @mixin size($size) {
+    border-radius: var(--size-#{$size}-borderradius);
+  }
+
+  .size-s {
+    @include size(s);
+  }
+  .size-m {
+    @include size(m);
+  }
+  .size-l {
+    @include size(l);
+  }
 }

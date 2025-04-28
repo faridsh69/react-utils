@@ -10,7 +10,7 @@ export const ModalStory = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <div className={styles.story}>
-      <h4>11 Modal </h4>
+      <h4>7 Modal </h4>
       <code>{`<Modal
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -30,11 +30,13 @@ export const ModalStory = () => {
           {
             label: 'Cancel',
             icon: IconsEnum.Cancel,
+            onClick: () => setIsOpen(false),
           },
           {
             variant: VariantsEnum.Dark,
             label: 'Save',
             icon: IconsEnum.Ok,
+            onClick: () => setIsOpen(false),
           },
         ]}
         title='Modal Title'

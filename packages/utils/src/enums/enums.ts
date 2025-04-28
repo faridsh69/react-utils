@@ -4,6 +4,12 @@ export enum SizesEnum {
   L = 'l',
 }
 
+export enum SizesPixelEnum {
+  s = '30',
+  m = '40',
+  l = '50',
+}
+
 export enum FontsEnum {
   Text12 = '--font-text-12',
   Text14 = '--font-text-14',

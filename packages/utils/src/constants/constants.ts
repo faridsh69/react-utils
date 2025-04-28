@@ -15,7 +15,7 @@ export const ENVS = {
 
 export const IMAGE_URLS = {
   trash:
-    'https://cdn5.vectorstock.com/i/1000x1000/98/64/trash-can-icon-design-template-vector-33829864.jpg',
+    'https://atlas-content-cdn.pixelsquid.com/stock-images/trash-can-street-bin-N4M5XQ0-600.jpg',
   ok: 'https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/ok.png',
 }
 

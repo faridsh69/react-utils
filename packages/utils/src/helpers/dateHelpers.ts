@@ -1,4 +1,4 @@
-import { _TABLE_NO_DATA } from 'components/Table/Table.constants'
+import { TABLE_NO_DATA } from 'components/Table/Table.constants'
 import { ColorsEnum } from 'enums/enums'
 
 import { getTwoDigits } from './calculationHelpers'
@@ -29,7 +29,7 @@ export const getServerDate = (date?: Date | string | number | null) => {
 }
 
 export const getRelativeTime = (dateString: string | number | null) => {
-  if (!dateString) return _TABLE_NO_DATA
+  if (!dateString) return TABLE_NO_DATA
 
   const givenDate = new Date(dateString)
   const today = new Date()

@@ -2,40 +2,34 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
 
-.wrapper {
-  display: flex;
-  width: 100%;
-  background-color: var(--grey-100);
-  overflow: hidden;
-}
+  .wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
 
-.NoBg {
-  background-color: transparent;
-  padding-left: 0px !important;
+  .background {
+    background-color: var(--grey-100);
+  }
+
+  .vertical {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 @mixin size($size) {
   border-radius: var(--size-#{$size}-borderradius);
   padding-right: var(--size-#{$size}-space);
-  padding-left: var(--size-#{$size}-space);
-  gap: var(--size-#{$size}-spacing-elements);
 }
+
 .size-s {
   @include size(s);
 }
 .size-m {
   @include size(m);
 }
-.size-48 {
+.size-l {
   @include size(l);
-}
-
-.vertical {
-  flex-direction: column;
-  gap: 0;
-}
-.horizontal {
-  flex-direction: row;
 }

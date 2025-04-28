@@ -15,7 +15,13 @@ export const FormStory = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <div className={styles.story}>
-      <h4>21 Form</h4>
+      <h4>FORM GENERATOR</h4>
+      <pre>
+        - This is a component that is automatically generate all kind of fields
+        <br />
+        - Also we can have all type of validations for each inputs
+        <br />- Also it will give you the current data of inputs and validity of form
+      </pre>
       <Form
         label='Register User Form'
         subLabel='No item added yet'
@@ -28,7 +34,6 @@ export const FormStory = () => {
         collapsable={true}
         isCollapsed={false}
         noPadding={false}
-        width={1000}
       />
       <br />
       <Button label='save' onClick={() => submitFormId(FORM_ID)} />

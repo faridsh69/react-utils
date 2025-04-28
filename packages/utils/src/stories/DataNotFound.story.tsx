@@ -17,7 +17,7 @@ export const DataNotFoundStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>15 DataNotFound </h4>
+      <h4>11 DataNotFound </h4>
 
       <code>
         {`<DataNotFound image icon label
@@ -25,7 +25,7 @@ export const DataNotFoundStory = () => {
       </code>
       <h5>It will show after search data is not found</h5>
       <Button label='start searching' onClick={handleSearch} />
-      <div style={{ width: 100 }}>
+      <div style={{ width: 160 }}>
         <DataNotFound isLoading={isLoading} label='Companies not found.' image={IMAGE_URLS.trash} />
       </div>
     </div>

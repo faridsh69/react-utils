@@ -24,7 +24,7 @@ export const Form = (props: FormProps) => {
     label,
     subLabel,
     icon,
-    width = 600,
+    width = '100%',
     height,
     background = true,
     noPadding = false,

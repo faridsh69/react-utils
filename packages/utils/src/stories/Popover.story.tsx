@@ -40,7 +40,7 @@ export const PopoverStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>8 Popover 9 Menu</h4>
+      <h4>5 Popover, Menu</h4>
       <code>{'<Popover />'}</code>
       <h5>Popover placement and on action can be used as a portal</h5>
       <div style={{ width: 100 }}>
