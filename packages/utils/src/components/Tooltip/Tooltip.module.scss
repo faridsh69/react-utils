@@ -30,15 +30,20 @@
 }
 
 @mixin size($size) {
-  font: var(--general-size#{$size}-font);
-  padding: var(--general-size#{$size}-margin-h);
-  border-radius: var(--general-size#{$size}-margin-h);
+  font: var(--size-#{$size}-font);
+  padding: var(--size-#{$size}-space);
+  border-radius: var(--size-#{$size}-space);
 }
-.size-24 {
-  @include size(24);
+.size-s {
+  @include size(s);
 }
-.size-34 {
-  @include size(34);
+
+.size-m {
+  @include size(m);
+}
+
+.size-l {
+  @include size(l);
 }
 
 .variant-light {

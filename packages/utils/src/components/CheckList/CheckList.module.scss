@@ -17,19 +17,19 @@
 }
 
 @mixin size($size) {
-  border-radius: var(--general-size#{$size}-borderradius);
-  padding-right: var(--general-size#{$size}-margin-h);
-  padding-left: var(--general-size#{$size}-margin-h);
-  gap: var(--general-size#{$size}-spacing-elements);
+  border-radius: var(--size-#{$size}-borderradius);
+  padding-right: var(--size-#{$size}-space);
+  padding-left: var(--size-#{$size}-space);
+  gap: var(--size-#{$size}-spacing-elements);
 }
-.size-24 {
-  @include size(24);
+.size-s {
+  @include size(s);
 }
-.size-34 {
-  @include size(34);
+.size-m {
+  @include size(m);
 }
 .size-48 {
-  @include size(48);
+  @include size(l);
 }
 
 .vertical {

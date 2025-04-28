@@ -37,7 +37,6 @@ input {
   --grey-200-grad: rgba(0, 0, 0, 0.2);
   --grey-300-grad: rgba(0, 0, 0, 0.3);
 
-  /* typography */
   --font-text-12: normal 400 12px/14px Roboto;
   --font-text-14: normal 400 14px/16px Roboto;
   --font-text-16: normal 400 16px/18px Roboto;
@@ -51,17 +50,17 @@ input {
   --font-header-26: normal 700 26px/28px Roboto;
   --font-header-30: normal 700 30px/34px Roboto;
 
-  --general-size-s-margin-h: 6px;
-  --general-size-s-borderradius: 4px;
-
-  --general-size-m-margin-h: 10px;
-  --general-size-m-borderradius: 6px;
-
-  --general-size-l-margin-h: 16px;
-  --general-size-l-borderradius: 8px;
-
   --general-outline-width: 3px;
   --general-outline-style: solid;
+
+  --size-s-space: 6px;
+  --size-s-borderradius: 4px;
+
+  --size-m-space: 10px;
+  --size-m-borderradius: 6px;
+
+  --size-l-space: 16px;
+  --size-l-borderradius: 8px;
 }
 
 input {

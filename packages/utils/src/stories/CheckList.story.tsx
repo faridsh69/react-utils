@@ -5,7 +5,7 @@ import styles from './Story.module.scss'
 export const CheckListStory = () => {
   return (
     <div className={styles.story}>
-      <h4>6 Checkbox - CheckList</h4>
+      <h4>3 Checkbox, CheckList</h4>
       <CheckList
         options={[
           { value: 1, label: 'One' },

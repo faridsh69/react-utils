@@ -1,7 +1,7 @@
 export enum SizesEnum {
-  S = '24',
-  M = '34',
-  L = '48',
+  S = 's',
+  M = 'm',
+  L = 'l',
 }
 
 export enum FontsEnum {

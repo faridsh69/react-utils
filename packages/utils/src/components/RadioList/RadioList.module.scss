@@ -16,17 +16,17 @@
 }
 
 @mixin size($size) {
-  border-radius: var(--general-size#{$size}-borderradius);
-  padding-right: var(--general-size#{$size}-margin-h);
+  border-radius: var(--size-#{$size}-borderradius);
+  padding-right: var(--size-#{$size}-space);
 }
-.size-24 {
-  @include size(24);
+.size-s {
+  @include size(s);
 }
-.size-34 {
-  @include size(34);
+.size-m {
+  @include size(m);
 }
 .size-48 {
-  @include size(48);
+  @include size(l);
 }
 
 .vertical {

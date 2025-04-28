@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--labels-label-24-margin-h);
+  gap: var(--labels-label-24-space);
 
   .wrapper {
     position: relative;
@@ -97,28 +97,28 @@
   }
 
   .input {
-    border-radius: var(--general-size#{$size}-borderradius);
-    padding: 0 var(--general-size#{$size}-margin-h);
-    font: var(--general-size#{$size}-font);
+    border-radius: var(--size-#{$size}-borderradius);
+    padding: 0 var(--size-#{$size}-space);
+    font: var(--size-#{$size}-font);
     height: #{$size}px;
     min-height: #{$size}px;
 
     &::placeholder {
-      font: var(--general-size#{$size}-font);
+      font: var(--size-#{$size}-font);
     }
   }
 
   .icon {
-    padding: 0 var(--general-size#{$size}-margin-h);
+    padding: 0 var(--size-#{$size}-space);
   }
 
   .avatar {
-    padding: 0 var(--general-size#{$size}-counter-spacing-v);
+    padding: 0 var(--size-#{$size}-counter-spacing-v);
   }
 
   .unit {
-    font: var(--general-size#{$size}-font);
-    padding: 0 var(--general-size#{$size}-margin-h);
+    font: var(--size-#{$size}-font);
+    padding: 0 var(--size-#{$size}-space);
   }
 
   .paddingLeft {
@@ -130,7 +130,7 @@
   }
 
   .doublePaddingRight {
-    padding-right: #{2 * $size}px;
+    // padding-right: #{2 * $size}px;
   }
 
   .moveLeft {
@@ -146,16 +146,16 @@
   }
 }
 
-.size-24 {
-  @include size(24);
+.size-s {
+  @include size(s);
 }
 
-.size-34 {
-  @include size(34);
+.size-m {
+  @include size(m);
 }
 
 .size-48 {
-  @include size(48);
+  @include size(l);
 }
 
 .noBorderRadiuses-left {

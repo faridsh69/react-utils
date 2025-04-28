@@ -16,7 +16,7 @@ export const Tooltip = (props: TooltipProps) => {
     overlay,
     disabled = false,
     mouseEnterDelay = 0.3,
-    size = SizesEnum.S,
+    size = SizesEnum.M,
     variant = VariantsEnum.Dark,
     placement: propPlacement = PlacementsEnum.Top,
     zIndex = 1,

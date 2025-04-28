@@ -18,13 +18,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: var(--general-size-m-margin-h);
+    padding: var(--size-m-space);
     border-radius: 6px;
     cursor: pointer;
     gap: 10px;
 
     .label {
-      font: var(--general-size-m-font);
+      font: var(--size-m-font);
       min-width: 50px;
       overflow: hidden;
       text-overflow: ellipsis;

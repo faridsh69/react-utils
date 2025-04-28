@@ -27,21 +27,21 @@
 }
 
 @mixin size($size, $borderRadius) {
-  gap: var(--general-size#{$size}-margin-h);
+  gap: var(--size-#{$size}-space);
   border-radius: $borderRadius;
-  padding: 0 var(--general-size#{$size}-margin-h);
+  padding: 0 var(--size-#{$size}-space);
   height: #{$size}px;
   min-height: #{$size}px;
 
   .label {
-    font: var(--general-size#{$size}-font);
+    font: var(--size-#{$size}-font);
   }
 }
 
-.size-24 {
+.size-s {
   @include size(24, 12px);
 }
-.size-34 {
+.size-m {
   @include size(34, 17px);
 }
 .size-48 {

@@ -45,15 +45,19 @@ export const TextInputStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>3 Text input, 4 Button, 5 Icon</h4>
-      <TextInput {...props} iconColor='green' label='' errorText={errorText} />
+      <h4>2 Text input</h4>
+
+      <TextInput {...props} size={SizesEnum.S} label='small' />
+      <TextInput {...props} size={SizesEnum.M} label='Medium' />
+      <TextInput {...props} size={SizesEnum.L} icon={undefined} label='large' />
+
       <TextInput {...props} active label='active' />
       <TextInput {...props} errorText='sad' label='errorText' />
       <TextInput {...props} readOnly label='readOnly' />
       <TextInput {...props} disabled label='disabled' />
-      <TextInput {...props} size={SizesEnum.L} icon={undefined} label='large' />
-      <TextInput {...props} size={SizesEnum.S} />
+
       <TextInput {...props} />
+      <TextInput {...props} iconColor='green' label='' errorText={errorText} />
       <TextInput
         {...props}
         size={SizesEnum.M}
