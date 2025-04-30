@@ -29,7 +29,6 @@ export const Select = (props: SelectProps) => {
     onScrollToBottom,
     width,
     height = 250,
-    showOnlySelecteds = false,
     zIndex = ZINDEXES.select,
     isLoading = false,
     label,
@@ -70,7 +69,6 @@ export const Select = (props: SelectProps) => {
   const triggerSelectedOption = useMemo(() => {
     return getTriggerSelectedOption(options, value, multiple)
   }, [options, value, multiple])
-  const hasValue = !!triggerSelectedOption?.label
 
   return (
     <Popover
@@ -87,7 +85,6 @@ export const Select = (props: SelectProps) => {
           onChange={onChange}
           options={options}
           groups={groups}
-          hasValue={hasValue}
           size={size}
           isSearchable={isSearchable}
           searchTerm={searchTerm}
@@ -97,7 +94,6 @@ export const Select = (props: SelectProps) => {
           handleCloseMenu={handleCloseMenu}
           width={width}
           height={height}
-          showOnlySelecteds={showOnlySelecteds}
           isLoading={isLoading}
         />
       }

@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
 import { Button } from 'components/Button/Button'
-import { ColorsEnum, DirectionsEnum } from 'enums/enums'
+import { DirectionsEnum } from 'enums/enums'
 
 import { TabItemsProps } from './TabItems.types'
 import styles from './TabItems.module.scss'
@@ -15,15 +15,13 @@ export const TabItems = (props: TabItemsProps) => {
     title = '',
   } = props
 
-  const isSuccess = (color: ColorsEnum) => color === ColorsEnum.Green
-
   return (
     <div className={clsx(styles.wrapper, background && styles.background, styles[direction])}>
       {direction === DirectionsEnum.Vertical && !!title && (
         <div className={styles.title}>{title}</div>
       )}
       {options.map(option => {
-        const { label, value: optionValue, icon, disabled, color } = option
+        const { label, value: optionValue, icon, disabled } = option
 
         return (
           <Button

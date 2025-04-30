@@ -203,9 +203,6 @@ export type { ModalProps } from 'components/Modal/Modal.types'
 export { Image } from 'components/Image/Image'
 export type { ImageProps } from 'components/Image/Image.types'
 
-export { ErrorBoundry } from 'components/ErrorBoundry/ErrorBoundry'
-export type { ErrorBoundryProps } from 'components/ErrorBoundry/ErrorBoundry.types'
-
 export { Loader } from 'components/Loader/Loader'
 export type { LoaderProps } from 'components/Loader/Loader.types'
 

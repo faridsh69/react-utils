@@ -349,7 +349,7 @@ export const TABLE_COLUMNS: TableColumn[] = [
     isSortable: true,
     widthConstraints: {
       min: '150px',
-      max: '300px',
+      max: '200px',
     },
   },
   {
@@ -364,8 +364,8 @@ export const TABLE_COLUMNS: TableColumn[] = [
     component: TableCellComponents.Price,
     separator: TableSeparators.halfLine,
     widthConstraints: {
-      min: '250px',
-      max: '300px',
+      min: '150px',
+      max: '200px',
     },
   },
   {
@@ -380,8 +380,8 @@ export const TABLE_COLUMNS: TableColumn[] = [
     component: TableCellComponents.File,
     separator: TableSeparators.halfLine,
     widthConstraints: {
-      min: '150px',
-      max: 200,
+      min: 100,
+      max: 120,
     },
   },
   {
@@ -426,11 +426,11 @@ export const TABLE_COLUMNS: TableColumn[] = [
     id: columnIds.more,
     component: TableCellComponents.MoreAction,
   },
-  {
-    id: columnIds.customAction,
-    icon: IconsEnum.Ok,
-    component: TableCellComponents.CustomAction,
-  },
+  // {
+  //   id: columnIds.customAction,
+  //   icon: IconsEnum.Ok,
+  //   component: TableCellComponents.CustomAction,
+  // },
 ]
 
 export const TABLE_ROWS: TableRow[] = [
@@ -444,7 +444,7 @@ export const TABLE_ROWS: TableRow[] = [
             'ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH',
           subLabel: 123456,
           color: ColorsEnum.Blue,
-          backgroundColor: ColorsEnum.RedTransparent,
+          // backgroundColor: ColorsEnum.RedTransparent,
         },
       },
       {

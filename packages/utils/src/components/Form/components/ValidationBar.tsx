@@ -30,7 +30,7 @@ export const ValidationBar = (props: TypeFormProgress) => {
   return (
     <div
       className={clsx(
-        styles.col12,
+        styles['col-12'],
         styles.validationBar,
         isSuccess ? styles.validationSuccess : styles.validationDanger,
       )}

@@ -1,9 +1,58 @@
 .button {
-  background-color: transparent;
-  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   cursor: pointer;
-  border: 1px solid grey;
-  padding: 10px;
-  border-radius: 10px;
+  border: 1px solid;
   width: fit-content;
+
+  &:hover {
+    background-color: var(--main-dark);
+    color: white;
+  }
+}
+
+.active {
+  background-color: var(--main-dark);
+  border-color: var(--main-light);
+  color: white;
+}
+
+.variant-dark {
+  background-color: var(--main-light);
+  border-color: var(--main-dark);
+  color: white;
+}
+.variant-light {
+  background-color: var(--main-transparent);
+  border-color: var(--main-light);
+  color: var(--main-light);
+}
+.variant-outline {
+  background-color: transparent;
+  border-color: var(--main-light);
+  color: var(--main-light);
+}
+.variant-ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--main-light);
+}
+
+@mixin size($size) {
+  border-radius: var(--size-#{$size}-borderradius);
+  padding: 0 var(--size-#{$size}-space);
+  height: var(--size-#{$size}-size);
+  min-height: var(--size-#{$size}-size);
+  gap: var(--size-#{$size}-space);
+}
+
+.size-s {
+  @include size(s);
+}
+.size-m {
+  @include size(m);
+}
+.size-l {
+  @include size(l);
 }

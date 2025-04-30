@@ -1,11 +1,8 @@
-import { Children, ReactElement, ReactNode, cloneElement } from 'react'
+import { Children, cloneElement, ReactElement, ReactNode } from 'react'
 
 import styles from './Tooltip.module.scss'
 
-export const getRefrenceWrapper = (
-  children: ReactNode,
-  refrenceProps: object
-) => {
+export const getRefrenceWrapper = (children: ReactNode, refrenceProps: object) => {
   if (!children) return <span />
 
   if (typeof children === 'string') {
@@ -26,6 +23,6 @@ export const getRefrenceWrapper = (
 
   return cloneElement(parent, {
     ...parentProps,
-    ...refrenceProps
+    ...refrenceProps,
   })
 }

@@ -25,10 +25,10 @@ export const FormStory = () => {
       <Form
         label='Register User Form'
         icon={IconsEnum.Ok}
-        subLabel='No item added yet'
         inputs={SMART_FORM_INPUTS}
         schema={TEST_SCHEMA}
         values={{ last_name: 'Shah', gender: 'female', chart_account_id: 1 }}
+        // eslint-disable-next-line no-console
         onSubmit={(data: any) => console.warn(data)}
         hiddenSubmitButtonId={FORM_ID}
         background={true}

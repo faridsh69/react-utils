@@ -36,7 +36,6 @@ export const Trigger = (props: TriggerComponentops) => {
         disabled={disabled}
         size={size}
         active={isActive}
-        hasIndicator={!!triggerSelectedOption?.label}
       />
     )
   }
@@ -51,7 +50,6 @@ export const Trigger = (props: TriggerComponentops) => {
         placeholder={trigerPlaceholder}
         value={triggerSelectedOption.label}
         icon={triggerSelectedOption.icon}
-        avatar={triggerSelectedOption.avatar}
         iconColor={triggerSelectedOption.color}
         disabled={disabled}
         clearable={clearable}

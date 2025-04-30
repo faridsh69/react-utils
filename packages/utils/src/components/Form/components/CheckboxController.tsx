@@ -16,7 +16,6 @@ export const CheckboxController = (props: InputControllerProps) => {
     label,
     size = SizesEnum.M,
     hintZIndex = ZINDEXES.tooltip,
-    background = false,
     ...rest
   } = props
 

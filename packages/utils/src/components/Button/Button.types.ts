@@ -10,5 +10,5 @@ export type ButtonProps = {
   disabled?: boolean
   icon?: IconsEnum
   onClick?: () => void
-  noRadius?: SidesEnum[]
+  noBorderRadius?: SidesEnum[]
 }

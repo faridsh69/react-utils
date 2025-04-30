@@ -73,7 +73,7 @@ export const GroupController = (props: InputControllerProps) => {
                   const inputName = `${groupName}.${fieldIndex}.${name}`
 
                   return (
-                    <div key={inputName} className={styles[`col${columns}`]}>
+                    <div key={inputName} className={styles[`col-${columns}`]}>
                       <InputController
                         name={inputName}
                         control={control}

@@ -93,7 +93,6 @@ export type MenuProps = {
 
   options: SelectOption[]
   groups: SelectGroup[]
-  hasValue: boolean
   size: SizesEnum
   isSearchable: boolean
   searchTerm: string
@@ -103,7 +102,6 @@ export type MenuProps = {
   handleCloseMenu: () => void
   width?: number | string
   height?: number | string
-  showOnlySelecteds: boolean
   isLoading: boolean
 }
 

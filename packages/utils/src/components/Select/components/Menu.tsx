@@ -1,6 +1,5 @@
 import { ChangeEvent, UIEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import { clsx } from 'clsx'
-import { Checkbox } from 'components/Checkbox/Checkbox'
 import { DataNotFound } from 'components/DataNotFound/DataNotFound'
 import { TextInput } from 'components/TextInput/TextInput'
 import { IconsEnum, SidesEnum } from 'enums/enums'
@@ -18,7 +17,6 @@ export const Menu = (props: MenuProps) => {
     groups,
     multiple,
     value,
-    hasValue,
     onChange,
     size,
     isSearchable,
@@ -29,7 +27,6 @@ export const Menu = (props: MenuProps) => {
     handleCloseMenu,
     width,
     height,
-    showOnlySelecteds,
     isLoading,
   } = props
 
@@ -80,8 +77,6 @@ export const Menu = (props: MenuProps) => {
     [isOnlySelected, onScrollToBottom, isLoading],
   )
 
-  const showOnlySelected = showOnlySelecteds && hasValue
-
   const [showSearch, setDelayShowSearch] = useState(false)
   useEffect(() => {
     setTimeout(() => {
@@ -108,17 +103,6 @@ export const Menu = (props: MenuProps) => {
         className={clsx(styles.menu, styles[`size-${size}`], isSearchable && styles.isSearchable)}
         style={{ maxHeight: height, width }}
       >
-        {showOnlySelected && (
-          <div className={styles.onlySelected}>
-            <Checkbox
-              checked={isOnlySelected}
-              onChange={setIsOnlySelected}
-              label={t('Only selecteds')}
-              size={size}
-            />
-          </div>
-        )}
-
         {isLoading ? (
           <div className={styles.isLoading}>
             <DataNotFound isLoading />

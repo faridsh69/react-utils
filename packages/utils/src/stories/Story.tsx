@@ -1,4 +1,5 @@
 import packageJson from '../../package.json'
+import { ButtonStory } from './ButtonStory'
 import { CheckListStory } from './CheckList.story'
 import { ChipStory } from './Chip.story'
 import { ConfirmStory } from './Confirm.story'
@@ -49,6 +50,7 @@ export const Story = () => {
       <I18nextStory />
       <TableStory />
       <IconsStory />
+      <ButtonStory />
     </div>
   )
 }

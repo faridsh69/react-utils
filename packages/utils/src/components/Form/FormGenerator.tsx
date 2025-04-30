@@ -107,7 +107,7 @@ export const FormGenerator = (props: FormGeneratorProps) => {
           )
         })}
         {!hiddenSubmitButtonId && (
-          <div className={styles.col12}>
+          <div className={styles['col-12']}>
             <Button label={t('Save')} icon={IconsEnum.Ok} type='submit' {...submitButtonProps} />
           </div>
         )}

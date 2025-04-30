@@ -11,7 +11,7 @@ export const PhoneCell = (props: PhoneCellProps) => {
 
   return (
     <div className={styles.tdCell}>
-      <Icon className={styles.cellIcon} />
+      <Icon className={styles.cellIcon} icon={icon} />
       <a href={`tel:${label}`} target='_blank' rel='noreferrer' className={styles.link}>
         <Label label={label} />
       </a>

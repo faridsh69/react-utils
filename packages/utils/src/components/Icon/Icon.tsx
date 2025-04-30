@@ -6,6 +6,7 @@ import {
   faCalendar,
   faCheck,
   faCopy,
+  faDownload,
   faEdit,
   faEllipsisH,
   faEnvelope,
@@ -45,6 +46,7 @@ const mapping = {
   [IconsEnum.Info]: faInfoCircle, // Info circle
   [IconsEnum.ThreeDots]: faEllipsisH, // Three dots horizontal
   [IconsEnum.File]: faFile, // File icon
+  [IconsEnum.Download]: faDownload, // File icon
 }
 
 export const Icon = (props: IconProps) => {

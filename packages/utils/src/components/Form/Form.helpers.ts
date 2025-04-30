@@ -40,6 +40,8 @@ export const getInputController = (component?: InputComponentsEnum) => {
 }
 
 export const getDateTypePicker = (dateType?: InputDateTypesEnum) => {
+  if (!dateType) return TextInput
+
   return TextInput
   // const inputs = {
   //   [InputDateTypesEnum.Date]: DatePicker,

@@ -139,6 +139,7 @@ export enum IconsEnum {
   Info = 'info',
   ThreeDots = 'threeDots',
   File = 'file',
+  Download = 'download',
 }
 
 export enum ActionsEnum {

@@ -12,7 +12,6 @@ export const DateController = (props: InputControllerProps) => {
     control,
     onChangeInput,
     name,
-    zIndex = ZINDEXES.select,
     dateType = InputDateTypesEnum.Date,
     hintZIndex = ZINDEXES.tooltip,
     ...rest
@@ -32,7 +31,7 @@ export const DateController = (props: InputControllerProps) => {
     <Controller
       control={control}
       name={name}
-      render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => {
+      render={({ field: { value, onChange }, fieldState: { error } }) => {
         const filterValue = value?.from && value?.to ? `${value.from} - ${value.to}` : value
 
         return (
@@ -40,7 +39,6 @@ export const DateController = (props: InputControllerProps) => {
             <DateTypePicker
               value={value}
               onChange={date => handleChange(date, onChange)}
-              // onClose={onBlur}
               hasError={!!error}
               hintZIndex={hintZIndex}
               {...rest}

@@ -19,7 +19,6 @@ export const MenuOption = (props: MenuOptionProps) => {
     isSeparator,
     disabled,
     isSelected,
-    statusChipColor,
     options: subOptions,
   } = option
 
