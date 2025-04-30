@@ -13,6 +13,11 @@ export const FormStory = () => {
   const FORM_ID = 'FORM_ID'
 
   const [isOpen, setIsOpen] = useState(false)
+  const [formValues, setFormValues] = useState({
+    last_name: 'Shah',
+    gender: 'female',
+    chart_account_id: 1,
+  })
   return (
     <div className={styles.story}>
       <h4>FORM GENERATOR</h4>
@@ -23,18 +28,15 @@ export const FormStory = () => {
         <br />- Also it will give you the current data of inputs and validity of form
       </pre>
       <Form
+        inputs={SMART_FORM_INPUTS}
+        values={formValues}
+        onChangeInput={setFormValues}
+        schema={TEST_SCHEMA}
         label='Register User Form'
         icon={IconsEnum.Ok}
-        inputs={SMART_FORM_INPUTS}
-        schema={TEST_SCHEMA}
-        values={{ last_name: 'Shah', gender: 'female', chart_account_id: 1 }}
-        // eslint-disable-next-line no-console
-        onSubmit={(data: any) => console.warn(data)}
         hiddenSubmitButtonId={FORM_ID}
         background={true}
         collapsable={true}
-        isCollapsed={false}
-        noPadding={false}
       />
       <br />
       <Button label='save' onClick={() => submitFormId(FORM_ID)} />

@@ -10,6 +10,23 @@ export enum SizesPixelEnum {
   l = '50',
 }
 
+export enum DirectionsEnum {
+  Vertical = 'vertical',
+  Horizontal = 'horizontal',
+}
+
+export enum VariantsEnum {
+  Dark = 'dark',
+  Light = 'light',
+  Outline = 'outline',
+  Ghost = 'ghost',
+}
+
+export enum ActionsEnum {
+  OnClick = 'onClick',
+  OnContextMenu = 'onContextMenu',
+}
+
 export enum FontsEnum {
   Text12 = '--font-text-12',
   Text14 = '--font-text-14',
@@ -98,18 +115,6 @@ export enum PlacementsEnum {
   LedftEnd = 'left-end',
 }
 
-export enum DirectionsEnum {
-  Vertical = 'vertical',
-  Horizontal = 'horizontal',
-}
-
-export enum VariantsEnum {
-  Dark = 'dark',
-  Light = 'light',
-  Outline = 'outline',
-  Ghost = 'ghost',
-}
-
 export enum SidesEnum {
   Top = 'top',
   Right = 'right',
@@ -141,9 +146,4 @@ export enum IconsEnum {
   ThreeDots = 'threeDots',
   File = 'file',
   Download = 'download',
-}
-
-export enum ActionsEnum {
-  OnClick = 'onClick',
-  OnContextMenu = 'onContextMenu',
 }

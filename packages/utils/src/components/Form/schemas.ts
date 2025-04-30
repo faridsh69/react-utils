@@ -44,7 +44,6 @@ export const TEST_SCHEMA: FormSchemaType = yup.object({
   gender: SCHEMAS.mixed(USERS_GENDER_ENUM),
   bio: SCHEMAS.requiredString,
   main_role: SCHEMAS.mixed(USERS_ROLE_ENUM),
-  birth_date: SCHEMAS.requiredString,
   roles: yup
     .array()
     .of(
