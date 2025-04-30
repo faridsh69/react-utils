@@ -8,10 +8,10 @@ export const ButtonStory = () => {
     <div className={styles.story}>
       <h4>18 Button</h4>
       <div className={styles.story}>
-        {Object.values(ColorsEnum).map(color => (
-          <div key={color}>
+        {[ColorsEnum.Blue, ColorsEnum.Green].map(color => (
+          <div key={color} style={{ gap: 30, display: 'flex', flexDirection: 'column' }}>
             {Object.values(VariantsEnum).map(variant => (
-              <div key={variant} style={{ gap: 20, display: 'flex' }}>
+              <div key={variant} style={{ gap: 30, display: 'flex' }}>
                 {Object.values(SizesEnum).map(size => (
                   <Button
                     label='Label sample Gg Label sample Gg'

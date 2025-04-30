@@ -7,36 +7,30 @@
   width: fit-content;
 
   &:hover {
-    background-color: var(--main-dark);
-    color: white;
+    background-color: var(--button-dark);
+    color: var(--white);
   }
 }
 
-.active {
-  background-color: var(--main-dark);
-  border-color: var(--main-light);
-  color: white;
-}
-
 .variant-dark {
-  background-color: var(--main-light);
-  border-color: var(--main-dark);
-  color: white;
+  background-color: var(--button-light);
+  border-color: var(--button-light);
+  color: var(--white);
 }
 .variant-light {
-  background-color: var(--main-transparent);
-  border-color: var(--main-light);
-  color: var(--main-light);
+  background-color: var(--button-transparent);
+  border-color: var(--button-transparent);
+  color: var(--button-light);
 }
 .variant-outline {
   background-color: transparent;
-  border-color: var(--main-light);
-  color: var(--main-light);
+  border-color: var(--button-light);
+  color: var(--button-light);
 }
 .variant-ghost {
   background-color: transparent;
   border-color: transparent;
-  color: var(--main-light);
+  color: var(--button-light);
 }
 
 @mixin size($size) {
@@ -55,4 +49,10 @@
 }
 .size-l {
   @include size(l);
+}
+
+.active {
+  background-color: var(--main-dark);
+  color: var(--white);
+  border-color: var(--main-light);
 }

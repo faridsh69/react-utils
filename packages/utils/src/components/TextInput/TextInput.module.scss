@@ -51,6 +51,13 @@
         position: absolute;
         bottom: 0px;
         right: 0px;
+        border-left: 1px solid var(--grey-200);
+        height: 100%;
+        width: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
       }
 
       .separator {
@@ -178,18 +185,3 @@
 .password {
   -webkit-text-security: disc;
 }
-// .cell {
-//   .input {
-//     background-color: var(--main-transparent);
-//     color: var(--main-dark);
-//     // border: unset !important;
-//   }
-
-//   .field__icon svg {
-//     color: var(--primary-blue-t50);
-//   }
-
-//   .field__unitText {
-//     color: var(--primary-blue-t50);
-//   }
-// }

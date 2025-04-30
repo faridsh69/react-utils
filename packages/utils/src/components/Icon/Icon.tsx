@@ -2,7 +2,6 @@ import {
   faArrowDown,
   faArrowRight,
   faArrowUp,
-  faAsterisk,
   faCalendar,
   faCheck,
   faCopy,
@@ -10,13 +9,16 @@ import {
   faEdit,
   faEllipsisH,
   faEnvelope,
+  faExclamationCircle,
   faExclamationTriangle,
   faEye,
   faEyeSlash,
   faFile,
   faInfoCircle,
+  faMagnifyingGlass,
   faMoneyBillAlt,
   faPhone,
+  faPlus,
   faTimes,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons'
@@ -33,7 +35,7 @@ const mapping = {
   [IconsEnum.Cancel]: faTimes, // Times (X, cancel) icon
   [IconsEnum.Trash]: faTrash, // Trash bin icon
   [IconsEnum.Mail]: faEnvelope, // Mail (envelope) icon
-  [IconsEnum.View]: faEye, // Eye (view) icon
+  [IconsEnum.View]: faMagnifyingGlass, // Eye (view) icon
   [IconsEnum.Copy]: faCopy, // Copy icon (missing import, I'll show in a second)
   [IconsEnum.Money]: faMoneyBillAlt, // Money icon (missing import too)
   [IconsEnum.Invisible]: faEyeSlash, // Invisible (eye slash) icon
@@ -42,11 +44,12 @@ const mapping = {
   [IconsEnum.ArrowBottom]: faArrowDown, // Arrow Down
   [IconsEnum.ArrowRight]: faArrowRight, // Arrow Right
   [IconsEnum.NotFound]: faExclamationTriangle, // Not Found (warning triangle)
-  [IconsEnum.Required]: faAsterisk, // Required field (asterisk) (missing import)
+  [IconsEnum.Required]: faExclamationCircle, // Required field (asterisk) (missing import)
   [IconsEnum.Info]: faInfoCircle, // Info circle
   [IconsEnum.ThreeDots]: faEllipsisH, // Three dots horizontal
   [IconsEnum.File]: faFile, // File icon
   [IconsEnum.Download]: faDownload, // File icon
+  [IconsEnum.Plus]: faPlus, // File icon
 }
 
 export const Icon = (props: IconProps) => {

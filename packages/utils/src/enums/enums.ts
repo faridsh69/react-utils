@@ -33,21 +33,21 @@ export enum ColorsEnum {
   Grey600 = 'var(--grey-600)',
   Grey900 = 'var(--grey-900)',
 
-  Red = 'var(--danger-light)',
-  RedDark = 'var(--danger-dark)',
-  RedTransparent = 'var(--danger-transparent)',
-
   Blue = 'var(--main-light)',
   BlueDark = 'var(--main-dark)',
   BlueTransparent = '#e2ecef',
 
   Green = 'var(--success-light)',
-  GreenDark = 'var(--warning-green-dark)',
+  GreenDark = 'var(--success-dark)',
   GreenTransparent = 'var(--success-transparent)',
 
   Orange = 'var(--warning-light)',
   OrangeDark = 'var(--warning-dark)',
   OrangeTransparent = 'var(--warning-transparent)',
+
+  Red = 'var(--danger-light)',
+  RedDark = 'var(--danger-dark)',
+  RedTransparent = 'var(--danger-transparent)',
 }
 
 export enum InputComponentsEnum {
@@ -119,7 +119,8 @@ export enum SidesEnum {
 }
 
 export enum IconsEnum {
-  Calendar = 'Calendar',
+  Plus = 'plus',
+  Calendar = 'calendar',
   Edit = 'edit',
   Phone = 'phone',
   Ok = 'ok',

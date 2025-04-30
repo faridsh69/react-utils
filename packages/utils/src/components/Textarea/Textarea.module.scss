@@ -10,6 +10,7 @@
 
   .resizeNone {
     .textarea {
+      border: 1px solid var(--grey-200);
       resize: none;
     }
   }
@@ -21,16 +22,8 @@
 
     .textarea {
       outline: none;
-      border: 1px solid var(--grey-500);
+      border: 1px solid var(--grey-200);
       width: 100%;
-
-      &[data-focus] {
-        border: 1px solid var(--main-light);
-      }
-
-      &[data-invalid] {
-        border: 1px solid var(--danger-light);
-      }
     }
 
     .counter {
@@ -67,17 +60,18 @@
   .textarea {
     height: $height;
     border-radius: var(--size-#{$size}-borderradius);
+    padding: 5px;
   }
 }
 
 .size-s {
-  @include size(24, 100px);
+  @include size(s, 100px);
 }
 .size-m {
-  @include size(34, 120px);
+  @include size(m, 120px);
 }
 .size-l {
-  @include size(48, 140px);
+  @include size(l, 140px);
 }
 
 .disabled {

@@ -65,9 +65,10 @@ export const Label = (props: LabelProps) => {
           }}
         >
           {label}
+          {required && ' *'}
         </div>
       </Tooltip>
-      {required && <Icon icon={IconsEnum.Required} className={styles.required} />}
+      {/* {required && <Icon icon={IconsEnum.Required} className={styles.required} />} */}
 
       {hint && (
         <Tooltip overlay={hint} zIndex={hintZIndex}>

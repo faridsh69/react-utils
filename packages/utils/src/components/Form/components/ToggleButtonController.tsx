@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
 import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
-import { ToggleButtonsOption } from 'components/ToggleButtons/ToggleButtons.types'
 import { Controller } from 'react-hook-form'
 import { OptionValueType } from 'types/types'
 
@@ -17,7 +16,7 @@ export const ToggleButtonController = (props: InputControllerProps) => {
     },
     [onChangeInput],
   )
-
+  console.log('1 options', options)
   return (
     <Controller
       control={control}
@@ -29,7 +28,7 @@ export const ToggleButtonController = (props: InputControllerProps) => {
               label={label}
               value={value}
               onChange={value => handleChange(value, onChange)}
-              options={options as ToggleButtonsOption[]}
+              options={options}
               hasError={!!error}
               {...rest}
             />

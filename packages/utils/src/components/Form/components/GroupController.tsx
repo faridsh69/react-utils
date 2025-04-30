@@ -96,7 +96,12 @@ export const GroupController = (props: InputControllerProps) => {
       <Label label={rootErrorMessage} hasError />
       {!disabled && (
         <div className={styles.groupAdd}>
-          <Button label={label} onClick={handleAddRow} variant={VariantsEnum.Outline} />
+          <Button
+            label={label}
+            icon={IconsEnum.Plus}
+            onClick={handleAddRow}
+            variant={VariantsEnum.Outline}
+          />
         </div>
       )}
     </div>

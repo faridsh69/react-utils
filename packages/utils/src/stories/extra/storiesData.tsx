@@ -138,7 +138,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
   },
   {
     name: 'group',
-    label: 'Add new record',
+    label: 'Add new guest',
     columns: 12,
     component: InputComponentsEnum.Group,
     inputs: [
@@ -169,43 +169,6 @@ export const SMART_FORM_INPUTS: FormInput[] = [
         hint: 'Text hint',
       },
     ],
-  },
-  {
-    name: 'year_picker',
-    columns: 2,
-    component: InputComponentsEnum.Date,
-    // dateType: InputDateTypesEnum.Year,
-    size: SizesEnum.M,
-  },
-  {
-    name: 'month_picker',
-    columns: 2,
-    component: InputComponentsEnum.Date,
-    // dateType: InputDateTypesEnum.Month,
-  },
-  {
-    name: 'date_range',
-    columns: 2,
-    component: InputComponentsEnum.Date,
-    // dateType: InputDateTypesEnum.DateRange,
-  },
-  {
-    name: 'year_range',
-    columns: 2,
-    component: InputComponentsEnum.Date,
-    // dateType: InputDateTypesEnum.YearRange,
-  },
-  {
-    name: 'month_range',
-    columns: 2,
-    component: InputComponentsEnum.Date,
-    // dateType: InputDateTypesEnum.MonthRange,
-  },
-  {
-    name: 'week_range',
-    columns: 2,
-    component: InputComponentsEnum.Date,
-    // dateType: InputDateTypesEnum.WeekRange,
   },
   {
     name: 'accept_term_and_conditions',

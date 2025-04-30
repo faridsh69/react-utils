@@ -22,16 +22,11 @@ export const TabItemsStory = () => {
             label: 'Section 1',
             icon: IconsEnum.Copy,
             value: 1,
-            // color: ColorsEnum.Green,
-            // disabled: false,
           },
           {
             label: 'Section 1',
             value: 2,
             icon: IconsEnum.Ok,
-            // counter: 2,
-            // color: ColorsEnum.Red,
-            // disabled: false,
           },
         ]}
       />

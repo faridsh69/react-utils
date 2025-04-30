@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { Icon } from 'components/Icon/Icon'
-import { SizesEnum, VariantsEnum } from 'enums/enums'
+import { ColorsEnum, SizesEnum, VariantsEnum } from 'enums/enums'
 
 import { ButtonProps } from './Button.types'
 import styles from './Button.module.scss'
@@ -14,8 +14,14 @@ export const Button = (props: ButtonProps) => {
     size = SizesEnum.M,
     active = false,
     disabled = false,
-    // color = ColorsEnum.Blue,
+    color = ColorsEnum.Blue,
   } = props
+
+  const colorStyles = {
+    '--button-light': color,
+    '--button-dark': color.replace('light', 'dark'),
+    '--button-transparent': color.replace('light', 'transparent'),
+  }
 
   return (
     <button
@@ -27,6 +33,8 @@ export const Button = (props: ButtonProps) => {
         styles[`variant-${variant}`],
         active && styles.active,
       )}
+      // @ts-ignore
+      style={{ ...colorStyles }}
     >
       <Icon icon={icon} />
       {label}
