@@ -1,14 +1,14 @@
-3) fix button colors, sizes, border radiuses, variants, active, disabled
++ 3) fix button colors, sizes, border radiuses, variants, active, disabled
 + 1) fix issue width 100%
 + 2) fix input height
 + 4) fix icons add all missing icons
 + 7) finish with eslint 
 + 9) context button triggeresh width 100% dare
++ 10) table fix kon
 
 1) implement doc and a url for crud
 2 implement doc for form
 3) start implementing tests
-
 
 1) micro frontend container
 2) micro frontend service
@@ -42,7 +42,6 @@
 		3 Bootstrap grid system
 		4 custom hooks: helper
 
-10) table fix kon
 5) implement date picker
 
 

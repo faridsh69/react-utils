@@ -91,7 +91,7 @@ export const ToggleButtons = (props: ToggleButtonsProps) => {
               onClick={() => onChangeHandler(option.value)}
               label={option.label}
               icon={option.icon}
-              noRadius={noRadius}
+              noBorderRadius={noRadius}
               disabled={disabled}
             />
           )

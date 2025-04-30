@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TabItems } from 'components/TabItems/TabItems'
-import { ColorsEnum, DirectionsEnum, IconsEnum } from 'enums/enums'
+import { DirectionsEnum, IconsEnum } from 'enums/enums'
 import { OptionValueType } from 'types/types'
 
 import styles from './Story.module.scss'
@@ -19,16 +19,16 @@ export const TabItemsStory = () => {
         title='Human Resources'
         options={[
           {
-            label: 'Dashboard',
+            label: 'Section 1',
             icon: IconsEnum.Copy,
             value: 1,
-            color: ColorsEnum.Green,
-            disabled: false,
+            // color: ColorsEnum.Green,
+            // disabled: false,
           },
           {
-            label: 'Calendar',
+            label: 'Section 1',
             value: 2,
-            // icon: CalendarCheckHIcon,
+            icon: IconsEnum.Ok,
             // counter: 2,
             // color: ColorsEnum.Red,
             // disabled: false,

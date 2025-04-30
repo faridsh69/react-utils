@@ -14,25 +14,11 @@
 
     .input {
       width: 100%;
-      background-color: var(--white);
-      border: 1px solid var(--grey-500);
+      border: 1px solid var(--grey-200);
       outline: unset;
 
       &::placeholder {
         color: var(--grey-500);
-      }
-
-      &[data-focus] {
-        border: 1px solid var(--main-light);
-      }
-
-      &[data-invalid] {
-        border: 1px solid var(--danger-light);
-      }
-
-      &[data-disabled] {
-        color: var(--grey-500);
-        background-color: var(--grey-100);
       }
     }
 
