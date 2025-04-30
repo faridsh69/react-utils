@@ -1,5 +1,4 @@
 import { SCHEMAS } from 'components/Form/schemas'
-import { useFormCallApiIfValid } from 'components/Form/useFormCallApiIfValid'
 import {
   API_PER_PAGE,
   DATE_FNS_FORMATS,
@@ -164,7 +163,6 @@ export {
   useDebounceValue,
   useElementVisiblity,
   useEventListener,
-  useFormCallApiIfValid,
   useInternetConnection,
   useIsTextFit,
   useMetaTags,

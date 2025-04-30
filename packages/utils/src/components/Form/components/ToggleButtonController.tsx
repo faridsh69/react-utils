@@ -16,7 +16,7 @@ export const ToggleButtonController = (props: InputControllerProps) => {
     },
     [onChangeInput],
   )
-  console.log('1 options', options)
+
   return (
     <Controller
       control={control}

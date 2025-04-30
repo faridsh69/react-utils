@@ -2,7 +2,6 @@ import { FontsEnum, SizesEnum } from '../enums/enums'
 
 export const API_PER_PAGE = 20
 export const DEFAULT_DEBOUNCE_TIME = 500
-export const DEFAULT_VALIDATION_DELAY = 100
 export const INVALIDATE_QUERY_CONFIG = { gcTime: 5000, refetchOnMount: true }
 
 export const APP_LS_KEY = 'react-utils-ls'

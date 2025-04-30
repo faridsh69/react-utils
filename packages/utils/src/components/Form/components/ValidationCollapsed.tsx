@@ -1,9 +1,7 @@
 import { clsx } from 'clsx'
 import { Icon } from 'components/Icon/Icon'
 import { Label } from 'components/Label/Label'
-import { DEFAULT_VALIDATION_DELAY } from 'constants/constants'
 import { FontsEnum } from 'enums/enums'
-import { useDebounceValue } from 'hooks/useDebounceValue'
 import Skeleton from 'react-loading-skeleton'
 
 import { FORM_DEFAULT_INVALIDS } from '../Form.constants'
@@ -12,9 +10,9 @@ import { TypeFormProgress } from '../Form.types'
 import styles from '../Form.module.scss'
 
 export const ValidationCollapsed = (props: TypeFormProgress) => {
-  const { all, invalids: propInvalids, showValidations = true } = props
+  const { all, invalids, showValidations = true } = props
 
-  const invalids = useDebounceValue(propInvalids, DEFAULT_VALIDATION_DELAY)
+  // const invalids = useDebounceValue(propInvalids, DEFAULT_VALIDATION_DELAY)
 
   if (!showValidations) return <></>
 

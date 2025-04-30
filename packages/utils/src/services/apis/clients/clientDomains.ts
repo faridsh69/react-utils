@@ -1,13 +1,13 @@
 import { isProd } from 'helpers/helpers'
 
 const TESTING_API_DOMAINS = {
-  base: 'https://testing.domain.com',
   auth: 'https://auth-testing.domain.com',
+  base: 'https://jsonplaceholder.typicode.com',
 }
 
 const PRODUCTION_API_DOMAINS = {
-  base: 'https://domain.com',
   auth: 'https://auth.domain.com',
+  base: 'https://domain.com',
 }
 
 const isProduction = isProd()

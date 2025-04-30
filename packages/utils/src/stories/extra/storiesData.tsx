@@ -3,7 +3,7 @@ import { FormInput } from 'components/Form/Form.types'
 import { SelectTriggerComponents } from 'components/Select/Select.enums'
 import { SelectOption, SelectProps } from 'components/Select/Select.types'
 import { TableCellComponents, TableSeparators } from 'components/Table/Table.enums'
-import { TableColumn, TableRow } from 'components/Table/Table.types'
+import { TableColumn } from 'components/Table/Table.types'
 import {
   ColorsEnum,
   IconsEnum,
@@ -396,151 +396,146 @@ export const TABLE_COLUMNS: TableColumn[] = [
   // },
 ]
 
-export const TABLE_ROWS: TableRow[] = [
+export const TABLE_CELLS = [
   {
-    id: 1,
-    cells: [
-      {
-        columnId: columnIds.customer,
-        props: {
-          label:
-            'ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH',
-          subLabel: 123456,
-          color: ColorsEnum.Blue,
-          // backgroundColor: ColorsEnum.RedTransparent,
+    columnId: columnIds.customer,
+    props: {
+      label:
+        'ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH ProKasro MEchatronic GMBH',
+      subLabel: 123456,
+      color: ColorsEnum.Blue,
+      // backgroundColor: ColorsEnum.RedTransparent,
+    },
+  },
+  {
+    columnId: columnIds.risk,
+    props: {
+      label: 'Medium',
+      colorEnum: ColorsEnum.Orange,
+    },
+  },
+  {
+    columnId: columnIds.employee,
+    props: {
+      label: 89,
+      subLabel: 'employees',
+      bold: true,
+    },
+  },
+  {
+    columnId: columnIds.total_amount,
+    props: {
+      label: 30000,
+    },
+  },
+  {
+    columnId: columnIds.due_date,
+    props: {
+      label: '2025-03-12',
+      showDateDiff: true,
+      showDate: false,
+      icon: null,
+    },
+  },
+  {
+    columnId: columnIds.documents,
+    props: {
+      documents: [
+        {
+          name: 'filename.pdf filename.pdf filename.pdf filename.pdf filename.pdf filename.pdf',
+          type: 'pdf',
         },
-      },
-      {
-        columnId: columnIds.risk,
-        props: {
-          label: 'Medium',
-          colorEnum: ColorsEnum.Orange,
+      ],
+    },
+  },
+  {
+    columnId: columnIds.projects,
+    props: {
+      chips: [
+        {
+          label: 'Project Name 1',
         },
-      },
-      {
-        columnId: columnIds.employee,
-        props: {
-          label: 89,
-          subLabel: 'employees',
-          bold: true,
+        {
+          label: 'Project Name 2',
         },
-      },
-      {
-        columnId: columnIds.total_amount,
-        props: {
-          label: 30000,
-        },
-      },
-      {
-        columnId: columnIds.due_date,
-        props: {
-          label: '2025-03-12',
-          showDateDiff: true,
-          showDate: false,
-          icon: null,
-        },
-      },
-      {
-        columnId: columnIds.documents,
-        props: {
-          documents: [
-            {
-              name: 'filename.pdf filename.pdf filename.pdf filename.pdf filename.pdf filename.pdf',
-              type: 'pdf',
-            },
-          ],
-        },
-      },
-      {
-        columnId: columnIds.projects,
-        props: {
-          chips: [
-            {
-              label: 'Project Name 1',
-            },
-            {
-              label: 'Project Name 2',
-            },
-          ],
-        },
-      },
-      {
-        columnId: columnIds.responsible,
-        props: {
-          label: 'Johnx Doe',
-          subLabel: 'Frontend',
-          // avatar: '',
-          avatar: 'https://dh5od79hpom3m.cloudfront.net/avatars/avatarCat.png',
-        },
-      },
+      ],
+    },
+  },
+  {
+    columnId: columnIds.responsible,
+    props: {
+      label: 'Johnx Doe',
+      subLabel: 'Frontend',
+      // avatar: '',
+      avatar: 'https://dh5od79hpom3m.cloudfront.net/avatars/avatarCat.png',
+    },
+  },
 
-      // {
-      //   columnId: columnIds.contracts,
-      //   props: {
-      //     children: <div style={{ background: 'red', width: '600px', height: '90px' }}>SAMPLE</div>,
-      //   },
-      // },
-      {
-        columnId: columnIds.view,
-        props: {
-          onClick: () => alert('View Clicked!'),
-          disabled: false,
+  // {
+  //   columnId: columnIds.contracts,
+  //   props: {
+  //     children: <div style={{ background: 'red', width: '600px', height: '90px' }}>SAMPLE</div>,
+  //   },
+  // },
+  {
+    columnId: columnIds.view,
+    props: {
+      onClick: () => alert('View Clicked!'),
+      disabled: false,
+    },
+  },
+  {
+    columnId: columnIds.edit,
+    props: {
+      onClick: () => alert('Edit Clicked!'),
+      disabled: true,
+    },
+  },
+  {
+    columnId: columnIds.delete,
+    props: {
+      onClick: () => alert('Delete Clicked!'),
+      disabled: true,
+    },
+  },
+  {
+    columnId: columnIds.call,
+    props: {
+      onClick: () => alert('call Clicked!'),
+      disabled: true,
+    },
+  },
+  {
+    columnId: columnIds.mail,
+    props: {
+      // onClick: () => alert('mail Clicked!'),
+      // disabled: true,
+    },
+  },
+  {
+    columnId: columnIds.customAction,
+    props: {
+      onClick: () => alert('Custom Action Clicked!'),
+      iconColor: ColorsEnum.Green,
+      disabled: false,
+    },
+  },
+  {
+    columnId: columnIds.more,
+    props: {
+      options: [
+        {
+          label: 'download',
+          icon: IconsEnum.View,
+          onClick: () => alert('download'),
         },
-      },
-      {
-        columnId: columnIds.edit,
-        props: {
-          onClick: () => alert('Edit Clicked!'),
-          disabled: true,
+        {
+          label: 'forward',
+          icon: IconsEnum.View,
+          onClick: () => alert('forward'),
         },
-      },
-      {
-        columnId: columnIds.delete,
-        props: {
-          onClick: () => alert('Delete Clicked!'),
-          disabled: true,
-        },
-      },
-      {
-        columnId: columnIds.call,
-        props: {
-          onClick: () => alert('call Clicked!'),
-          disabled: true,
-        },
-      },
-      {
-        columnId: columnIds.mail,
-        props: {
-          // onClick: () => alert('mail Clicked!'),
-          // disabled: true,
-        },
-      },
-      {
-        columnId: columnIds.customAction,
-        props: {
-          onClick: () => alert('Custom Action Clicked!'),
-          iconColor: ColorsEnum.Green,
-          disabled: false,
-        },
-      },
-      {
-        columnId: columnIds.more,
-        props: {
-          options: [
-            {
-              label: 'download',
-              icon: IconsEnum.View,
-              onClick: () => alert('download'),
-            },
-            {
-              label: 'forward',
-              icon: IconsEnum.View,
-              onClick: () => alert('forward'),
-            },
-          ],
-        },
-      },
-    ],
+      ],
+    },
   },
 ]
 

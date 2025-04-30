@@ -47,7 +47,6 @@ export const useCrud = <T>(
 
       if (isArray(apiResponse)) return apiResponse
       if (isArray(apiResponse?.data)) return apiResponse?.data || []
-      if (isArray(apiResponse?.data?.data)) return apiResponse?.data?.data || []
 
       return []
     },
@@ -79,10 +78,16 @@ export const useCrud = <T>(
   const createMutation = useMutation({
     mutationFn: (payload: TypePayload<T>) => createApi(payload.data),
     onSuccess: (apiResponse: any, payload: TypePayload<T>) => {
-      const createdModel = apiResponse.data.data
+      const createdModel = apiResponse.data
+
+      console.log('1 apiResponse', apiResponse)
       QUERY_CLIENT.setQueryData([queryKey, filters], (list: TypeModel[]) => {
-        if (createdModel && list && isArray(list)) {
-          return [createdModel, ...list]
+        if (list && isArray(list)) {
+          if (createdModel) {
+            return [createdModel, ...list]
+          }
+
+          return list
         }
 
         return [createdModel]

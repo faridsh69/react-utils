@@ -1,9 +1,7 @@
 import clsx from 'clsx'
 import { Icon } from 'components/Icon/Icon'
 import { Label } from 'components/Label/Label'
-import { DEFAULT_VALIDATION_DELAY } from 'constants/constants'
 import { FontsEnum } from 'enums/enums'
-import { useDebounceValue } from 'hooks/useDebounceValue'
 import Skeleton from 'react-loading-skeleton'
 
 import { FORM_DEFAULT_INVALIDS } from '../Form.constants'
@@ -12,11 +10,12 @@ import { TypeFormProgress } from '../Form.types'
 import styles from '../Form.module.scss'
 
 export const ValidationBar = (props: TypeFormProgress) => {
-  const { all, invalids: propInvalids, showValidations } = props
+  const { all, invalids, showValidations } = props
 
-  const invalids = useDebounceValue(propInvalids, DEFAULT_VALIDATION_DELAY)
+  // const invalids = useDebounceValue(propInvalids, 50)
 
   if (!showValidations) return <></>
+
   if (invalids === FORM_DEFAULT_INVALIDS) {
     return (
       <div style={{ paddingBottom: 15 }}>

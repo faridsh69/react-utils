@@ -1,6 +1,6 @@
 import { BASE_API_CLIENT } from './clients/clients'
 
-const COMMON = 'products'
+const COMMON = 'posts'
 
 export const getProductsApi = (filters: any) =>
   BASE_API_CLIENT.get({
