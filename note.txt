@@ -22,7 +22,6 @@ B) Microfrontend (main app, micro-services apps)
 + 4) utils:
     all custom hooks
     all helper methods
-    managing all local storage keys
 5) api handling
     react query
     useCrud

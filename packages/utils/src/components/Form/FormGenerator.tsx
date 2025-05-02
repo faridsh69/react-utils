@@ -45,8 +45,6 @@ export const FormGenerator = (props: FormGeneratorProps) => {
     defaultValues: defaultValues,
   })
 
-  console.log('1 errors', errors)
-
   useEffect(() => {
     if (values) {
       trigger()

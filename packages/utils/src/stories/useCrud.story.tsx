@@ -9,7 +9,7 @@ export const UseCrudStory = () => {
   const [showCrud, setShowCrud] = useState(false)
   return (
     <div className={styles.story}>
-      <h4>USECRUD</h4>
+      <h4>B) useCrud</h4>
       <code>{'const {list} = useCrud()'}</code>
       <pre>
         - This hook will provide you api data

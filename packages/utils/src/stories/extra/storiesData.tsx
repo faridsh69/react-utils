@@ -76,15 +76,6 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     background: true,
     required: true,
   },
-  {
-    name: 'bio',
-    columns: 4,
-    component: InputComponentsEnum.Textarea,
-    size: SizesEnum.S,
-    placeholder: 'First name',
-    hint: 'Text hint',
-    required: true,
-  },
 
   {
     name: 'Job',
@@ -96,7 +87,15 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     ],
     hint: 'Text hint',
   },
-
+  {
+    name: 'bio',
+    columns: 4,
+    component: InputComponentsEnum.Textarea,
+    size: SizesEnum.S,
+    placeholder: 'First name',
+    hint: 'Text hint',
+    required: true,
+  },
   {
     name: 'roles',
     columns: 4,
@@ -130,46 +129,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
       },
     ],
   },
-  {
-    name: 'custom',
-    columns: 12,
-    component: InputComponentsEnum.Custom,
-    children: <div style={{ background: 'lightgreen' }}>children of custom field</div>,
-  },
-  {
-    name: 'group',
-    label: 'Add new guest',
-    columns: 12,
-    component: InputComponentsEnum.Group,
-    inputs: [
-      {
-        name: 'first name',
-        label: 'first name',
-        columns: 4,
-        component: InputComponentsEnum.Text,
-        placeholder: 'Last name',
-        clearable: true,
-      },
-      {
-        name: 'last name',
-        label: 'last name',
-        columns: 4,
-        component: InputComponentsEnum.Text,
-        mask: InputTextMasksEnum.PriceDe,
-        placeholder: 'price',
-        hint: 'Text hint',
-        icon: IconsEnum.Money,
-        unit: '$',
-      },
-      {
-        name: 'gender',
-        label: 'gender',
-        columns: 4,
-        component: InputComponentsEnum.Text,
-        hint: 'Text hint',
-      },
-    ],
-  },
+
   {
     name: 'accept_term_and_conditions',
     label: FORM_NO_LABEL,
@@ -193,6 +153,49 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     columns: 6,
     component: InputComponentsEnum.Checkbox,
     size: SizesEnum.M,
+  },
+  {
+    name: 'group',
+    label: 'Add new family members',
+    noItemsLabel: 'No family member added yet',
+    columns: 12,
+    component: InputComponentsEnum.Group,
+    inputs: [
+      {
+        name: 'first name',
+        label: 'First name',
+        columns: 4,
+        component: InputComponentsEnum.Text,
+        placeholder: 'Last name',
+        clearable: true,
+      },
+      {
+        name: 'last name',
+        label: 'Last name',
+        columns: 4,
+        component: InputComponentsEnum.Text,
+        mask: InputTextMasksEnum.PriceDe,
+        placeholder: 'price',
+        icon: IconsEnum.Money,
+        unit: '$',
+      },
+      {
+        name: 'gender',
+        label: 'Gender',
+        columns: 4,
+        component: InputComponentsEnum.Radio,
+        options: [
+          { value: 'male', label: 'Male' },
+          { value: 'female', label: 'Female' },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'custom',
+    columns: 12,
+    component: InputComponentsEnum.Custom,
+    children: <small>children of custom field</small>,
   },
 ]
 

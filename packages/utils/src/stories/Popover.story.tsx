@@ -1,7 +1,7 @@
 import { ContextMenu } from 'components/ContextMenu/ContextMenu'
 import { Popover } from 'components/Popover/Popover'
 import { PopoverProps } from 'components/Popover/Popover.types'
-import { ActionsEnum } from 'enums/enums'
+import { ActionsEnum, PlacementsEnum } from 'enums/enums'
 
 import styles from './Story.module.scss'
 
@@ -21,6 +21,7 @@ export const PopoverStory = () => {
     ),
     disabled: false,
     isOpen: false,
+    placement: PlacementsEnum.RightStart,
   }
   const propsArray: PopoverProps[] = []
 

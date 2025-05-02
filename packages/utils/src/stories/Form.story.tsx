@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import { Button } from 'components/Button/Button'
 import { Form } from 'components/Form/Form'
 import { TEST_SCHEMA } from 'components/Form/schemas'
 import { Modal } from 'components/Modal/Modal'
-import { IconsEnum, VariantsEnum } from 'enums/enums'
-import { submitFormId } from 'helpers/formHelpers'
+import { IconsEnum } from 'enums/enums'
 
 import { SMART_FORM_INPUTS } from './extra/storiesData'
 import styles from './Story.module.scss'
@@ -18,9 +16,13 @@ export const FormStory = () => {
     gender: 'female',
     chart_account_id: 1,
   })
+
+  const onChangeInput = (inputNewValue: object) => {
+    setFormValues(p => ({ ...p, ...inputNewValue }))
+  }
   return (
     <div className={styles.story}>
-      <h4>FORM GENERATOR</h4>
+      <h4>A) Form Generator {`<Form inputs={[{name: 'email'}]} />`}</h4>
       <pre>
         - This is a component that is automatically generate all kind of fields
         <br />
@@ -30,7 +32,7 @@ export const FormStory = () => {
       <Form
         inputs={SMART_FORM_INPUTS}
         values={formValues}
-        onChangeInput={setFormValues}
+        onChangeInput={onChangeInput}
         schema={TEST_SCHEMA}
         label='Register User Form'
         icon={IconsEnum.Ok}
@@ -38,14 +40,14 @@ export const FormStory = () => {
         background={true}
         collapsable={true}
       />
-      <br />
-      <Button label='save' onClick={() => submitFormId(FORM_ID)} />
-      <br />
-      <Button
+      {/* <br /> */}
+      {/* <Button label='save' onClick={() => submitFormId(FORM_ID)} /> */}
+      {/* <br /> */}
+      {/* <Button
         variant={VariantsEnum.Dark}
         label='show form in a modal'
         onClick={() => setIsOpen(true)}
-      />
+      /> */}
       <Modal
         isOpen={isOpen}
         setIsOpen={setIsOpen}
