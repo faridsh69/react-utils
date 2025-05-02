@@ -4,7 +4,7 @@ import { Button } from 'components/Button/Button'
 import { Label } from 'components/Label/Label'
 import { ZINDEXES } from 'constants/constants'
 import { DirectionsEnum, FontsEnum, SidesEnum, SizesEnum, VariantsEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import { ToggleButtonsProps } from './ToggleButtons.types'
 import styles from './ToggleButtons.module.scss'

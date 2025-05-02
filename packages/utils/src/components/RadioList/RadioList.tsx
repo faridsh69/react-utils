@@ -3,7 +3,7 @@ import { clsx } from 'clsx'
 import { Label } from 'components/Label/Label'
 import { Radio } from 'components/Radio/Radio'
 import { DirectionsEnum, FontsEnum, SizesEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import { RadioListProps } from './RadioList.types'
 import styles from './RadioList.module.scss'

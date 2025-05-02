@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ZINDEXES } from 'constants/constants'
 import { ActionsEnum, PlacementsEnum, SizesEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import { Popover } from '../Popover/Popover'
 import { Menu } from './components/Menu'

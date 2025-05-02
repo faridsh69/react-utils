@@ -1,5 +1,5 @@
 import { DirectionsEnum, SizesEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 export type RadioListOption = {
   value: OptionValueType

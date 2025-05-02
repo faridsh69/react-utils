@@ -4,7 +4,7 @@ import { DataNotFound } from 'components/DataNotFound/DataNotFound'
 import { TextInput } from 'components/TextInput/TextInput'
 import { IconsEnum, SidesEnum } from 'enums/enums'
 import { useTrans } from 'hooks/useTrans'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import { getDisplayedOptions, getFinalValue, getIsScrolledBottom } from '../Select.helpers'
 import { MenuProps, SelectDisplayedOption, SelectOption } from '../Select.types'

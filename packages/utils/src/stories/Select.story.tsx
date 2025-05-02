@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Select } from 'components/Select/Select'
 import { SelectTriggerComponents } from 'components/Select/Select.enums'
 import { SelectOption } from 'components/Select/Select.types'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import { SELECT_DEFAULT_PROPS } from './extra/storiesData'
 import styles from './Story.module.scss'

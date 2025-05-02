@@ -3,7 +3,7 @@ import { clsx } from 'clsx'
 import { Checkbox } from 'components/Checkbox/Checkbox'
 import { Label } from 'components/Label/Label'
 import { DirectionsEnum, FontsEnum, SizesEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import { CheckListProps } from './CheckList.types'
 import styles from './CheckList.module.scss'

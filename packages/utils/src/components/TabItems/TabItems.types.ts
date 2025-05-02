@@ -1,5 +1,5 @@
 import { ColorsEnum, DirectionsEnum, IconsEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 export type TabItemsOption = {
   value?: OptionValueType

@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
 import { CheckList } from 'components/CheckList/CheckList'
 import { CheckListOption } from 'components/CheckList/CheckList.types'
+import { OptionValueType } from 'interfaces/interfaces'
 import { Controller } from 'react-hook-form'
-import { OptionValueType } from 'types/types'
 
 import { InputControllerProps } from '../Form.types'
 import { InputWrapper } from './InputWrapper'

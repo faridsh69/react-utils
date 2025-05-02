@@ -1,6 +1,6 @@
 import { DEFAULT_DEBOUNCE_TIME } from 'constants/constants'
 
-import { TypeResolve } from './helpers.types'
+export type TypeResolve = (...args: any[]) => void
 
 export function debounceMethod(func: TypeResolve, debounceTime = DEFAULT_DEBOUNCE_TIME) {
   if (!func || !debounceTime) return func

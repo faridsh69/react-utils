@@ -239,6 +239,7 @@ export {
   SizesEnum,
 } from 'enums/enums'
 
+export type { OptionValueType } from 'interfaces/interfaces'
 export type { AuthUserModelType } from 'services/interfaces/auth.types'
 export type {
   ApiKeyMapType,
@@ -246,7 +247,6 @@ export type {
   TypePayload,
   TypePayloadDelete,
 } from 'services/interfaces/services'
-export type { OptionValueType } from 'types/types'
 
 // export { Suspender } from 'components/Suspender/Suspender'
 // export type { SuspenderProps } from 'components/Suspender/Suspender.types'

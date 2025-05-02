@@ -80,7 +80,6 @@ export const useCrud = <T>(
     onSuccess: (apiResponse: any, payload: TypePayload<T>) => {
       const createdModel = apiResponse.data
 
-      console.log('1 apiResponse', apiResponse)
       QUERY_CLIENT.setQueryData([queryKey, filters], (list: TypeModel[]) => {
         if (list && isArray(list)) {
           if (createdModel) {

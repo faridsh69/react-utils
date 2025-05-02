@@ -1,7 +1,7 @@
 import { UIEvent } from 'react'
 import { isUndefined } from 'helpers/helpers'
 import { i18nextUtils } from 'i18n/i18nextInstance'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import { EMPTY_OPTION, SCROLL_THRESHOLD } from './Select.constants'
 import { SelectDisplayedOption, SelectGroup, SelectOption, SelectValue } from './Select.types'

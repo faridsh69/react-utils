@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react'
 import { ButtonProps } from 'components/Button/Button.types'
 import { TextInputProps } from 'components/TextInput/TextInput.types'
 import { IconsEnum, PlacementsEnum, SizesEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import { SelectTriggerComponents } from './Select.enums'
 

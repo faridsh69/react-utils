@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { TabItems } from 'components/TabItems/TabItems'
 import { DirectionsEnum, IconsEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 import styles from './Story.module.scss'
 

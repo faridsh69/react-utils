@@ -1,5 +1,5 @@
 import { DirectionsEnum, IconsEnum, SizesEnum, VariantsEnum } from 'enums/enums'
-import { OptionValueType } from 'types/types'
+import { OptionValueType } from 'interfaces/interfaces'
 
 export type ToggleButtonsOption = {
   value: OptionValueType

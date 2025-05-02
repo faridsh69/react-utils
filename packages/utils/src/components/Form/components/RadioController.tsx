@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { RadioList } from 'components/RadioList/RadioList'
+import { OptionValueType } from 'interfaces/interfaces'
 import { Controller } from 'react-hook-form'
-import { OptionValueType } from 'types/types'
 
 import { InputControllerProps } from '../Form.types'
 import { InputWrapper } from './InputWrapper'
