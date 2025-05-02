@@ -30,14 +30,6 @@ import {
   debounceMethodWithAllPromises,
   debounceMethodWithPromise,
 } from 'helpers/debounce'
-import {
-  getGroupFieldIndex,
-  getGroupFieldName,
-  getGroupInputName,
-  onChangeInputInGroup,
-  submitFormId,
-  submitFormIds,
-} from 'helpers/formHelpers'
 import { handleException } from 'helpers/handleException'
 import {
   callPhone,
@@ -104,9 +96,6 @@ export {
   getDaysAfter,
   getFormalCase,
   getGermanDate,
-  getGroupFieldIndex,
-  getGroupFieldName,
-  getGroupInputName,
   getLs,
   getReorderedPositions,
   getServerDate,
@@ -131,7 +120,6 @@ export {
   isProd,
   isString,
   isUndefined,
-  onChangeInputInGroup,
   openUrl,
   removeLs,
   renderPriceFormat,
@@ -139,8 +127,6 @@ export {
   sendEmail,
   setLs,
   sortArray,
-  submitFormId,
-  submitFormIds,
 }
 
 export {

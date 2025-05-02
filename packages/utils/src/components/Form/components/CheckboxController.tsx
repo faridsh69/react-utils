@@ -2,9 +2,9 @@ import { useCallback } from 'react'
 import { Checkbox } from 'components/Checkbox/Checkbox'
 import { ZINDEXES } from 'constants/constants'
 import { SizesEnum } from 'enums/enums'
-import { getFilterValueOfBoolean } from 'helpers/formHelpers'
 import { Controller } from 'react-hook-form'
 
+import { getFilterValueOfBoolean } from '../Form.helpers'
 import { InputControllerProps } from '../Form.types'
 import { InputWrapper } from './InputWrapper'
 

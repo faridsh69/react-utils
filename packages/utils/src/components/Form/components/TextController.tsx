@@ -1,11 +1,10 @@
 import { ChangeEvent, useCallback } from 'react'
 import { TextInput } from 'components/TextInput/TextInput'
 import { InputTextMasksEnum } from 'enums/enums'
-import { getClientInputValue, getServerInputValue } from 'helpers/formHelpers'
 import { useDebounceMethod } from 'hooks/useDebounceMethod'
 import { Controller } from 'react-hook-form'
 
-import { getRidOfExtraProps } from '../Form.helpers'
+import { getClientInputValue, getRidOfExtraProps, getServerInputValue } from '../Form.helpers'
 import { InputControllerProps } from '../Form.types'
 import { InputWrapper } from './InputWrapper'
 

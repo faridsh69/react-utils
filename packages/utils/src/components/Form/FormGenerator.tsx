@@ -2,12 +2,11 @@ import { useCallback, useEffect } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Button } from 'components/Button/Button'
 import { IconsEnum } from 'enums/enums'
-import { getLabelOfInputs } from 'helpers/formHelpers'
 import { useTrans } from 'hooks/useTrans'
 import { useForm } from 'react-hook-form'
 
 import { ValidationBar } from './components/ValidationBar'
-import { getAllInvalidFields, getInputController } from './Form.helpers'
+import { getAllInvalidFields, getInputController, getLabelOfInputs } from './Form.helpers'
 import { FormGeneratorProps } from './Form.types'
 import styles from './Form.module.scss'
 

@@ -5,6 +5,7 @@ import { ChipStory } from './Chip.story'
 import { ConfirmStory } from './Confirm.story'
 import { DataNotFoundStory } from './DataNotFound.story'
 import { FormStory } from './Form.story'
+import { HelpersStory } from './HelpersStory'
 import { I18nextStory } from './I18next.story'
 import { IconsStory } from './IconsStory'
 import { ImageStory } from './Image.story'
@@ -66,6 +67,7 @@ export const Story = () => {
       <TableStory />
       <IconsStory />
       <ButtonStory />
+      <HelpersStory />
     </div>
   )
 }

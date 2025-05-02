@@ -1,9 +1,8 @@
 import { useCallback } from 'react'
 import { Select } from 'components/Select/Select'
-import { getFilterValueSelect } from 'helpers/formHelpers'
 import { Controller } from 'react-hook-form'
 
-import { getRidOfExtraProps } from '../Form.helpers'
+import { getFilterValueSelect, getRidOfExtraProps } from '../Form.helpers'
 import { InputControllerProps } from '../Form.types'
 import { InputWrapper } from './InputWrapper'
 
