@@ -95,11 +95,11 @@ export const FormGenerator = (props: FormGeneratorProps) => {
             <div key={input.name} className={styles[`col-${columns}`]}>
               <InputController
                 control={control}
-                onChangeInput={onChangeInput}
-                key={name}
                 name={name}
+                key={name}
                 label={isFilterbar ? '' : label}
                 errors={errors}
+                onChangeInput={onChangeInput}
                 {...rest}
               />
             </div>

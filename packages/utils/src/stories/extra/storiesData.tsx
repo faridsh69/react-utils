@@ -4,6 +4,7 @@ import { SelectTriggerComponents } from 'components/Select/Select.enums'
 import { SelectOption, SelectProps } from 'components/Select/Select.types'
 import { TableCellComponents, TableSeparators } from 'components/Table/Table.enums'
 import { TableColumn } from 'components/Table/Table.types'
+import { DEFAULT_DEBOUNCE_TIME } from 'constants/constants'
 import {
   ColorsEnum,
   IconsEnum,
@@ -48,10 +49,10 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     name: 'last_name',
     columns: 4,
     component: InputComponentsEnum.Text,
-    // mask: InputTextMasksEnum.Number,
     placeholder: 'Last name',
     clearable: true,
     required: true,
+    debounceTime: DEFAULT_DEBOUNCE_TIME,
   },
   {
     name: 'Price',
@@ -188,6 +189,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
           { value: 'male', label: 'Male' },
           { value: 'female', label: 'Female' },
         ],
+        background: false,
       },
     ],
   },
@@ -195,7 +197,11 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     name: 'custom',
     columns: 12,
     component: InputComponentsEnum.Custom,
-    children: <small>children of custom field</small>,
+    children: (
+      <small>
+        children of <b>awesome</b> custom field
+      </small>
+    ),
   },
 ]
 

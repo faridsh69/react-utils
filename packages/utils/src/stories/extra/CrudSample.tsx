@@ -13,15 +13,18 @@ export const CrudSample = () => {
 
   const {
     list: products,
+    // single: product,
+    isLoading,
     createMutation,
     updateMutation,
     deleteMutation,
-    isLoading,
   } = useCrudProducts()
 
   const handleAddProduct = () => {
     createMutation.mutate({
       data: productFakeData,
+      onSuccess: () => {},
+      onError: () => {},
     })
   }
 

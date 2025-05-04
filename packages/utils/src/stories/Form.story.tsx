@@ -12,7 +12,7 @@ export const FormStory = () => {
 
   const [isOpen, setIsOpen] = useState(false)
   const [formValues, setFormValues] = useState({
-    last_name: 'Shah',
+    last_name: 'test',
     gender: 'female',
     chart_account_id: 1,
   })
