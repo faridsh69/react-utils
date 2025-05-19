@@ -41,6 +41,7 @@ export const MenuOption = (props: MenuOptionProps) => {
         option={option}
         handleCloseMenu={handleCloseMenu}
         zIndex={zIndex}
+        isLast={isLast}
       />
     )
   }
@@ -52,7 +53,7 @@ export const MenuOption = (props: MenuOptionProps) => {
       onClick={handleClick}
       className={clsx(
         styles.menuOption,
-        isLast && styles.last,
+        isLast && styles.isLast,
         styles[`color-${color}`],
         isSeparator && styles.seperator,
         isSeparator && !label && styles.seperatorNoLabel,

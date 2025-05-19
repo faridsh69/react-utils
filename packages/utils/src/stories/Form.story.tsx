@@ -17,9 +17,11 @@ export const FormStory = () => {
     chart_account_id: 1,
   })
 
-  const onChangeInput = (inputNewValue: object) => {
-    setFormValues(p => ({ ...p, ...inputNewValue }))
+  // console.log('1 formValues', formValues)
+  const onChangeInput = (_: any, finalFormData: any) => {
+    setFormValues(finalFormData)
   }
+
   return (
     <div className={styles.story}>
       <h4>A) Form Generator {`<Form inputs={[{name: 'email'}]} />`}</h4>

@@ -156,7 +156,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     size: SizesEnum.M,
   },
   {
-    name: 'group',
+    name: 'family',
     label: 'Add new family members',
     noItemsLabel: 'No family member added yet',
     columns: 12,

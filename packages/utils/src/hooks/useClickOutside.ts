@@ -1,17 +1,13 @@
 import { useCallback, useEffect, useRef } from 'react'
 
-export const useClickOutside = (
-  handleClose: () => void,
-  isOpen: boolean,
-  stillOpenOnClickPortals = true,
-) => {
+export const useClickOutside = (handleClose: () => void, isOpen: boolean) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const handleClickOutside = useCallback(
     (event: any) => {
       const target = event.target
       if (!ref.current || ref.current.contains(target)) return
-      if (stillOpenOnClickPortals && target?.closest('[data-floating-ui-portal]')) return // this is for select
+      if (target?.closest('[data-floating-ui-portal]')) return
 
       handleClose()
     },
@@ -21,8 +17,9 @@ export const useClickOutside = (
   useEffect(() => {
     if (!isOpen) return
 
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
+    document.addEventListener('mouseup', handleClickOutside)
+
+    return () => document.removeEventListener('mouseup', handleClickOutside)
   }, [handleClickOutside, ref, isOpen])
 
   return ref

@@ -42,6 +42,7 @@ export type SubmenuProps = {
   option: ContextMenuOptionType
   zIndex?: number
   handleCloseMenu: () => void
+  isLast?: boolean
 }
 
 export type MenuOptionProps = {

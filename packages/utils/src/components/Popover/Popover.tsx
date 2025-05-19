@@ -21,9 +21,6 @@ export const Popover = (props: PopoverProps) => {
     offset = 3,
     isOpen: propIsOpen = false,
     setIsOpen: propSetIsOpen,
-    closeOnClickOutside = true,
-    stillOpenOnClickPortals = false,
-    alwaysKeepMountOverlay = false,
   } = props
 
   const { refs, floatingStyles } = useFloatingUi(propPlacement, offset)
@@ -61,11 +58,7 @@ export const Popover = (props: PopoverProps) => {
     }, 0)
   }, [propSetIsOpen])
 
-  const clickoutsideRef = useClickOutside(
-    handleClose,
-    isOpen && closeOnClickOutside,
-    stillOpenOnClickPortals,
-  )
+  const clickoutsideRef = useClickOutside(handleClose, isOpen)
 
   if (disabled || !overlay || !children) return <>{children}</>
 
@@ -74,7 +67,7 @@ export const Popover = (props: PopoverProps) => {
     [openOnAction]: handleOpen,
   }
   const refrenceWrapper = getRefrenceWrapper(children, refrenceProps)
-  const mountOverlay = isOpen || alwaysKeepMountOverlay
+  const mountOverlay = isOpen
 
   return (
     <Fragment>

@@ -3,6 +3,8 @@ import { Button } from 'components/Button/Button'
 import { Modal } from 'components/Modal/Modal'
 import { IconsEnum, VariantsEnum } from 'enums/enums'
 
+import { FormStory } from './Form.story'
+import { PopoverStory } from './Popover.story'
 import { TableStory } from './Table.story'
 import styles from './Story.module.scss'
 
@@ -43,6 +45,8 @@ export const ModalStory = () => {
         body={
           <div style={{ height: 500 }}>
             <TableStory />
+            <FormStory />
+            <PopoverStory />
           </div>
         }
       />

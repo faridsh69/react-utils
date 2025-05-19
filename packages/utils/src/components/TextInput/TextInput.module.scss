@@ -107,6 +107,7 @@
   .unit {
     font: var(--size-#{$size}-font);
     padding: 0 var(--size-#{$size}-space);
+    background-color: var(--white);
   }
 
   .paddingLeft {

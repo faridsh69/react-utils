@@ -24,8 +24,9 @@
     color: var(--grey-900);
     position: relative;
     border-bottom: 1px solid var(--grey-400);
-    &.last {
-      border-bottom: unset;
+
+    &.isLast {
+      border-bottom: unset !important;
     }
 
     svg {
