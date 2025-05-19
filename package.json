@@ -9,6 +9,7 @@
     "build": "npx lerna run build",
     "build:dev": "NODE_ENV=development npx lerna run build",
     "build:prod": "npm run build -w packages/",
+    "dev": "vite",
     "lerna:clean": "rm -rf ./node_modules && npx lerna clean --yes",
     "lint": "eslint packages/utils/src --config packages/utils/eslint.config.mjs",
     "prepare": "husky",

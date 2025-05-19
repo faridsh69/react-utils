@@ -1,7 +1,74 @@
-@mixin no-wrap-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+html {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+div,
+input {
+  font-feature-settings: 'pnum' on, 'lnum' on !important;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-light: #4285f4;
+  --main-dark: #3367d6;
+  --main-transparent: #3367d612;
+
+  --success-light: #34a853;
+  --success-dark: #2e974b;
+  --success-transparent: #34a85318;
+
+  --warning-light: #ffa500;
+  --warning-dark: #e59400;
+  --warning-transparent: #ffa50012;
+
+  --danger-light: #ea4335;
+  --danger-dark: #d13c30;
+  --danger-transparent: #ea433512;
+
+  --white: #fff;
+  --black: #000;
+  --grey-100: #f4f4f4;
+  --grey-200: #dddddd;
+  --grey-400: #aaaaaa;
+  --grey-500: #888888;
+  --grey-600: #777777;
+  --grey-900: #333333;
+  --grey-100-grad: rgba(0, 0, 0, 0.03);
+  --grey-200-grad: rgba(0, 0, 0, 0.2);
+  --grey-300-grad: rgba(0, 0, 0, 0.3);
+
+  --font-text-12: normal 400 12px/14px sans-serif;
+  --font-text-14: normal 400 14px/16px sans-serif;
+  --font-text-16: normal 400 16px/18px sans-serif;
+
+  --font-header-12: normal 700 12px/18px sans-serif;
+  --font-header-14: normal 700 14px/21px sans-serif;
+  --font-header-16: normal 700 16px/24px sans-serif;
+  --font-header-18: normal 700 18px/20px sans-serif;
+  --font-header-20: normal 700 20px/22px sans-serif;
+  --font-header-22: normal 700 22px/26px sans-serif;
+  --font-header-26: normal 700 26px/28px sans-serif;
+  --font-header-30: normal 700 30px/34px sans-serif;
+
+  --general-outline-width: 3px;
+  --general-outline-style: solid;
+
+  --size-s-size: 30px;
+  --size-s-space: 6px;
+  --size-s-borderradius: 4px;
+
+  --size-m-size: 40px;
+  --size-m-space: 10px;
+  --size-m-borderradius: 6px;
+
+  --size-l-size: 50px;
+  --size-l-space: 16px;
+  --size-l-borderradius: 8px;
+}
+
+input {
+  font-feature-settings: 'pnum' on, 'lnum' on !important;
 }
 
 @mixin scroll {
@@ -26,201 +93,18 @@
 
 .row {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 0px;
-  margin-right: -10px;
-  margin-left: -10px;
+  margin: 0 -10px;
 }
 
-.col0 {
-  display: none;
+.row > [class^='col-'] {
+  box-sizing: border-box;
 }
 
-@mixin col($percent) {
-  max-width: $percent;
-  -ms-flex: 0 0 $percent;
-  flex: 0 0 $percent;
-  padding-right: 10px;
-  padding-left: 10px;
-  -webkit-box-flex: 0;
-}
-
-// col1 col-md-2 col-sm-3 col-xs-4
-// col2 col-md-3 col-sm-4 col-xs-6
-// col3 col-md-4 col-sm-6 col-xs-12
-// col4 col-md-5 col-sm-6 col-xs-12
-// col5 col-md-6 col-sm-6 col-xs-12
-// col6 col-md-6 col-sm-6 col-xs-12
-// col7 col-md-6 col-sm-6 col-xs-12
-// col8 col-md-7 col-sm-6 col-xs-12
-// col9 col-md-8 col-sm-6 col-xs-12
-// col10 col-md-9 col-sm-8 col-xs-12
-// col11 col-md-10 col-sm-9 col-xs-12
-// col12 col-md-12 col-sm-12 col-xs-12
-
-$mobile: 480px;
-$tablet: 768px;
-$laptop: 992px;
-$monitor: 1200px;
-
-// xs
-@media only screen and (max-width: $mobile) {
-  .col1 {
-    @include col(33.333333%);
-  }
-  .col2 {
-    @include col(50%);
-  }
-  .col3 {
-    @include col(100%);
-  }
-  .col4 {
-    @include col(100%);
-  }
-  .col5 {
-    @include col(100%);
-  }
-  .col6 {
-    @include col(100%);
-  }
-  .col7 {
-    @include col(100%);
-  }
-  .col8 {
-    @include col(100%);
-  }
-  .col9 {
-    @include col(100%);
-  }
-  .col10 {
-    @include col(100%);
-  }
-  .col11 {
-    @include col(100%);
-  }
-  .col12 {
-    @include col(100%);
-  }
-}
-
-/* sm */
-@media only screen and (min-width: $tablet) {
-  .col1 {
-    @include col(25%);
-  }
-  .col2 {
-    @include col(33.333333%);
-  }
-  .col3 {
-    @include col(50%);
-  }
-  .col4 {
-    @include col(50%);
-  }
-  .col5 {
-    @include col(50%);
-  }
-  .col6 {
-    @include col(50%);
-  }
-  .col7 {
-    @include col(50%);
-  }
-  .col8 {
-    @include col(50%);
-  }
-  .col9 {
-    @include col(50%);
-  }
-  .col10 {
-    @include col(66.666667%);
-  }
-  .col11 {
-    @include col(75%);
-  }
-  .col12 {
-    @include col(100%);
-  }
-}
-
-/* md */
-@media only screen and (min-width: $laptop) {
-  .col1 {
-    @include col(16.666667%);
-  }
-  .col2 {
-    @include col(25%);
-  }
-  .col3 {
-    @include col(33.333333%);
-  }
-  .col4 {
-    @include col(41.666667%);
-  }
-  .col5 {
-    @include col(50%);
-  }
-  .col6 {
-    @include col(50%);
-  }
-  .col7 {
-    @include col(50%);
-  }
-  .col8 {
-    @include col(58.333333%);
-  }
-  .col9 {
-    @include col(66.666667%);
-  }
-  .col10 {
-    @include col(75%);
-  }
-  .col11 {
-    @include col(83.333333%);
-  }
-  .col12 {
-    @include col(100%);
-  }
-}
-
-/* lg */
-@media only screen and (min-width: $monitor) {
-  .col1 {
-    @include col(8.333333%);
-  }
-  .col2 {
-    @include col(16.666667%);
-  }
-  .col3 {
-    @include col(25%);
-  }
-  .col4 {
-    @include col(33.333333%);
-  }
-  .col5 {
-    @include col(41.666667%);
-  }
-  .col6 {
-    @include col(50%);
-  }
-  .col7 {
-    @include col(58.333333%);
-  }
-  .col8 {
-    @include col(66.666667%);
-  }
-  .col9 {
-    @include col(75%);
-  }
-  .col10 {
-    @include col(83.333333%);
-  }
-  .col11 {
-    @include col(91.666667%);
-  }
-  .col12 {
-    @include col(100%);
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 calc(100% * #{$i} / 12);
+    max-width: calc(100% * #{$i} / 12);
+    padding: 0px 10px;
   }
 }

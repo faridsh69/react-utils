@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useRef } from 'react'
 
-export const useClickOutside = (handleClose: () => void, isOpen: boolean) => {
+export const useClickOutside = (
+  handleClose: () => void,
+  isOpen: boolean,
+  actionName = 'mouseup',
+) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const handleClickOutside = useCallback(
@@ -17,9 +21,9 @@ export const useClickOutside = (handleClose: () => void, isOpen: boolean) => {
   useEffect(() => {
     if (!isOpen) return
 
-    document.addEventListener('mouseup', handleClickOutside)
+    document.addEventListener(actionName, handleClickOutside)
 
-    return () => document.removeEventListener('mouseup', handleClickOutside)
+    return () => document.removeEventListener(actionName, handleClickOutside)
   }, [handleClickOutside, ref, isOpen])
 
   return ref
