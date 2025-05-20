@@ -206,6 +206,9 @@ export type {
   TriggerProp,
 } from 'components/Select/Select.types'
 
+export { Button } from 'components/Button/Button'
+export type { ButtonProps } from 'components/Button/Button.types'
+
 export { RadioList } from 'components/RadioList/RadioList'
 export type { RadioListProps } from 'components/RadioList/RadioList.types'
 

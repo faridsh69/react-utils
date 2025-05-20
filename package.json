@@ -14,6 +14,7 @@
     "lint": "eslint packages/utils/src --config packages/utils/eslint.config.mjs",
     "prepare": "husky",
     "prettier": "prettier --config packages/utils/src/constants/.prettierrc.json packages/utils/src --write",
+    "publish-public": "npm run build && npm publish --access public",
     "serve": "vite build && serve ./dist",
     "start": "vite",
     "test": "vitest",

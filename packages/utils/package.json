@@ -1,6 +1,6 @@
 {
   "name": "@faridsh69/react-utils",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "private": false,
   "license": "ISC",
   "author": "Farid Shahidi <farid.sh69@gmail.com>",
@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "node builder.js",
-    "publish": "npm run build && npm publish --access public"
+    "publish-public": "npm run build && npm publish --access public"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.3",
