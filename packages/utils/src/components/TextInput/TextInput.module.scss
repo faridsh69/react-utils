@@ -105,6 +105,7 @@
   }
 
   .unit {
+    margin-right: 1px;
     font: var(--size-#{$size}-font);
     padding: 0 var(--size-#{$size}-space);
     background-color: var(--white);
