@@ -93,7 +93,7 @@ export const Form = (props: FormProps) => {
             <Label
               label={label}
               font={FontsEnum.Header22}
-              color={ColorsEnum.BlueDark}
+              color={ColorsEnum.Grey900}
               className={styles.label}
             />
           </div>

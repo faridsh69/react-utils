@@ -7,8 +7,14 @@
   width: fit-content;
 
   &:hover {
-    background-color: var(--button-dark);
+    background-color: var(--button-light);
     color: var(--white);
+  }
+
+  &:focus {
+    outline-width: var(--general-outline-width);
+    outline-style: var(--general-outline-style);
+    outline-color: var(--button-light);
   }
 }
 
@@ -16,17 +22,24 @@
   background-color: var(--button-light);
   border-color: var(--button-light);
   color: var(--white);
+
+  &:hover {
+    background-color: var(--button-dark);
+  }
 }
+
 .variant-light {
   background-color: var(--button-transparent);
   border-color: var(--button-transparent);
   color: var(--button-light);
 }
+
 .variant-outline {
   background-color: transparent;
   border-color: var(--button-light);
   color: var(--button-light);
 }
+
 .variant-ghost {
   background-color: transparent;
   border-color: transparent;
@@ -55,4 +68,24 @@
   background-color: var(--main-dark);
   color: var(--white);
   border-color: var(--main-light);
+}
+
+.noBorderRadius-left {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.noBorderRadius-right {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.noBorderRadius-top {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.noBorderRadius-bottom {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }

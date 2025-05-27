@@ -179,6 +179,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
         placeholder: 'price',
         icon: IconsEnum.Money,
         unit: '$',
+        clearable: true,
       },
       {
         name: 'gender',

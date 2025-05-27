@@ -38,7 +38,7 @@ export const Textarea = (props: TextareaProps) => {
       <div>
         <Label
           label={label}
-          font={FontsEnum.Text14}
+          font={FontsEnum.Header12}
           required={required}
           hasError={invalid}
           hint={hint}

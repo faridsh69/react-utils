@@ -63,7 +63,7 @@ export const useCrud = <T>(
     data: single,
     error: singleApiError,
     isFetching: isFetchingSingle,
-  } = useQuery({
+  } = useQuery<any>({
     queryKey: [queryKey, modelId],
     queryFn: async () => {
       const response: any = await singleApi(modelId)
@@ -72,6 +72,7 @@ export const useCrud = <T>(
       return isObject(apiResponse?.data) ? apiResponse.data : apiResponse || {}
     },
     placeholderData: {},
+    ...configs,
     enabled: !!modelId,
   })
 

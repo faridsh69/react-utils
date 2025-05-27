@@ -10,21 +10,25 @@ input {
 }
 
 :root {
-  --main-light: #4285f4;
-  --main-dark: #3367d6;
-  --main-transparent: #3367d612;
+  /* Primary (Blue - Google Blue 500 / 700) */
+  --main-light: #4285f4; /* standard Google Blue */
+  --main-dark: #3367d6; /* darker shade */
+  --main-transparent: #4285f412; /* ~7% opacity */
 
-  --success-light: #34a853;
-  --success-dark: #2e974b;
-  --success-transparent: #34a85318;
+  /* Success (Green - Google Green 500 / 700) */
+  --success-light: #34a853; /* Google Green */
+  --success-dark: #1e7e34; /* deeper green */
+  --success-transparent: #34a85318; /* ~9% opacity */
 
-  --warning-light: #ffa500;
-  --warning-dark: #e59400;
-  --warning-transparent: #ffa50012;
+  /* Warning (Amber - Google Yellow 600 / 700) */
+  --warning-light: #fbbc04; /* Google Yellow/Amber */
+  --warning-dark: #e39e00; /* deeper amber */
+  --warning-transparent: #fbbc0412; /* ~7% opacity */
 
-  --danger-light: #ea4335;
-  --danger-dark: #d13c30;
-  --danger-transparent: #ea433512;
+  /* Danger (Red - Google Red 500 / 700) */
+  --danger-light: #ea4335; /* Google Red */
+  --danger-dark: #c5221f; /* deeper tone */
+  --danger-transparent: #ea433512; /* ~7% opacity */
 
   --white: #fff;
   --black: #000;
@@ -51,7 +55,7 @@ input {
   --font-header-26: normal 700 26px/28px sans-serif;
   --font-header-30: normal 700 30px/34px sans-serif;
 
-  --general-outline-width: 3px;
+  --general-outline-width: 1px;
   --general-outline-style: solid;
 
   --size-s-size: 30px;

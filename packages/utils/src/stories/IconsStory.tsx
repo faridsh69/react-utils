@@ -7,14 +7,14 @@ export const IconsStory = () => {
   return (
     <div className={styles.story}>
       <h4>17 Icons</h4>
-      <div style={{ gap: 20, display: 'flex' }}>
+      <div style={{ gap: 20, display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {Object.values(IconsEnum).map(icon => (
-          <span key={icon}>
-            <Icon icon={icon} />
+          <div key={icon} style={{ gap: 0, display: 'flex', flexDirection: 'column' }}>
+            <Icon icon={icon} style={{ color: '#333' }} />
             <br />
             <br />
             {icon}
-          </span>
+          </div>
         ))}
       </div>
     </div>

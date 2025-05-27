@@ -31,7 +31,7 @@ export const TextInputStory = () => {
     required: true,
     hint: 'Hint goes here...',
 
-    noBorderRadiuses: [],
+    noBorderRadius: [],
     noBorderColors: [],
     type: 'email',
     autoComplete: 'email',
