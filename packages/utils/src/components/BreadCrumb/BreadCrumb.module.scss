@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  .link {
+    text-decoration: none;
+    color: var(--grey-500);
+
+    &:hover {
+      color: var(--main-light);
+    }
+
+    &::after {
+      color: var(--grey-500);
+      padding-left: 13px;
+      content: '/';
+      font-weight: bold;
+    }
+
+    &:last-child {
+      color: var(--black);
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

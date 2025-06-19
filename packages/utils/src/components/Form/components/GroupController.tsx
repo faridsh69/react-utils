@@ -1,8 +1,11 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import clsx from 'clsx'
+import { BreadCrumb } from 'components/BreadCrumb/BreadCrumb'
 import { Button } from 'components/Button/Button'
 import { Label } from 'components/Label/Label'
-import { IconsEnum, VariantsEnum } from 'enums/enums'
+import { IconsEnum, InputComponentsEnum, VariantsEnum } from 'enums/enums'
+import { useFieldIndexesAtom, usePathAtom } from 'hooks/usePathAtom'
+import { useAtom } from 'jotai'
 import { useFieldArray } from 'react-hook-form'
 
 import { FORM_GROUP_ADD } from '../Form.constants'
@@ -21,6 +24,9 @@ export const GroupController = (props: InputControllerProps) => {
     disabled = false,
     hiddenInputLabelsBasedOnIndex,
     errors,
+    checkPathInBreadcrumb = false,
+    arrowButtonPath,
+    breadCrumbOptions = [],
   } = props
 
   const { fields, append, remove } = useFieldArray({
@@ -53,19 +59,56 @@ export const GroupController = (props: InputControllerProps) => {
   )
   const rootErrorMessage = errors?.[groupName]?.root?.message
 
+  // rendering path based groups
+  const [fieldIndexes, setFieldIndexes] = useAtom(useFieldIndexesAtom)
+  const currentFieldIndex = fieldIndexes[groupName] as number
+
+  const currentPath = breadCrumbOptions[breadCrumbOptions.length - 1]?.path
+  const [path, setPath] = useAtom(usePathAtom)
+  const isSamePath = path === currentPath
+  const showForm = !checkPathInBreadcrumb || isSamePath
+  const showActionButtons = !disabled && showForm
+  const isParentGroup = path.includes(currentPath)
+
+  const filteredInputs = useMemo(() => {
+    return inputs.filter(input => {
+      if (!showForm) return input.component === InputComponentsEnum.Group
+
+      return isParentGroup && input.component !== InputComponentsEnum.Group
+    })
+  }, [inputs, showForm, fieldIndexes, isParentGroup])
+  // console.log(currentPath, isParentGroup, showForm)
+
+  const handleChangePath = (fieldIndex: number) => {
+    window.history.pushState({}, '', arrowButtonPath)
+    setPath(arrowButtonPath || '')
+    setFieldIndexes((p: any) => ({
+      ...p,
+      [groupName]: fieldIndex,
+    }))
+  }
+
   return (
     <div className={styles.groupsWrapper}>
+      {showForm && <BreadCrumb options={breadCrumbOptions} />}
+
       <div className={styles.groups}>
-        {!fields.length && (
+        {!fields.length && showForm && (
           <div className={styles.noItems}>
             <Label label={noItemsLabel} disabled />
           </div>
         )}
         {fields.map((_, fieldIndex) => {
+          const isWrongParentIndex =
+            isParentGroup && !isSamePath && currentFieldIndex !== fieldIndex
+
           return (
-            <div className={styles.group} key={fieldIndex}>
+            <div
+              className={clsx(styles.group, isWrongParentIndex && styles.isWrongParentIndex)}
+              key={fieldIndex}
+            >
               <div className={clsx(styles.row, styles.groupInputs)}>
-                {inputs.map(input => {
+                {filteredInputs.map(input => {
                   const { name, columns = 12, component, ...rest } = input
                   if (hideInput(input, fieldIndex)) return null
 
@@ -84,9 +127,17 @@ export const GroupController = (props: InputControllerProps) => {
                   )
                 })}
               </div>
-              {!disabled && (
+              {showActionButtons && (
                 <div className={styles.groupRemove}>
                   <Button icon={IconsEnum.Trash} onClick={() => handleRemoveRow(fieldIndex)} />
+                </div>
+              )}
+              {showActionButtons && arrowButtonPath && (
+                <div className={styles.groupRemove}>
+                  <Button
+                    icon={IconsEnum.ArrowRight}
+                    onClick={() => handleChangePath(fieldIndex)}
+                  />
                 </div>
               )}
             </div>
@@ -94,7 +145,7 @@ export const GroupController = (props: InputControllerProps) => {
         })}
       </div>
       <Label label={rootErrorMessage} hasError />
-      {!disabled && (
+      {showActionButtons && (
         <div className={styles.groupAdd}>
           <Button
             label={label}

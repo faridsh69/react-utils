@@ -155,44 +155,44 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     component: InputComponentsEnum.Checkbox,
     size: SizesEnum.M,
   },
-  {
-    name: 'group',
-    label: 'Add new family members',
-    noItemsLabel: 'No family member added yet',
-    columns: 12,
-    component: InputComponentsEnum.Group,
-    inputs: [
-      {
-        name: 'first name',
-        label: 'First name',
-        columns: 4,
-        component: InputComponentsEnum.Text,
-        placeholder: 'Last name',
-        clearable: true,
-      },
-      {
-        name: 'last name',
-        label: 'Last name',
-        columns: 4,
-        component: InputComponentsEnum.Text,
-        mask: InputTextMasksEnum.PriceDe,
-        placeholder: 'price',
-        icon: IconsEnum.Money,
-        unit: '$',
-      },
-      {
-        name: 'gender',
-        label: 'Gender',
-        columns: 4,
-        component: InputComponentsEnum.Radio,
-        options: [
-          { value: 'male', label: 'Male' },
-          { value: 'female', label: 'Female' },
-        ],
-        background: false,
-      },
-    ],
-  },
+  // {
+  //   name: 'family',
+  //   label: 'Add new family members',
+  //   noItemsLabel: 'No family member added yet',
+  //   columns: 12,
+  //   component: InputComponentsEnum.Group,
+  //   inputs: [
+  //     {
+  //       name: 'first name',
+  //       label: 'First name',
+  //       columns: 4,
+  //       component: InputComponentsEnum.Text,
+  //       placeholder: 'Last name',
+  //       clearable: true,
+  //     },
+  //     {
+  //       name: 'last name',
+  //       label: 'Last name',
+  //       columns: 4,
+  //       component: InputComponentsEnum.Text,
+  //       mask: InputTextMasksEnum.PriceDe,
+  //       placeholder: 'price',
+  //       icon: IconsEnum.Money,
+  //       unit: '$',
+  //     },
+  //     {
+  //       name: 'gender',
+  //       label: 'Gender',
+  //       columns: 4,
+  //       component: InputComponentsEnum.Radio,
+  //       options: [
+  //         { value: 'male', label: 'Male' },
+  //         { value: 'female', label: 'Female' },
+  //       ],
+  //       background: false,
+  //     },
+  //   ],
+  // },
   {
     name: 'custom',
     columns: 12,
@@ -202,6 +202,113 @@ export const SMART_FORM_INPUTS: FormInput[] = [
         children of <b>awesome</b> custom field
       </small>
     ),
+  },
+  {
+    name: 'group_1',
+    label: 'Add new group 1',
+    noItemsLabel: 'No group 1 added.',
+    checkPathInBreadcrumb: true,
+    arrowButtonPath: '/g1/g2',
+    breadCrumbOptions: [
+      {
+        label: 'Group 1',
+        path: '/g1',
+      },
+    ],
+    component: InputComponentsEnum.Group,
+    inputs: [
+      {
+        name: 'name_1',
+        label: 'Name 1',
+        component: InputComponentsEnum.Text,
+      },
+      {
+        name: 'group_2',
+        label: 'Add new group 2',
+        noItemsLabel: 'No group 2 added.',
+        checkPathInBreadcrumb: true,
+        arrowButtonPath: '/g1/g2/g3',
+        breadCrumbOptions: [
+          {
+            label: 'Group 1',
+            path: '/g1',
+          },
+          {
+            label: 'Group 2',
+            path: '/g1/g2',
+          },
+        ],
+        component: InputComponentsEnum.Group,
+        inputs: [
+          {
+            name: 'name_2',
+            label: 'Name 2',
+            component: InputComponentsEnum.Text,
+          },
+          {
+            name: 'group_3',
+            label: 'Add new group 3',
+            noItemsLabel: 'No group 3 added.',
+            checkPathInBreadcrumb: true,
+            arrowButtonPath: '/g1/g2/g3/g4',
+            breadCrumbOptions: [
+              {
+                label: 'Group 1',
+                path: '/g1',
+              },
+              {
+                label: 'Group 2',
+                path: '/g1/g2',
+              },
+              {
+                label: 'Group 3',
+                path: '/g1/g2/g3',
+              },
+            ],
+            component: InputComponentsEnum.Group,
+            inputs: [
+              {
+                name: 'name_3',
+                label: 'Name 3',
+                component: InputComponentsEnum.Text,
+              },
+              {
+                name: 'group_4',
+                label: 'Add new group 4',
+                noItemsLabel: 'No group 4 added.',
+                checkPathInBreadcrumb: true,
+                breadCrumbOptions: [
+                  {
+                    label: 'Group 1',
+                    path: '/g1',
+                  },
+                  {
+                    label: 'Group 2',
+                    path: '/g1/g2',
+                  },
+                  {
+                    label: 'Group 3',
+                    path: '/g1/g2/g3',
+                  },
+                  {
+                    label: 'Group 4',
+                    path: '/g1/g2/g3/g4',
+                  },
+                ],
+                component: InputComponentsEnum.Group,
+                inputs: [
+                  {
+                    name: 'name_4',
+                    label: 'Name 4',
+                    component: InputComponentsEnum.Text,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
 ]
 

@@ -1,4 +1,5 @@
 import { Dispatch, FC, ReactNode, SetStateAction } from 'react'
+import { BreadCrumbOptionsType } from 'components/BreadCrumb/BreadCrumb.types'
 import { ButtonProps } from 'components/Button/Button.types'
 import { CheckboxProps } from 'components/Checkbox/Checkbox.types'
 import { CheckListProps } from 'components/CheckList/CheckList.types'
@@ -31,6 +32,9 @@ type GroupProps = {
   inputs: FormInput[]
   hiddenInputLabelsBasedOnIndex?: (index: number) => string[]
   noItemsLabel?: string
+  checkPathInBreadcrumb?: boolean
+  arrowButtonPath?: string
+  breadCrumbOptions?: BreadCrumbOptionsType[]
 }
 
 type TotalRowProps = {
@@ -140,4 +144,7 @@ export type InputControllerProps = {
   noItemsLabel?: string
   errors?: any
   active?: boolean
+  breadCrumbOptions?: BreadCrumbOptionsType[]
+  checkPathInBreadcrumb?: boolean
+  arrowButtonPath?: string
 }
