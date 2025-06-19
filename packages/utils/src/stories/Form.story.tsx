@@ -21,7 +21,6 @@ export const FormStory = () => {
     setFormValues(formData)
   }
 
-  console.log('x', formValues)
   return (
     <div className={styles.story}>
       <h4>A) Form Generator {`<Form inputs={[{name: 'email'}]} />`}</h4>

@@ -1,6 +1,7 @@
 import { ChangeEvent, useCallback } from 'react'
 import { clsx } from 'clsx'
 import { Button } from 'components/Button/Button'
+import { ButtonProps } from 'components/Button/Button.types'
 import { Icon } from 'components/Icon/Icon'
 import { ColorsEnum, IconsEnum, SidesEnum, VariantsEnum } from 'enums/enums'
 import { copyToClipboard } from 'helpers/helpers'
@@ -47,12 +48,13 @@ export const InputOptions = (props: InputOptionsProps) => {
   const showCopy = copyable && value && !showClear
   const showHide = hideable && value && !showClear && !showCopy
   const showSeparator = unit && (showClear || showCopy || showHide) && !withHandle
-  const noRadius = withHandle ? [SidesEnum.All] : ([SidesEnum.Left] as any)
-  const buttonProps = {
+  const noBorderRadius = withHandle ? [SidesEnum.All] : [SidesEnum.Left]
+
+  const buttonProps: ButtonProps = {
     variant: VariantsEnum.Ghost,
     color: ColorsEnum.Blue,
     size,
-    noRadius: noRadius,
+    noBorderRadius,
   }
 
   return (

@@ -9,6 +9,7 @@ export const Menu = (props: MenuProps) => {
     <div className={styles.menu} style={{ width, zIndex }}>
       {options.map((option, optionIndex) => {
         const isLast = optionIndex === options.length - 1
+
         return (
           <MenuOption
             zIndex={zIndex}

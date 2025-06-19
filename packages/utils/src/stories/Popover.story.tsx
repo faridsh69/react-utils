@@ -1,7 +1,7 @@
 import { ContextMenu } from 'components/ContextMenu/ContextMenu'
 import { Popover } from 'components/Popover/Popover'
 import { PopoverProps } from 'components/Popover/Popover.types'
-import { ActionsEnum, PlacementsEnum } from 'enums/enums'
+import { ActionsEnum, ColorsEnum, IconsEnum, PlacementsEnum } from 'enums/enums'
 
 import styles from './Story.module.scss'
 
@@ -56,7 +56,23 @@ export const PopoverStory = () => {
         })}
         <Popover />
       </div>
-      <ContextMenu triggerButtonProps={{ label: 'Context Menu' }} options={[{ label: 'sample' }]} />
+      <ContextMenu
+        triggerButtonProps={{ label: 'Context Menu' }}
+        options={[
+          { label: 'sample', onClick: () => alert('sample') },
+          {
+            label: 'edit',
+            icon: IconsEnum.Edit,
+            color: ColorsEnum.Blue,
+            options: [
+              {
+                label: 'options  child',
+                onClick: () => alert('options  child'),
+              },
+            ],
+          },
+        ]}
+      />
     </div>
   )
 }

@@ -95,7 +95,7 @@ export const Menu = (props: MenuProps) => {
           placeholder={t('Search')}
           icon={IconsEnum.View}
           autoFocus={true}
-          noBorderRadiuses={[SidesEnum.Bottom]}
+          noBorderRadius={[SidesEnum.Bottom]}
           noBorderColors={[SidesEnum.Left, SidesEnum.Right, SidesEnum.Top]}
         />
       )}

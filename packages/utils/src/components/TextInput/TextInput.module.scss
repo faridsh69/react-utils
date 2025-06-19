@@ -105,8 +105,10 @@
   }
 
   .unit {
+    margin-right: 1px;
     font: var(--size-#{$size}-font);
     padding: 0 var(--size-#{$size}-space);
+    background-color: var(--white);
   }
 
   .paddingLeft {
@@ -118,7 +120,7 @@
   }
 
   .doublePaddingRight {
-    padding-right: var(--size-#{$size}-size);
+    padding-right: calc(1.5 * var(--size-#{$size}-size));
   }
 
   .moveLeft {
@@ -146,22 +148,22 @@
   @include size(l);
 }
 
-.noBorderRadiuses-left {
+.noBorderRadius-left {
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
 
-.noBorderRadiuses-right {
+.noBorderRadius-right {
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
 
-.noBorderRadiuses-top {
+.noBorderRadius-top {
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
 }
 
-.noBorderRadiuses-bottom {
+.noBorderRadius-bottom {
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }

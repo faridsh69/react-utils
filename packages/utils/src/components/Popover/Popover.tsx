@@ -21,10 +21,9 @@ export const Popover = (props: PopoverProps) => {
     offset = 3,
     isOpen: propIsOpen = false,
     setIsOpen: propSetIsOpen,
-    closeOnClickOutside = true,
-    stillOpenOnClickPortals = false,
-    alwaysKeepMountOverlay = false,
   } = props
+
+  const isActionRightClick = openOnAction === ActionsEnum.OnContextMenu
 
   const { refs, floatingStyles } = useFloatingUi(propPlacement, offset)
 
@@ -41,15 +40,14 @@ export const Popover = (props: PopoverProps) => {
       setIsOpen(true)
       propSetIsOpen?.(true)
 
-      if (openOnAction === ActionsEnum.OnContextMenu) {
-        e?.preventDefault?.()
+      if (!isActionRightClick) return
 
-        refs.setPositionReference({
-          getBoundingClientRect() {
-            return getMouseEventPosition(e)
-          },
-        })
-      }
+      e?.preventDefault?.()
+      refs.setPositionReference({
+        getBoundingClientRect() {
+          return getMouseEventPosition(e)
+        },
+      })
     },
     [propSetIsOpen, openOnAction],
   )
@@ -63,8 +61,8 @@ export const Popover = (props: PopoverProps) => {
 
   const clickoutsideRef = useClickOutside(
     handleClose,
-    isOpen && closeOnClickOutside,
-    stillOpenOnClickPortals,
+    isOpen,
+    isActionRightClick ? 'mousedown' : 'mouseup',
   )
 
   if (disabled || !overlay || !children) return <>{children}</>
@@ -74,7 +72,7 @@ export const Popover = (props: PopoverProps) => {
     [openOnAction]: handleOpen,
   }
   const refrenceWrapper = getRefrenceWrapper(children, refrenceProps)
-  const mountOverlay = isOpen || alwaysKeepMountOverlay
+  const mountOverlay = isOpen
 
   return (
     <Fragment>

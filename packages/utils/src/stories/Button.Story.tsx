@@ -1,5 +1,5 @@
 import { Button } from 'components/Button/Button'
-import { ColorsEnum, SidesEnum, SizesEnum, VariantsEnum } from 'enums/enums'
+import { ColorsEnum, SizesEnum, VariantsEnum } from 'enums/enums'
 
 import styles from './Story.module.scss'
 
@@ -20,7 +20,6 @@ export const ButtonStory = () => {
                     variant={variant}
                     color={color}
                     active={false}
-                    noBorderRadius={[SidesEnum.Left, SidesEnum.Right]}
                   />
                 ))}
               </div>

@@ -6,7 +6,7 @@ import { Menu } from './Menu'
 import { MenuOption } from './MenuOption'
 
 export const Submenu = (props: SubmenuProps) => {
-  const { subOptions, option, handleCloseMenu, zIndex } = props
+  const { subOptions, option, handleCloseMenu, zIndex, isLast } = props
 
   return (
     <Popover
@@ -17,7 +17,12 @@ export const Submenu = (props: SubmenuProps) => {
       offset={4}
       overlay={<Menu options={subOptions} handleCloseMenu={handleCloseMenu} />}
     >
-      <MenuOption option={option} handleCloseMenu={handleCloseMenu} canHasSubmenu={false} />
+      <MenuOption
+        option={option}
+        handleCloseMenu={handleCloseMenu}
+        canHasSubmenu={false}
+        isLast={isLast}
+      />
     </Popover>
   )
 }

@@ -23,7 +23,7 @@ export interface TextInputProps extends Omit<React.InputHTMLAttributes<HTMLInput
   copyable?: boolean
   hideable?: boolean
   wrapperClassName?: string
-  noBorderRadiuses?: SidesEnum[]
+  noBorderRadius?: SidesEnum[]
   noBorderColors?: SidesEnum[]
   textAlignRight?: boolean
 }

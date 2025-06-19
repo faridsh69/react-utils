@@ -15,6 +15,7 @@ export const Button = (props: ButtonProps) => {
     active = false,
     disabled = false,
     color = ColorsEnum.Blue,
+    noBorderRadius = [],
   } = props
 
   const colorStyles = {
@@ -32,6 +33,10 @@ export const Button = (props: ButtonProps) => {
         styles[`size-${size}`],
         styles[`variant-${variant}`],
         active && styles.active,
+        styles[`noBorderRadius-${noBorderRadius[0]}`],
+        styles[`noBorderRadius-${noBorderRadius[1]}`],
+        styles[`noBorderRadius-${noBorderRadius[2]}`],
+        styles[`noBorderRadius-${noBorderRadius[3]}`],
       )}
       // @ts-ignore
       style={{ ...colorStyles }}

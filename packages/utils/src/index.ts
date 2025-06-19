@@ -73,6 +73,7 @@ import { useMetaTags } from 'hooks/useMetaTags'
 import { usePersistState } from 'hooks/usePersistState'
 import { useRunOnlyOnChange } from 'hooks/useRunOnlyOnChange'
 import { useToggle } from 'hooks/useToggle'
+import { useTrans } from 'hooks/useTrans'
 import { useWindowDimensions } from 'hooks/useWindowDimention'
 import { createApiClient } from 'services/apis/clients/createApiClient'
 import { QUERY_CLIENT } from 'services/apis/queryConstants'
@@ -155,6 +156,7 @@ export {
   usePersistState,
   useRunOnlyOnChange,
   useToggle,
+  useTrans,
   useWindowDimensions,
 }
 
@@ -206,6 +208,15 @@ export type {
   TriggerProp,
 } from 'components/Select/Select.types'
 
+export { ContextMenu } from 'components/ContextMenu/ContextMenu'
+export type { ContextMenuProps } from 'components/ContextMenu/ContextMenu.types'
+
+export { Button } from 'components/Button/Button'
+export type { ButtonProps } from 'components/Button/Button.types'
+
+export { Icon } from 'components/Icon/Icon'
+export type { IconProps } from 'components/Icon/Icon.types'
+
 export { RadioList } from 'components/RadioList/RadioList'
 export type { RadioListProps } from 'components/RadioList/RadioList.types'
 
@@ -232,11 +243,14 @@ export {
   ColorsEnum,
   DirectionsEnum,
   FontsEnum,
+  IconsEnum,
   InputComponentsEnum,
   InputDateTypesEnum,
   InputTextMasksEnum,
   PlacementsEnum,
+  SidesEnum,
   SizesEnum,
+  VariantsEnum,
 } from 'enums/enums'
 
 export type { OptionValueType } from 'interfaces/interfaces'

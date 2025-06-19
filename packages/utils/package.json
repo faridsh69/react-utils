@@ -1,6 +1,7 @@
 {
   "name": "@faridsh69/react-utils",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "private": false,
   "license": "ISC",
   "author": "Farid Shahidi <farid.sh69@gmail.com>",
   "type": "module",
@@ -14,7 +15,8 @@
     "scss"
   ],
   "scripts": {
-    "build": "node builder.js"
+    "build": "node builder.js",
+    "publish-public": "npm run build && npm publish --access public"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.3",
@@ -38,8 +40,8 @@
     "@types/react-dom": "^18.2.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": ">=18.2.0 <20.0.0 || ^19.0.0",
+    "react-dom": ">=18.2.0 <20.0.0 || ^19.0.0"
   },
   "engines": {
     "node": ">=18.15.0 <19.0.0",

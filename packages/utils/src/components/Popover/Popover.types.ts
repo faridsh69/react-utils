@@ -11,7 +11,4 @@ export type PopoverProps = {
   isOpen?: boolean
   setIsOpen?: (isOpen: boolean) => void
   offset?: number
-  closeOnClickOutside?: boolean
-  stillOpenOnClickPortals?: boolean
-  alwaysKeepMountOverlay?: boolean
 }
