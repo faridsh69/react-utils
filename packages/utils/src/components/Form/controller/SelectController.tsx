@@ -1,15 +1,19 @@
 import { useCallback } from 'react'
-import { Select } from 'components/Select/Select'
 import { Controller } from 'react-hook-form'
 
-import { getFilterValueSelect, getRidOfExtraProps } from '../Form.helpers'
+import { ErrorWrapper } from '../ErrorWrapper'
 import { InputControllerProps } from '../Form.types'
-import { InputWrapper } from './InputWrapper'
 
 export const SelectController = (props: InputControllerProps) => {
-  const { control, onChangeInput, name, options = [], multiple = false, ...rest } = props
-
-  const restProps = getRidOfExtraProps(rest)
+  const {
+    control,
+    onChangeInput,
+    name,
+    options = [],
+    multiple = false,
+    uikitMapper,
+    ...rest
+  } = props
 
   const handleChange = useCallback(
     (value: any, onChange: (data: any) => void) => {
@@ -24,19 +28,17 @@ export const SelectController = (props: InputControllerProps) => {
       control={control}
       name={name}
       render={({ field: { value, onChange }, fieldState: { error } }) => {
-        const filterValue = getFilterValueSelect(value, multiple, options)
-
         return (
-          <InputWrapper {...props} filterValue={filterValue} error={error}>
-            <Select
-              onChange={(value: any) => handleChange(value, onChange)}
+          <ErrorWrapper {...props} error={error}>
+            <uikitMapper.Select
+              onChange={value => handleChange(value, onChange)}
               options={options}
               value={value}
               multiple={multiple}
               hasError={!!error}
-              {...restProps}
+              {...rest}
             />
-          </InputWrapper>
+          </ErrorWrapper>
         )
       }}
     />

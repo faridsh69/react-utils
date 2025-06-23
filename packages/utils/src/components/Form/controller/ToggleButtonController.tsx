@@ -1,13 +1,12 @@
 import { useCallback } from 'react'
-import { RadioList } from 'components/RadioList/RadioList'
 import { OptionValueType } from 'interfaces/interfaces'
 import { Controller } from 'react-hook-form'
 
+import { ErrorWrapper } from '../ErrorWrapper'
 import { InputControllerProps } from '../Form.types'
-import { InputWrapper } from './InputWrapper'
 
-export const RadioController = (props: InputControllerProps) => {
-  const { control, onChangeInput, name, options, ...rest } = props
+export const ToggleButtonController = (props: InputControllerProps) => {
+  const { control, onChangeInput, name, options, uikitMapper, ...rest } = props
 
   const handleChange = useCallback(
     (value: OptionValueType, onChange: (value: OptionValueType) => void) => {
@@ -23,15 +22,15 @@ export const RadioController = (props: InputControllerProps) => {
       name={name}
       render={({ field: { value, onChange }, fieldState: { error } }) => {
         return (
-          <InputWrapper {...props} filterValue={value} error={error}>
-            <RadioList
+          <ErrorWrapper {...props} error={error}>
+            <uikitMapper.ToggleButtons
               value={value}
               onChange={value => handleChange(value, onChange)}
               options={options}
               hasError={!!error}
               {...rest}
             />
-          </InputWrapper>
+          </ErrorWrapper>
         )
       }}
     />

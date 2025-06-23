@@ -29,6 +29,7 @@ export const Textarea = (props: TextareaProps) => {
     ...textareaProps
   } = props
 
+  // @ts-ignore
   const valueLength = value?.trim?.()?.length
   const invalidLength = valueLength < min || (!!max && valueLength > max)
   const invalid = hasError || !!errorText || invalidLength

@@ -1,3 +1,12 @@
+:root {
+  --success-light: #34a853;
+  --success-dark: #2e974b;
+  --success-transparent: #34a85318;
+
+  --error-light: #ea4335;
+  --error-dark: #d13c30;
+  --error-transparent: #ea433512;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -18,20 +27,6 @@
 
 .form {
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background-color: var(--grey-100);
-
-  padding: 40px;
-  border-radius: 20px;
-
-  .noDataFound {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-  }
 }
 
 .inputWrapper {
@@ -45,6 +40,10 @@
 
   .errorWrapper {
     height: 18px;
+
+    .hasError {
+      color: var(--error-light);
+    }
   }
 }
 
@@ -69,7 +68,7 @@
     width: 134px;
     height: 14px;
     border-radius: 7px;
-    background-color: var(--grey-100-grad);
+    background-color: rgba(0, 0, 0, 0.03);
 
     .filledBar {
       height: 100%;
@@ -81,14 +80,14 @@
 
 .validationSuccess {
   color: var(--success-light);
+  border: 1px solid var(--success-dark);
   background-color: var(--success-transparent);
-  border: 1px solid var(--warning-green-t20);
 }
 
 .validationDanger {
-  color: var(--danger-light);
-  background-color: var(--danger-transparent);
-  border: 1px solid var(--warning-red-t20);
+  color: var(--error-light);
+  border: 1px solid var(--error-dark);
+  background-color: var(--error-transparent);
 }
 
 .validationCollapseSuccess {
@@ -123,7 +122,7 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 15px;
-      background-color: var(--grey-100-grad);
+      background-color: rgba(0, 0, 0, 0.03);
       padding-bottom: 0px;
       border-radius: 8px;
       padding: 15px 20px;

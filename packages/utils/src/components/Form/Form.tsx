@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { getFormalCase } from 'helpers/helpers'
 import { useForm } from 'react-hook-form'
 
-import { ValidationBar } from './components/ValidationBar'
-import { getInputController, getLabelOfInputs } from './Form.helpers'
+import { ValidationBar } from './controller/ValidationBar'
+import { getInputController } from './Form.helpers'
 import { FormProps } from './Form.types'
 import styles from './Form.module.scss'
 
@@ -13,7 +14,7 @@ export const Form = (props: FormProps) => {
     values,
     schema = undefined,
     onChangeInput: propOnChangeInput,
-    showValidations = true,
+    uikitMapper,
     setFormIsValid,
   } = props
 
@@ -27,7 +28,7 @@ export const Form = (props: FormProps) => {
     values: values,
   })
 
-  const onChangeInput = (inputObject: any) => {
+  const onChangeInput = (inputObject: object) => {
     propOnChangeInput?.(watch(), inputObject)
   }
 
@@ -39,14 +40,14 @@ export const Form = (props: FormProps) => {
 
   return (
     <div className={styles.form}>
-      {showValidations && <ValidationBar all={inputs.length} invalids={invalids} />}
+      {schema && <ValidationBar all={inputs.length} invalids={invalids} />}
 
       <div className={styles.row}>
         {inputs.map(input => {
           const { component, name, columns = 12, label: inputLabel, ...rest } = input
 
           const InputController = getInputController(component)
-          const label = getLabelOfInputs(name, inputLabel)
+          const label = inputLabel || getFormalCase(name)
 
           return (
             <div key={input.name} className={styles[`col-${columns}`]}>
@@ -57,6 +58,7 @@ export const Form = (props: FormProps) => {
                 label={label}
                 errors={errors}
                 onChangeInput={onChangeInput}
+                uikitMapper={uikitMapper}
                 {...rest}
               />
             </div>
