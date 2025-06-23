@@ -2,7 +2,6 @@ import { ChangeEvent } from 'react'
 import { IconsEnum, SidesEnum, SizesEnum } from 'enums/enums'
 
 export interface TextInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  value?: string | number | readonly string[] | undefined
   label?: string
   size?: SizesEnum
   required?: boolean
@@ -30,7 +29,7 @@ export interface TextInputProps extends Omit<React.InputHTMLAttributes<HTMLInput
 
 export type InputOptionsProps = {
   size?: SizesEnum
-  value?: string | number
+  value?: string | number | readonly string[]
   unit?: string
   withHandle?: boolean
   clearable?: boolean

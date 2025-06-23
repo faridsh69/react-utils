@@ -24,8 +24,8 @@ export type OptionType = {
 
 type CheckListProps = {
   options?: OptionType[]
-  value?: OptionType[]
-  onChange?: (value: OptionType[]) => void
+  value?: OptionValueType[]
+  onChange?: (value: OptionValueType[]) => void
 }
 
 type RadioListProps = {

@@ -2,13 +2,13 @@ import { useCallback } from 'react'
 import { Controller } from 'react-hook-form'
 
 import { ErrorWrapper } from '../ErrorWrapper'
-import { InputControllerProps, OptionType } from '../Form.types'
+import { InputControllerProps, OptionValueType } from '../Form.types'
 
 export const ChecklistController = (props: InputControllerProps) => {
   const { control, onChangeInput, name, options, uikitMapper, ...rest } = props
 
   const handleChange = useCallback(
-    (checkeds: OptionType[], onChange: (checkeds: OptionType[]) => void) => {
+    (checkeds: OptionValueType[], onChange: (checkeds: OptionValueType[]) => void) => {
       onChange(checkeds)
       onChangeInput?.({ [name]: checkeds })
     },

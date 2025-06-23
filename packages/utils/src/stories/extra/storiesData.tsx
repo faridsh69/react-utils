@@ -11,21 +11,6 @@ const AVATAR_URLS = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwR_rZSPvvl1u7DcpG3DhfD7oSD-NQfvMqqg&s',
 ]
 
-const LONG_LIST = [
-  {
-    value: 'Admin',
-    label: 'Admin',
-  },
-  {
-    value: 'Guest',
-    label: 'Guest',
-  },
-  {
-    value: 'user',
-    label: 'User',
-  },
-]
-
 export const CHART_OF_ACCOUNT_GROUPS = [
   {
     id: 'Sales Revenue',

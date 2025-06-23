@@ -15,6 +15,19 @@ import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
 
 import styles from './Story.module.scss'
 
+export const uikitMapper = {
+  Label,
+  Button,
+  TextInput,
+  Checkbox,
+  CheckList,
+  ToggleButtons,
+  Textarea,
+  RadioList,
+  Select: Select as any,
+  DatePicker: () => <div>DatePicker</div>,
+}
+
 export const FormStory = () => {
   const [formData, setFormData] = useState({
     first_name: 'First name',
@@ -24,19 +37,6 @@ export const FormStory = () => {
 
   const onChangeInput = (formData: any) => {
     setFormData(formData)
-  }
-
-  const uikitMapper = {
-    Label,
-    Button,
-    TextInput,
-    Checkbox,
-    CheckList,
-    ToggleButtons,
-    Textarea,
-    Select,
-    RadioList,
-    DatePicker: () => <div>DatePicker</div>,
   }
 
   const inputs: FormInput[] = [
