@@ -50,7 +50,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     columns: 4,
     component: InputComponentsEnum.Text,
     placeholder: 'Last name',
-    clearable: true,
+    clearable: false,
     required: true,
     debounceTime: DEFAULT_DEBOUNCE_TIME,
   },
@@ -63,7 +63,7 @@ export const SMART_FORM_INPUTS: FormInput[] = [
     icon: IconsEnum.Money,
     unit: '$',
     placeholder: 'Price',
-    clearable: true,
+    clearable: false,
   },
   {
     name: 'gender',

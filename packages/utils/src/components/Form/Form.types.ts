@@ -1,6 +1,5 @@
-import { Dispatch, FC, ReactNode, SetStateAction } from 'react'
+import { FC, ReactNode } from 'react'
 import { BreadCrumbOptionsType } from 'components/BreadCrumb/BreadCrumb.types'
-import { ButtonProps } from 'components/Button/Button.types'
 import { CheckboxProps } from 'components/Checkbox/Checkbox.types'
 import { CheckListProps } from 'components/CheckList/CheckList.types'
 import { RadioListProps } from 'components/RadioList/RadioList.types'
@@ -8,13 +7,7 @@ import { SelectOption, SelectProps } from 'components/Select/Select.types'
 import { TextareaProps } from 'components/Textarea/Textarea.types'
 import { TextInputProps } from 'components/TextInput/TextInput.types'
 import { ToggleButtonsProps } from 'components/ToggleButtons/ToggleButtons.types'
-import {
-  IconsEnum,
-  InputComponentsEnum,
-  InputDateTypesEnum,
-  InputTextMasksEnum,
-  SizesEnum,
-} from 'enums/enums'
+import { InputComponentsEnum, InputDateTypesEnum, InputTextMasksEnum, SizesEnum } from 'enums/enums'
 import { Control, FieldError } from 'react-hook-form'
 import * as yup from 'yup'
 
@@ -37,11 +30,9 @@ type GroupProps = {
   breadCrumbOptions?: BreadCrumbOptionsType[]
 }
 
-type TotalRowProps = {
-  active: boolean
+type CustomProps = {
+  ControllerComponent: FC<InputControllerProps>
 }
-
-type CustomProps = { children: ReactNode }
 
 export type FormInput =
   | ({ component: InputComponentsEnum.Text } & Input &
@@ -54,62 +45,20 @@ export type FormInput =
   | ({ component: InputComponentsEnum.Checkbox } & Input & Omit<CheckboxProps, 'size'>)
   | ({ component: InputComponentsEnum.Date } & Input)
   | ({ component: InputComponentsEnum.Group } & Input & GroupProps)
-  | ({ component: InputComponentsEnum.TotalRow } & Input & TotalRowProps)
   | ({ component: InputComponentsEnum.Custom } & Input & CustomProps)
-  | ({ component: InputComponentsEnum.CustomComponentWithController } & Input & {
-        FunctionComponent: FC<InputControllerProps>
-      })
 
 export type FormProps = {
   inputs: FormInput[]
-  label?: string
-  icon?: IconsEnum
-  background?: boolean
-  width?: number | string
-  height?: number | string
-
-  schema?: FormSchemaType
   values?: any
-  defaultValues?: any
-  onSubmit?: (formData: any) => void
-  onChangeInput?: (inputData: any, formData: any) => void
-  hiddenSubmitButtonId?: string
-  submitButtonProps?: ButtonProps
-  noPadding?: boolean
-  isFilterbar?: boolean
-  hideErrors?: boolean
-  collapsable?: boolean
-  isCollapsed?: boolean
-  setIsCollapsed?: (isCollapsed?: boolean) => void
-
-  triggerValidationOnChangeState?: boolean
-  forceInvalidFieldsNumber?: number
+  schema?: FormSchemaType
+  onChangeInput?: (formData: any, changedInput: any) => void
   showValidations?: boolean
   setFormIsValid?: (isValid: boolean) => void
 }
 
 export type FormSchemaType = yup.ObjectSchema<any>
 
-export type TypeFormProgress = { all: number; invalids: number; showValidations: boolean }
-
-export type FormGeneratorProps = {
-  inputs: FormInput[]
-  schema?: FormSchemaType
-  values?: any
-  defaultValues?: any
-  onSubmit?: (formData: any) => void
-  onChangeInput?: (inputData: any, formData: any) => void
-  hiddenSubmitButtonId?: string
-  submitButtonProps?: ButtonProps
-  noPadding?: boolean
-  isFilterbar?: boolean
-  height?: number | string
-  hideErrors?: boolean
-  progress: TypeFormProgress
-  setProgress: Dispatch<SetStateAction<TypeFormProgress>>
-  triggerOnChange?: boolean
-  forceInvalidFieldsNumber: number
-}
+export type TypeFormProgress = { all: number; invalids: number }
 
 export type inputWrapperProps = {
   children: ReactNode
@@ -139,7 +88,7 @@ export type InputControllerProps = {
   expandeds?: string[]
   disabled?: boolean
   children?: ReactNode
-  FunctionComponent?: FC<InputControllerProps>
+  ControllerComponent?: FC<InputControllerProps>
   hiddenInputLabelsBasedOnIndex?: (index: number) => string[]
   noItemsLabel?: string
   errors?: any

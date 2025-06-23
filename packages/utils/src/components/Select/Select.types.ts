@@ -77,7 +77,7 @@ export type TriggerComponentops = {
   isActive: boolean
   handleClearInput: () => void
   width?: number | string
-  clearable: boolean
+  clearable?: boolean
   label?: string
   placeholder?: string
   hint?: string

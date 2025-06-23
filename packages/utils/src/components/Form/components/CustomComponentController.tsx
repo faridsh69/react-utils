@@ -1,9 +1,9 @@
 import { InputControllerProps } from '../Form.types'
 
-export const CustomComponentController = (props: InputControllerProps) => {
-  const { FunctionComponent } = props
+export const CustomController = (props: InputControllerProps) => {
+  const { ControllerComponent } = props
 
-  if (!FunctionComponent) return null
+  if (!ControllerComponent) return null
 
-  return <FunctionComponent {...props} />
+  return <ControllerComponent {...props} />
 }

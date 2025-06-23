@@ -77,9 +77,7 @@ export enum InputComponentsEnum {
   Checkbox = 'checkbox',
   Date = 'date',
   Group = 'group',
-  TotalRow = 'totalRow',
   Custom = 'custom',
-  CustomComponentWithController = 'CustomComponentWithController',
 }
 
 export enum InputTextMasksEnum {

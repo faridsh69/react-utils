@@ -1,171 +1,101 @@
-@use '../../scss/theme';
-
-.wrapper {
-  padding: 40px;
-  max-width: 100%;
+.row {
   display: flex;
-  flex-direction: column;
-  gap: 0px;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.row > [class^='col-'] {
+  box-sizing: border-box;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 calc(100% * #{$i} / 12);
+    max-width: calc(100% * #{$i} / 12);
+    padding: 0px 10px;
+  }
+}
+
+.form {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--grey-100);
+
+  padding: 40px;
   border-radius: 20px;
 
-  .header {
+  .noDataFound {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+
+  .inputComponent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .errorWrapper {
+    height: 18px;
+  }
+}
+
+.validationBar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  padding: 7px 10px;
+
+  .flexRow {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     gap: 10px;
-    cursor: pointer;
-    user-select: none;
-
-    .headerTitle {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-
-      .icon {
-        height: 20px;
-        color: var(--grey-900);
-      }
-
-      .label {
-        cursor: pointer;
-      }
-    }
   }
 
-  .collapse {
-    .collapseText {
-      display: flex;
-      flex-direction: row;
-      gap: 8px;
-    }
-    svg {
-      color: var(--main-light);
-      min-width: 18px !important;
-      min-height: 18px;
-    }
-  }
+  .bar {
+    width: 134px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: var(--grey-100-grad);
 
-  .body {
-    user-select: none;
-    overflow: hidden;
-    margin-top: 0px;
-
-    .form {
-      width: 100%;
-      overflow-y: auto;
-      overflow-x: hidden;
-      @include theme.scroll;
-
-      .noDataFound {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-    }
-
-    .inputWrapper {
-      display: flex;
-      flex-direction: column;
-
-      .inputComponent {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .errorWrapper {
-        height: 18px;
-      }
-    }
-  }
-
-  .showHeader {
-    margin-top: 40px;
-  }
-
-  .isCollapsedForm {
-    height: 0px !important;
-    margin: 0px !important;
-  }
-
-  .submitBtn {
-    display: contents;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-  }
-
-  .validationBar {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    padding: 7px 10px;
-
-    .flexRow {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .bar {
-      width: 134px;
-      height: 14px;
+    .filledBar {
+      height: 100%;
+      width: 0%;
       border-radius: 7px;
-      background-color: var(--grey-100-grad);
-
-      .filledBar {
-        height: 100%;
-        width: 0%;
-        border-radius: 7px;
-      }
     }
   }
-
-  .validationSuccess {
-    color: var(--success-light);
-    background-color: var(--success-transparent);
-    border: 1px solid var(--warning-green-t20);
-  }
-
-  .validationDanger {
-    color: var(--danger-light);
-    background-color: var(--danger-transparent);
-    border: 1px solid var(--warning-red-t20);
-  }
-
-  .validationCollapseSuccess {
-    margin-bottom: 0px;
-  }
-  .validationCollapseDanger {
-    margin-bottom: 0px;
-  }
 }
 
-.background {
-  background-color: var(--grey-100);
+.validationSuccess {
+  color: var(--success-light);
+  background-color: var(--success-transparent);
+  border: 1px solid var(--warning-green-t20);
 }
 
-.backgroundOnHover {
-  &:hover {
-    background-color: var(--grey-100);
-  }
+.validationDanger {
+  color: var(--danger-light);
+  background-color: var(--danger-transparent);
+  border: 1px solid var(--warning-red-t20);
 }
 
-.noPadding {
-  padding: 0px;
+.validationCollapseSuccess {
+  margin-bottom: 0px;
 }
-
-.isCollapsed {
-  padding: 17px 40px;
-  cursor: pointer;
+.validationCollapseDanger {
+  margin-bottom: 0px;
 }
 
 .groupsWrapper {
@@ -208,14 +138,6 @@
       }
     }
   }
-
-  .groupAdd {
-    // margin: 10px;
-  }
-}
-
-.toggleMarginTop {
-  height: 17px;
 }
 
 .isWrongParentIndex {
