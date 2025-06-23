@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { getFormalCase } from 'helpers/helpers'
 import { useForm } from 'react-hook-form'
@@ -21,20 +21,26 @@ export const Form = (props: FormProps) => {
   const {
     control,
     watch,
+    trigger,
     formState: { errors },
   } = useForm({
     resolver: schema ? yupResolver(schema) : undefined,
-    mode: 'all',
+    mode: 'onTouched',
     values: values,
   })
 
-  const onChangeInput = (inputObject: object) => {
-    propOnChangeInput?.(watch(), inputObject)
-  }
+  const onChangeInput = useCallback(
+    (inputObject: object) => {
+      propOnChangeInput?.(watch(), inputObject)
+      trigger()
+    },
+    [propOnChangeInput],
+  )
 
   const invalids = Object.values(errors).length
 
   useEffect(() => {
+    trigger()
     setFormIsValid?.(invalids === 0)
   }, [invalids])
 

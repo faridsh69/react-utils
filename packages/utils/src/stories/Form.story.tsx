@@ -4,8 +4,8 @@ import { Checkbox } from 'components/Checkbox/Checkbox'
 import { CheckList } from 'components/CheckList/CheckList'
 import { Form } from 'components/Form/Form'
 import { InputComponentsEnum } from 'components/Form/Form.enums'
-import { FormInput, InputControllerProps } from 'components/Form/Form.types'
-import { TEST_SCHEMA } from 'components/Form/schemas'
+import { FormInput, FormSchemaType, InputControllerProps } from 'components/Form/Form.types'
+import { SCHEMAS } from 'components/Form/schemas'
 import { Label } from 'components/Label/Label'
 import { RadioList } from 'components/RadioList/RadioList'
 import { Select } from 'components/Select/Select'
@@ -30,9 +30,35 @@ export const uikitMapper = {
 
 export const FormStory = () => {
   const [formData, setFormData] = useState({
-    first_name: 'First name',
-    last_name: 'Last name',
+    first_name: 'Jon',
+    last_name: 'Adel',
     gender: 'male',
+    salary: 123000,
+    job: 'IT',
+    role: 'Admin',
+    accept_term_and_conditions: 'accept',
+    bio: 'This is my own bio',
+    family: [
+      {
+        first_name: 'papa',
+        last_name: 'Adel',
+        gender: 'male',
+      },
+      {
+        first_name: 'mama',
+        last_name: 'Adel',
+        gender: 'female',
+      },
+    ],
+  })
+  console.log('1 formData', formData)
+
+  const TEST_SCHEMA: FormSchemaType = SCHEMAS.wrapper({
+    first_name: SCHEMAS.requiredString.min(5),
+    last_name: SCHEMAS.requiredString.min(2),
+    gender: SCHEMAS.mixed(['male', 'female']),
+    bio: SCHEMAS.requiredString,
+    role: SCHEMAS.mixed(['admin', 'guest']),
   })
 
   const onChangeInput = (formData: any) => {
@@ -70,7 +96,7 @@ export const FormStory = () => {
     },
 
     {
-      name: 'Job',
+      name: 'job',
       columns: 4,
       component: InputComponentsEnum.ToggleButton,
       options: [
@@ -85,11 +111,11 @@ export const FormStory = () => {
       component: InputComponentsEnum.Select,
       options: [
         {
-          value: 'Admin',
+          value: 'admin',
           label: 'Admin',
         },
         {
-          value: 2,
+          value: 'guest',
           label: 'Guest',
         },
         {
@@ -132,13 +158,13 @@ export const FormStory = () => {
       component: InputComponentsEnum.Group,
       inputs: [
         {
-          name: 'first name',
+          name: 'first_name',
           label: 'First name',
           columns: 4,
           component: InputComponentsEnum.Text,
         },
         {
-          name: 'last name',
+          name: 'last_name',
           label: 'Last name',
           columns: 4,
           component: InputComponentsEnum.Text,
