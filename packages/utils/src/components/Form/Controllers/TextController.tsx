@@ -1,8 +1,12 @@
-import { ChangeEvent, useCallback } from 'react'
+import { ChangeEvent, InputHTMLAttributes, useCallback } from 'react'
 import { Controller } from 'react-hook-form'
 
 import { ErrorWrapper } from '../ErrorWrapper'
 import { InputControllerProps } from '../Form.types'
+
+const DefaultTextInput = (props: InputHTMLAttributes<HTMLInputElement>) => (
+  <input type='text' {...props} />
+)
 
 export const TextController = (props: InputControllerProps) => {
   const { control, name, onChangeInput, uikitMapper, ...rest } = props
@@ -16,14 +20,16 @@ export const TextController = (props: InputControllerProps) => {
     [onChangeInput],
   )
 
+  const TextInput = uikitMapper.TextInput || DefaultTextInput
+
   return (
     <Controller
       control={control}
       name={name}
       render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => {
         return (
-          <ErrorWrapper {...props} error={error}>
-            <uikitMapper.TextInput
+          <ErrorWrapper error={error}>
+            <TextInput
               value={value || ''}
               onChange={e => handleChange(e, onChange)}
               onBlur={onBlur}

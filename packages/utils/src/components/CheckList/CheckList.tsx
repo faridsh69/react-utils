@@ -33,10 +33,10 @@ export const CheckList = (props: CheckListProps) => {
 
   const onChangeHandler = useCallback(
     (val: OptionValueType) => {
-      const newVal = value.includes(val) ? value.filter(v => v !== val) : [...value, val]
+      const newVal = value.includes(val) ? value?.filter?.(v => v !== val) : [...value, val]
 
-      setValue(newVal)
-      onChange?.(newVal)
+      setValue(newVal || [])
+      onChange?.(newVal || [])
     },
     [value, onChange],
   )
@@ -65,7 +65,7 @@ export const CheckList = (props: CheckListProps) => {
             <div key={option.label}>
               <Checkbox
                 key={option.label}
-                checked={value.includes(option.value)}
+                checked={value?.includes?.(option.value)}
                 size={size}
                 onChange={() => onChangeHandler(option.value)}
                 label={option.label}

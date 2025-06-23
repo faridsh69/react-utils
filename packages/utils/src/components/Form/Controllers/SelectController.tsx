@@ -1,8 +1,23 @@
 import { useCallback } from 'react'
+import { SelectProps } from 'components/Select/Select.types'
 import { Controller } from 'react-hook-form'
 
 import { ErrorWrapper } from '../ErrorWrapper'
 import { InputControllerProps } from '../Form.types'
+
+const DefaultSelect = (props: SelectProps) => {
+  const { options = [] } = props
+  return (
+    // @ts-ignore
+    <select {...props}>
+      {options.map(option => (
+        <option key={option.value} value={option.value as any}>
+          {option.label}
+        </option>
+      ))}
+    </select>
+  )
+}
 
 export const SelectController = (props: InputControllerProps) => {
   const {
@@ -23,15 +38,17 @@ export const SelectController = (props: InputControllerProps) => {
     [onChangeInput],
   )
 
+  const Select = uikitMapper.Select || DefaultSelect
+
   return (
     <Controller
       control={control}
       name={name}
       render={({ field: { value, onChange }, fieldState: { error } }) => {
         return (
-          <ErrorWrapper {...props} error={error}>
-            <uikitMapper.Select
-              onChange={value => handleChange(value, onChange)}
+          <ErrorWrapper error={error}>
+            <Select
+              onChange={(value: any) => handleChange(value, onChange)}
               options={options}
               value={value}
               multiple={multiple}

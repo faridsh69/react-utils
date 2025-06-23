@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react'
 import { SizesEnum } from 'enums/enums'
 
 export type CheckboxProps = {
@@ -7,7 +8,7 @@ export type CheckboxProps = {
   hasError?: boolean
   checked?: boolean
   disabled?: boolean
-  onChange?: (checked: boolean) => void
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
   width?: string
   color?: string
   hint?: string

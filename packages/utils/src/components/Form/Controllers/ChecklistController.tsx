@@ -2,7 +2,29 @@ import { useCallback } from 'react'
 import { Controller } from 'react-hook-form'
 
 import { ErrorWrapper } from '../ErrorWrapper'
-import { InputControllerProps, OptionValueType } from '../Form.types'
+import { CheckListProps, InputControllerProps, OptionValueType } from '../Form.types'
+
+const DefaultChecklist = (props: CheckListProps) => {
+  const { options = [], value, onChange } = props
+
+  return (
+    <div>
+      {options.map(option => {
+        return (
+          <div key={option.label}>
+            {option.label}
+            <input
+              type='checkbox'
+              key={option.label}
+              checked={value?.includes?.(option.value)}
+              onChange={() => onChange?.([option.value])}
+            />
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 export const ChecklistController = (props: InputControllerProps) => {
   const { control, onChangeInput, name, options, uikitMapper, ...rest } = props
@@ -15,6 +37,8 @@ export const ChecklistController = (props: InputControllerProps) => {
     [onChangeInput],
   )
 
+  const CheckList = uikitMapper.CheckList || DefaultChecklist
+
   return (
     <Controller
       control={control}
@@ -22,7 +46,7 @@ export const ChecklistController = (props: InputControllerProps) => {
       render={({ field: { value, onChange }, fieldState: { error } }) => {
         return (
           <ErrorWrapper error={error}>
-            <uikitMapper.CheckList
+            <CheckList
               value={value || []}
               onChange={checkeds => handleChange(checkeds, onChange)}
               options={options}

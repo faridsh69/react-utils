@@ -3,9 +3,9 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { getFormalCase } from 'helpers/helpers'
 import { useForm } from 'react-hook-form'
 
-import { ValidationBar } from './controller/ValidationBar'
 import { getInputController } from './Form.helpers'
 import { FormProps } from './Form.types'
+import { ValidationBar } from './ValidationBar'
 import styles from './Form.module.scss'
 
 export const Form = (props: FormProps) => {
@@ -14,7 +14,7 @@ export const Form = (props: FormProps) => {
     values,
     schema = undefined,
     onChangeInput: propOnChangeInput,
-    uikitMapper,
+    uikitMapper = {},
     setFormIsValid,
   } = props
 

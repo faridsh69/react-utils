@@ -2,7 +2,16 @@ import { useCallback } from 'react'
 import { Controller } from 'react-hook-form'
 
 import { ErrorWrapper } from '../ErrorWrapper'
-import { InputControllerProps } from '../Form.types'
+import { CheckboxProps, InputControllerProps } from '../Form.types'
+
+const DefaultCheckbox = (props: CheckboxProps) => {
+  return (
+    <div>
+      <input type='checkbox' {...props} />
+      {props.label}
+    </div>
+  )
+}
 
 export const CheckboxController = (props: InputControllerProps) => {
   const { control, onChangeInput, name, uikitMapper, ...rest } = props
@@ -15,16 +24,18 @@ export const CheckboxController = (props: InputControllerProps) => {
     [onChangeInput],
   )
 
+  const Checkbox = uikitMapper.Checkbox || DefaultCheckbox
+
   return (
     <Controller
       control={control}
       name={name}
       render={({ field: { value, onChange }, fieldState: { error } }) => {
         return (
-          <ErrorWrapper {...props} error={error}>
-            <uikitMapper.Checkbox
+          <ErrorWrapper error={error}>
+            <Checkbox
               checked={!!value}
-              onChange={checked => handleChange(checked, onChange)}
+              onChange={e => handleChange(e.target.checked, onChange)}
               hasError={!!error}
               {...rest}
             />

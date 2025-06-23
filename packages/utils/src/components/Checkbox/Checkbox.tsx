@@ -24,12 +24,7 @@ export const Checkbox = (props: CheckboxProps) => {
 
   return (
     <div className={clsx(styles.wrapper, styles[`size-${size}`])}>
-      <input
-        type='checkbox'
-        checked={!!checked}
-        onChange={e => onChange?.(e.target.checked)}
-        id={htmlFor}
-      />
+      <input type='checkbox' checked={!!checked} onChange={e => onChange?.(e)} id={htmlFor} />
       <Label
         label={label}
         required={required}

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import styles from '../Form.module.scss'
+import styles from './Form.module.scss'
 
 type TypeFormProgress = { all: number; invalids: number }
 

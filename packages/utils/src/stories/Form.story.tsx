@@ -1,12 +1,10 @@
 import { useState } from 'react'
-import { Button } from 'components/Button/Button'
 import { Checkbox } from 'components/Checkbox/Checkbox'
 import { CheckList } from 'components/CheckList/CheckList'
 import { Form } from 'components/Form/Form'
 import { InputComponentsEnum } from 'components/Form/Form.enums'
 import { FormInput, FormSchemaType, InputControllerProps } from 'components/Form/Form.types'
 import { SCHEMAS } from 'components/Form/schemas'
-import { Label } from 'components/Label/Label'
 import { RadioList } from 'components/RadioList/RadioList'
 import { Select } from 'components/Select/Select'
 import { Textarea } from 'components/Textarea/Textarea'
@@ -16,16 +14,13 @@ import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
 import styles from './Story.module.scss'
 
 export const uikitMapper = {
-  Label,
-  Button,
   TextInput,
-  Checkbox,
-  CheckList,
-  ToggleButtons,
   Textarea,
-  RadioList,
   Select: Select as any,
-  DatePicker: () => <div>DatePicker</div>,
+  Checkbox,
+  ToggleButtons,
+  RadioList,
+  CheckList,
 }
 
 export const FormStory = () => {
@@ -36,7 +31,7 @@ export const FormStory = () => {
     salary: 123000,
     job: 'IT',
     role: 'Admin',
-    accept_term_and_conditions: 'accept',
+    accept_term_and_conditions: ['accept'],
     bio: 'This is my own bio',
     family: [
       {
@@ -51,7 +46,6 @@ export const FormStory = () => {
       },
     ],
   })
-  console.log('1 formData', formData)
 
   const TEST_SCHEMA: FormSchemaType = SCHEMAS.wrapper({
     first_name: SCHEMAS.requiredString.min(5),
@@ -94,7 +88,6 @@ export const FormStory = () => {
         { value: 'female', label: 'Female' },
       ],
     },
-
     {
       name: 'job',
       columns: 4,
@@ -104,7 +97,6 @@ export const FormStory = () => {
         { value: 'Other', label: 'Other' },
       ],
     },
-
     {
       name: 'role',
       columns: 4,
@@ -124,7 +116,6 @@ export const FormStory = () => {
         },
       ],
     },
-
     {
       name: 'accept_term_and_conditions',
       columns: 4,

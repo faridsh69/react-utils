@@ -1,9 +1,12 @@
-import { ChangeEvent, useCallback } from 'react'
-import { convertNullToEmptyString } from 'helpers/helpers'
+import { ChangeEvent, TextareaHTMLAttributes, useCallback } from 'react'
 import { Controller } from 'react-hook-form'
 
 import { ErrorWrapper } from '../ErrorWrapper'
 import { InputControllerProps } from '../Form.types'
+
+const DefaultTextarea = (props: TextareaHTMLAttributes<HTMLTextAreaElement>) => (
+  <textarea {...props} />
+)
 
 export const TextareaController = (props: InputControllerProps) => {
   const { control, name, onChangeInput, uikitMapper, ...rest } = props
@@ -17,18 +20,18 @@ export const TextareaController = (props: InputControllerProps) => {
     [onChangeInput],
   )
 
+  const Textarea = uikitMapper.Textarea || DefaultTextarea
+
   return (
     <Controller
       control={control}
       name={name}
       render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => {
-        const inputValue = convertNullToEmptyString(value)
-
         return (
-          <ErrorWrapper {...props} error={error}>
-            <uikitMapper.Textarea
+          <ErrorWrapper error={error}>
+            <Textarea
               name={name}
-              value={inputValue}
+              value={value}
               onChange={e => handleChange(e, onChange)}
               onBlur={onBlur}
               hasError={!!error}

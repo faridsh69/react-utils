@@ -1,4 +1,10 @@
-import { FC, InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from 'react'
+import {
+  ChangeEventHandler,
+  FC,
+  InputHTMLAttributes,
+  ReactNode,
+  TextareaHTMLAttributes,
+} from 'react'
 import { Control, FieldError } from 'react-hook-form'
 import * as yup from 'yup'
 
@@ -13,7 +19,12 @@ type CommonInputProps = {
 type TextInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>
 type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>
 type DatepickerProps = InputHTMLAttributes<HTMLInputElement>
-type CheckboxProps = { checked?: boolean; onChange?: (checked: boolean) => void }
+
+export type CheckboxProps = {
+  checked?: boolean
+  onChange?: ChangeEventHandler<HTMLInputElement>
+  label?: string
+}
 
 export type OptionValueType = string | number | null | undefined
 
@@ -22,25 +33,25 @@ export type OptionType = {
   value: OptionValueType
 }
 
-type CheckListProps = {
+export type CheckListProps = {
   options?: OptionType[]
   value?: OptionValueType[]
   onChange?: (value: OptionValueType[]) => void
 }
 
-type RadioListProps = {
+export type RadioListProps = {
   options?: OptionType[]
   value?: OptionValueType
   onChange?: (value: OptionValueType) => void
 }
 
-type ToggleButtonsProps = {
+export type ToggleButtonsProps = {
   options?: OptionType[]
   value?: OptionValueType
   onChange?: (value: OptionValueType) => void
 }
 
-type SelectProps = {
+export type SelectProps = {
   options?: OptionType[]
   value?: OptionType[]
   multiple?: boolean
@@ -73,8 +84,8 @@ export type FormInput =
 export type FormSchemaType = yup.ObjectSchema<any>
 
 export type FormProps = {
-  uikitMapper: UikitMapperType
   inputs: FormInput[]
+  uikitMapper?: Partial<UikitMapperType>
   values?: any
   schema?: FormSchemaType
   onChangeInput?: (formData: any, changedInput: object) => void
@@ -99,12 +110,12 @@ export type InputControllerProps = {
   hiddenInputLabelsBasedOnIndex?: (index: number) => string[]
   noItemsLabel?: string
   errors?: any
-  uikitMapper: UikitMapperType
+  uikitMapper: Partial<UikitMapperType>
 }
 
 type harErrorType = { hasError?: boolean }
 
-type UikitMapperType = {
+export type UikitMapperType = {
   TextInput: FC<TextInputProps & harErrorType>
   Checkbox: FC<CheckboxProps & harErrorType>
   Textarea: FC<TextareaProps & harErrorType>
