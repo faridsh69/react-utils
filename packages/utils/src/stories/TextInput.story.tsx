@@ -16,7 +16,7 @@ export const TextInputStory = () => {
     label: 'Email (autoComplete)',
     width: 400,
     hasError: false,
-    clearable: true,
+    clearable: false,
     disabled: false,
     withHandle: false,
     wrapperClassName: 'string',
@@ -37,8 +37,8 @@ export const TextInputStory = () => {
     autoComplete: 'email',
     active: false,
     readOnly: false,
-    copyable: true,
-    hideable: true,
+    copyable: false,
+    hideable: false,
   }
 
   const errorText = 'AAAAAAAA AAAAAAAAAA AAAAAAAA AAAAAAAAA AAAAAAAA AAAAAAAAAA AAAAAAAAAA'

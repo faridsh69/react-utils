@@ -1,61 +1,189 @@
 import { useState } from 'react'
+import { Button } from 'components/Button/Button'
+import { Checkbox } from 'components/Checkbox/Checkbox'
+import { CheckList } from 'components/CheckList/CheckList'
 import { Form } from 'components/Form/Form'
+import { InputComponentsEnum } from 'components/Form/Form.enums'
+import { FormInput, InputControllerProps } from 'components/Form/Form.types'
 import { TEST_SCHEMA } from 'components/Form/schemas'
-import { Modal } from 'components/Modal/Modal'
-import { IconsEnum } from 'enums/enums'
+import { Label } from 'components/Label/Label'
+import { RadioList } from 'components/RadioList/RadioList'
+import { Select } from 'components/Select/Select'
+import { Textarea } from 'components/Textarea/Textarea'
+import { TextInput } from 'components/TextInput/TextInput'
+import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
 
-import { SMART_FORM_INPUTS } from './extra/storiesData'
 import styles from './Story.module.scss'
 
-export const FormStory = () => {
-  const FORM_ID = 'FORM_ID'
+export const uikitMapper = {
+  Label,
+  Button,
+  TextInput,
+  Checkbox,
+  CheckList,
+  ToggleButtons,
+  Textarea,
+  RadioList,
+  Select: Select as any,
+  DatePicker: () => <div>DatePicker</div>,
+}
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [formValues, setFormValues] = useState({
-    last_name: 'test',
-    gender: 'female',
-    chart_account_id: 1,
+export const FormStory = () => {
+  const [formData, setFormData] = useState({
+    first_name: 'First name',
+    last_name: 'Last name',
+    gender: 'male',
   })
 
-  const onChangeInput = (inputNewValue: object, formData: any) => {
-    setFormValues(formData)
+  const onChangeInput = (formData: any) => {
+    setFormData(formData)
   }
+
+  const inputs: FormInput[] = [
+    {
+      name: 'first_name',
+      columns: 6,
+      component: InputComponentsEnum.Text,
+    },
+    {
+      name: 'last_name',
+      label: 'Last name (with custom label, placeholder, required, debounce time)',
+      columns: 6,
+      component: InputComponentsEnum.Text,
+      placeholder: 'Last name (with placeholder, required, debounce time)',
+      required: true,
+    },
+    {
+      name: 'salary',
+      label: 'Salary (With mask for price or float or integer)',
+      columns: 4,
+      component: InputComponentsEnum.Text,
+    },
+    {
+      name: 'gender',
+      columns: 4,
+      component: InputComponentsEnum.RadioList,
+      options: [
+        { value: 'male', label: 'Male' },
+        { value: 'female', label: 'Female' },
+      ],
+    },
+
+    {
+      name: 'Job',
+      columns: 4,
+      component: InputComponentsEnum.ToggleButton,
+      options: [
+        { value: 'IT', label: 'IT' },
+        { value: 'Other', label: 'Other' },
+      ],
+    },
+
+    {
+      name: 'role',
+      columns: 4,
+      component: InputComponentsEnum.Select,
+      options: [
+        {
+          value: 'Admin',
+          label: 'Admin',
+        },
+        {
+          value: 2,
+          label: 'Guest',
+        },
+        {
+          value: 3,
+          label: 'User',
+        },
+      ],
+    },
+
+    {
+      name: 'accept_term_and_conditions',
+      columns: 4,
+      component: InputComponentsEnum.Checklist,
+      options: [
+        {
+          value: 'accept',
+          label: 'Do you agree our terms?',
+        },
+        {
+          value: 'email',
+          label: 'Recieve email?',
+        },
+      ],
+    },
+    {
+      name: 'has_disablity?',
+      columns: 4,
+      component: InputComponentsEnum.Checkbox,
+    },
+    {
+      name: 'bio',
+      columns: 12,
+      component: InputComponentsEnum.Textarea,
+    },
+    {
+      name: 'family',
+      label: 'Add new family members',
+      noItemsLabel: 'No family member added yet',
+      columns: 12,
+      component: InputComponentsEnum.Group,
+      inputs: [
+        {
+          name: 'first name',
+          label: 'First name',
+          columns: 4,
+          component: InputComponentsEnum.Text,
+        },
+        {
+          name: 'last name',
+          label: 'Last name',
+          columns: 4,
+          component: InputComponentsEnum.Text,
+        },
+        {
+          name: 'gender',
+          label: 'Gender',
+          columns: 4,
+          component: InputComponentsEnum.RadioList,
+          options: [
+            { value: 'male', label: 'Male' },
+            { value: 'female', label: 'Female' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'custom name',
+      columns: 12,
+      component: InputComponentsEnum.Custom,
+      ControllerComponent: (props: InputControllerProps) => (
+        <small>name: {props.name}, others</small>
+      ),
+    },
+  ]
 
   return (
     <div className={styles.story}>
-      <h4>A) Form Generator {`<Form inputs={[{name: 'email'}]} />`}</h4>
+      <h4>A) Form {`<Form inputs={[{name: 'email'}]} />`}</h4>
       <pre>
-        - This is a component that is automatically generate all kind of fields
+        inputs: - This is a component that will build a form based on array of inputs in props
         <br />
-        - Also we can have all type of validations for each inputs
-        <br />- Also it will give you the current data of inputs and validity of form
+        schema: - This for accept an schema and do live validation based on that schema
+        <br />
+        columns: - For each input you can set a number between 0-12 for defining column width
+        <br />
+        onCahngeInput: - This will despose current form data and current changed input via
+        onCahngeInput
       </pre>
       <Form
-        inputs={SMART_FORM_INPUTS}
-        values={formValues}
-        onChangeInput={onChangeInput}
+        inputs={inputs}
         schema={TEST_SCHEMA}
-        label='Register User Form'
-        icon={IconsEnum.Ok}
-        hiddenSubmitButtonId={FORM_ID}
-        background={true}
-        collapsable={true}
-      />
-      {/* <br /> */}
-      {/* <Button label='save' onClick={() => submitFormId(FORM_ID)} /> */}
-      {/* <br /> */}
-      {/* <Button
-        variant={VariantsEnum.Dark}
-        label='show form in a modal'
-        onClick={() => setIsOpen(true)}
-      /> */}
-      <Modal
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        title='Register User Form'
-        body={
-          <Form width={1400} inputs={SMART_FORM_INPUTS} schema={TEST_SCHEMA} background={false} />
-        }
+        values={formData}
+        onChangeInput={onChangeInput}
+        uikitMapper={uikitMapper}
       />
     </div>
   )

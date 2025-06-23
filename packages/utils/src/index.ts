@@ -166,7 +166,7 @@ export { TableCellComponents, TableSeparators } from 'components/Table/Table.enu
 export type { TableCell, TableColumn, TableProps, TableRow } from 'components/Table/Table.types'
 
 export { Form } from 'components/Form/Form'
-export { FORM_NO_LABEL } from 'components/Form/Form.constants'
+export { InputComponentsEnum } from 'components/Form/Form.enums'
 export type {
   FormInput,
   FormProps,
@@ -244,7 +244,6 @@ export {
   DirectionsEnum,
   FontsEnum,
   IconsEnum,
-  InputComponentsEnum,
   InputDateTypesEnum,
   InputTextMasksEnum,
   PlacementsEnum,

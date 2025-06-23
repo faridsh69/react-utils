@@ -67,21 +67,6 @@ export enum ColorsEnum {
   RedTransparent = 'var(--danger-transparent)',
 }
 
-export enum InputComponentsEnum {
-  Text = 'text',
-  Textarea = 'textarea',
-  Select = 'select',
-  Radio = 'radio',
-  Checklist = 'checklist',
-  ToggleButton = 'toggleButton',
-  Checkbox = 'checkbox',
-  Date = 'date',
-  Group = 'group',
-  TotalRow = 'totalRow',
-  Custom = 'custom',
-  CustomComponentWithController = 'CustomComponentWithController',
-}
-
 export enum InputTextMasksEnum {
   String = 'string',
   Number = 'number',

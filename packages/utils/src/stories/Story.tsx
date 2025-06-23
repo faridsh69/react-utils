@@ -28,7 +28,7 @@ export const Story = () => {
       <h1>
         {packageJson.name} - {packageJson.version}
       </h1>
-      {/* <h3>npm i {packageJson.name}@latest</h3> */}
+      <h3>npm i {packageJson.name}@latest</h3>
       <h3>This package is a combination of:</h3>
       <pre>
         A) A powerfull form generator, highly suggested to use it
@@ -39,7 +39,6 @@ export const Story = () => {
         <br />
         D) All custom hooks and usefull helper methods, like loadash but much more lighter
       </pre>
-
       <h3>
         You need to customise it based on your own components and design system, then upload it to
         your github like: npm i @your-github/react-utils@latest
@@ -48,7 +47,7 @@ export const Story = () => {
       <FormStory />
       <hr />
       <UseCrudStory />
-
+      <hr />
       <LabelStory />
       <TextInputStory />
       <CheckListStory />

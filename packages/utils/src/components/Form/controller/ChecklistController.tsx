@@ -1,14 +1,11 @@
 import { useCallback } from 'react'
-import { CheckList } from 'components/CheckList/CheckList'
-import { CheckListOption } from 'components/CheckList/CheckList.types'
-import { OptionValueType } from 'interfaces/interfaces'
 import { Controller } from 'react-hook-form'
 
-import { InputControllerProps } from '../Form.types'
-import { InputWrapper } from './InputWrapper'
+import { ErrorWrapper } from '../ErrorWrapper'
+import { InputControllerProps, OptionValueType } from '../Form.types'
 
 export const ChecklistController = (props: InputControllerProps) => {
-  const { control, onChangeInput, name, options, ...rest } = props
+  const { control, onChangeInput, name, options, uikitMapper, ...rest } = props
 
   const handleChange = useCallback(
     (checkeds: OptionValueType[], onChange: (checkeds: OptionValueType[]) => void) => {
@@ -23,19 +20,16 @@ export const ChecklistController = (props: InputControllerProps) => {
       control={control}
       name={name}
       render={({ field: { value, onChange }, fieldState: { error } }) => {
-        const checkListValue = value || []
-        const filterValue = checkListValue.join(', ')
-
         return (
-          <InputWrapper {...props} filterValue={filterValue} error={error}>
-            <CheckList
-              value={checkListValue}
+          <ErrorWrapper error={error}>
+            <uikitMapper.CheckList
+              value={value || []}
               onChange={checkeds => handleChange(checkeds, onChange)}
-              options={options as CheckListOption[]}
+              options={options}
               hasError={!!error}
               {...rest}
             />
-          </InputWrapper>
+          </ErrorWrapper>
         )
       }}
     />

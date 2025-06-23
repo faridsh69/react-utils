@@ -7,10 +7,11 @@ import { Checkbox } from 'components/Checkbox/Checkbox'
 import { Chip } from 'components/Chip/Chip'
 import { DataNotFound } from 'components/DataNotFound/DataNotFound'
 import { Form } from 'components/Form/Form'
+import { InputComponentsEnum } from 'components/Form/Form.enums'
 import { Loader } from 'components/Loader/Loader'
 import { Radio } from 'components/Radio/Radio'
 import { TextInput } from 'components/TextInput/TextInput'
-import { InputComponentsEnum } from 'enums/enums'
+import { uikitMapper } from 'stories/Form.story'
 import { describe, expect, it } from 'vitest'
 
 import { Label } from '../components/Label/Label'
@@ -51,7 +52,7 @@ describe('Label', () => {
   it('render Form component', async () => {
     render(
       <Form
-        label='Form'
+        uikitMapper={uikitMapper}
         inputs={[
           {
             name: 'name',
