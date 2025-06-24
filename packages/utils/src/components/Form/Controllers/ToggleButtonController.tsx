@@ -5,7 +5,7 @@ import { ErrorWrapper } from '../ErrorWrapper'
 import { InputControllerProps, OptionValueType, ToggleButtonsProps } from '../Form.types'
 
 const DefaultToggleButtons = (props: ToggleButtonsProps) => {
-  return <div>ToggleButtons</div>
+  return <div>ToggleButtons {JSON.stringify(props)}</div>
 }
 
 export const ToggleButtonController = (props: InputControllerProps) => {

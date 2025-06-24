@@ -86,7 +86,7 @@ export const GroupController = (props: InputControllerProps) => {
               </div>
               {showActionButtons && (
                 <div className={styles.groupRemove}>
-                  <button onClick={() => handleRemoveRow(fieldIndex)}>Remove</button>
+                  <button onClick={() => handleRemoveRow(fieldIndex)}>✕</button>
                 </div>
               )}
             </div>
@@ -96,7 +96,7 @@ export const GroupController = (props: InputControllerProps) => {
       <span className={styles.hasError}>{rootErrorMessage}</span>
       {showActionButtons && (
         <div className={styles.groupAdd}>
-          <button onClick={handleAddRow}>{label}</button>
+          <button onClick={handleAddRow}>+ {label}</button>
         </div>
       )}
     </div>

@@ -1,26 +1,27 @@
 import { useState } from 'react'
-import { Checkbox } from 'components/Checkbox/Checkbox'
-import { CheckList } from 'components/CheckList/CheckList'
+// import { Checkbox } from 'components/Checkbox/Checkbox'
+// import { CheckList } from 'components/CheckList/CheckList'
 import { Form } from 'components/Form/Form'
 import { InputComponentsEnum } from 'components/Form/Form.enums'
 import { FormInput, FormSchemaType, InputControllerProps } from 'components/Form/Form.types'
 import { SCHEMAS } from 'components/Form/schemas'
-import { RadioList } from 'components/RadioList/RadioList'
-import { Select } from 'components/Select/Select'
-import { Textarea } from 'components/Textarea/Textarea'
-import { TextInput } from 'components/TextInput/TextInput'
-import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
+
+// import { RadioList } from 'components/RadioList/RadioList'
+// import { Select } from 'components/Select/Select'
+// import { Textarea } from 'components/Textarea/Textarea'
+// import { TextInput } from 'components/TextInput/TextInput'
+// import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
 
 import styles from './Story.module.scss'
 
 export const uikitMapper = {
-  TextInput,
-  Textarea,
-  Select: Select as any,
-  Checkbox,
-  ToggleButtons,
-  RadioList,
-  CheckList,
+  // TextInput,
+  // Textarea,
+  // Select: Select as any,
+  // Checkbox,
+  // ToggleButtons,
+  // RadioList,
+  // CheckList,
 }
 
 export const FormStory = () => {
@@ -43,6 +44,7 @@ export const FormStory = () => {
         first_name: 'mama',
         last_name: 'Adel',
         gender: 'female',
+        phones: [{ phone: '12345678901' }, { phone: '12345678902' }],
       },
     ],
   })
@@ -80,21 +82,17 @@ export const FormStory = () => {
       component: InputComponentsEnum.Text,
     },
     {
+      name: 'birth_date',
+      columns: 4,
+      component: InputComponentsEnum.Date,
+    },
+    {
       name: 'gender',
       columns: 4,
       component: InputComponentsEnum.RadioList,
       options: [
         { value: 'male', label: 'Male' },
         { value: 'female', label: 'Female' },
-      ],
-    },
-    {
-      name: 'job',
-      columns: 4,
-      component: InputComponentsEnum.ToggleButton,
-      options: [
-        { value: 'IT', label: 'IT' },
-        { value: 'Other', label: 'Other' },
       ],
     },
     {
@@ -161,13 +159,18 @@ export const FormStory = () => {
           component: InputComponentsEnum.Text,
         },
         {
-          name: 'gender',
-          label: 'Gender',
+          name: 'phones',
+          label: 'Add new phone',
+          noItemsLabel: 'No phone added yet',
           columns: 4,
-          component: InputComponentsEnum.RadioList,
-          options: [
-            { value: 'male', label: 'Male' },
-            { value: 'female', label: 'Female' },
+          component: InputComponentsEnum.Group,
+          inputs: [
+            {
+              name: 'phone',
+              label: 'Phone number',
+              columns: 12,
+              component: InputComponentsEnum.Text,
+            },
           ],
         },
       ],
@@ -186,14 +189,18 @@ export const FormStory = () => {
     <div className={styles.story}>
       <h4>A) Form {`<Form inputs={[{name: 'email'}]} />`}</h4>
       <pre>
-        inputs: - This is a component that will build a form based on array of inputs in props
+        inputs: Form is a component that will build a form based on array of inputs in props.
         <br />
-        schema: - This for accept an schema and do live validation based on that schema
+        schema: Form accepts an schema and do live validation based on that schema with statistics.
         <br />
-        columns: - For each input you can set a number between 0-12 for defining column width
+        columns: For each input you can set width of the input based on 12 column grid.
         <br />
-        onCahngeInput: - This will despose current form data and current changed input via
-        onCahngeInput
+        onCahngeInput: You have access to current form data and current changed input via this
+        callback.
+        <br />
+        uikitMapper: You can override the default uikit components.
+        <br />
+        Grouping fields: You can manage unlimit group in group inputs with not even 1 line of code.
       </pre>
       <Form
         inputs={inputs}
