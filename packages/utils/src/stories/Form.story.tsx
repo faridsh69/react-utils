@@ -9,10 +9,8 @@ import { SCHEMAS } from 'components/Form/schemas'
 // import { RadioList } from 'components/RadioList/RadioList'
 // import { Select } from 'components/Select/Select'
 // import { Textarea } from 'components/Textarea/Textarea'
-// import { TextInput } from 'components/TextInput/TextInput'
-// import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
 
-import styles from './Story.module.scss'
+// import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
 
 export const uikitMapper = {
   // TextInput,
@@ -47,6 +45,7 @@ export const FormStory = () => {
         phones: [{ phone: '12345678901' }, { phone: '12345678902' }],
       },
     ],
+    educations: [{ education: 'bachelors' }, { education: 'diplome' }],
   })
 
   const TEST_SCHEMA: FormSchemaType = SCHEMAS.wrapper({
@@ -59,6 +58,21 @@ export const FormStory = () => {
 
   const onChangeInput = (formData: any) => {
     setFormData(formData)
+  }
+
+  const hiddenInputLabelsBasedOnIndex = (fieldIndex: number) => {
+    // We are checking based on field index to determine which inputs should be hidden
+    const education = formData?.educations?.[fieldIndex]?.education
+
+    if (education === 'bachelors') {
+      return ['schools'] // List of hidden inputs
+    }
+
+    if (education === 'diplome') {
+      return ['universities']
+    }
+
+    return ['universities', 'schools']
   }
 
   const inputs: FormInput[] = [
@@ -183,10 +197,41 @@ export const FormStory = () => {
         <small>name: {props.name}, others</small>
       ),
     },
+    {
+      name: 'educations',
+      label: 'add custom group exceptions',
+      component: InputComponentsEnum.Group,
+      hiddenInputLabelsBasedOnIndex,
+      inputs: [
+        {
+          name: 'education',
+          label: 'education',
+          columns: 6,
+          component: InputComponentsEnum.Text,
+        },
+        {
+          name: 'schools',
+          label: 'schools',
+          placeholder: 'schools',
+          columns: 6,
+          component: InputComponentsEnum.Text,
+        },
+        {
+          name: 'universities',
+          label: 'universities',
+          placeholder: 'universities',
+          columns: 6,
+          component: InputComponentsEnum.Text,
+        },
+      ],
+    },
   ]
 
+  console.log('formData', formData)
+  // groupExeption
+
   return (
-    <div className={styles.story}>
+    <div>
       <h4>A) Form {`<Form inputs={[{name: 'email'}]} />`}</h4>
       <pre>
         inputs: Form is a component that will build a form based on array of inputs in props.
