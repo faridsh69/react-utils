@@ -184,7 +184,7 @@ export const FormStory = () => {
 
   return (
     <div className={styles.story}>
-      <h4>A) Form {`<Form inputs={[{name: 'email'}]} />`}</h4>
+      <h4>Form {`<Form inputs={[{name: 'email'}]} />`}</h4>
       <pre>
         inputs: - This is a component that will build a form based on array of inputs in props
         <br />
