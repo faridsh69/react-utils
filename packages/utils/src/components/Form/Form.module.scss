@@ -13,15 +13,12 @@
   margin: 0 -10px;
 }
 
-.row > [class^='col-'] {
-  box-sizing: border-box;
-}
-
 @for $i from 1 through 12 {
   .col-#{$i} {
     flex: 0 0 calc(100% * #{$i} / 12);
     max-width: calc(100% * #{$i} / 12);
     padding: 0px 10px;
+    box-sizing: border-box;
   }
 }
 
@@ -143,4 +140,9 @@
   opacity: 0.3;
   height: 0px;
   visibility: hidden;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
 }

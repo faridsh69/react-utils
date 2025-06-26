@@ -3,9 +3,14 @@ import { Controller } from 'react-hook-form'
 
 import { ErrorWrapper } from '../ErrorWrapper'
 import { InputControllerProps } from '../Form.types'
+import styles from '../Form.module.scss'
 
-const DefaultTextInput = (props: InputHTMLAttributes<HTMLInputElement>) => (
-  <input type='text' {...props} />
+const DefaultTextInput = (props: InputHTMLAttributes<HTMLInputElement> & { label: string }) => (
+  <div className={styles.flexColumn}>
+    {props.label}
+    <br />
+    <input type='text' {...props} />
+  </div>
 )
 
 export const TextController = (props: InputControllerProps) => {

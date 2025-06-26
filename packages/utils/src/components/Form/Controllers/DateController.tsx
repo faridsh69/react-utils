@@ -1,11 +1,11 @@
-import { useCallback } from 'react'
+import { InputHTMLAttributes, useCallback } from 'react'
 import { Controller } from 'react-hook-form'
 
 import { ErrorWrapper } from '../ErrorWrapper'
 import { InputControllerProps } from '../Form.types'
 
-const DefaultDatepicker = () => {
-  return <div>ToggleButtons</div>
+const DefaultDatepicker = (props: InputHTMLAttributes<HTMLInputElement>) => {
+  return <input type='date' {...props} />
 }
 
 export const DateController = (props: InputControllerProps) => {
