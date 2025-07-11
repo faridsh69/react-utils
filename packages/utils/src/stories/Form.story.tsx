@@ -1,25 +1,26 @@
 import { useState } from 'react'
-// import { Checkbox } from 'components/Checkbox/Checkbox'
-// import { CheckList } from 'components/CheckList/CheckList'
+import { Checkbox } from 'components/Checkbox/Checkbox'
+import { CheckList } from 'components/CheckList/CheckList'
 import { Form } from 'components/Form/Form'
 import { InputComponentsEnum } from 'components/Form/Form.enums'
 import { FormInput, FormSchemaType, InputControllerProps } from 'components/Form/Form.types'
 import { SCHEMAS } from 'components/Form/schemas'
-
-// import { RadioList } from 'components/RadioList/RadioList'
-// import { Select } from 'components/Select/Select'
-// import { Textarea } from 'components/Textarea/Textarea'
-
-// import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
+import { RadioList } from 'components/RadioList/RadioList'
+import { Select } from 'components/Select/Select'
+import { Textarea } from 'components/Textarea/Textarea'
+import { TextInput } from 'components/TextInput/TextInput'
+import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
+import { usePathAtom } from 'hooks/usePathAtom'
+import { useAtom } from 'jotai'
 
 export const uikitMapper = {
-  // TextInput,
-  // Textarea,
-  // Select: Select as any,
-  // Checkbox,
-  // ToggleButtons,
-  // RadioList,
-  // CheckList,
+  TextInput,
+  Textarea,
+  Select: Select as any,
+  Checkbox,
+  ToggleButtons,
+  RadioList,
+  CheckList,
 }
 
 export const FormStory = () => {
@@ -46,6 +47,37 @@ export const FormStory = () => {
       },
     ],
     educations: [{ education: 'bachelors' }, { education: 'diplome' }],
+    // group_1: [
+    //   {
+    //     name_1: '1',
+    //     group_2: [
+    //       {
+    //         static_input_g2: '3',
+    //         group_2: [
+    //           {
+    //             name_2: '4',
+    //           },
+    //           {
+    //             name_2: '5',
+    //           },
+    //         ],
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     name_1: '2',
+    //     group_2: [
+    //       {
+    //         static_input_g2: '7',
+    //         group_2: [
+    //           {
+    //             name_2: '8',
+    //           },
+    //         ],
+    //       },
+    //     ],
+    //   },
+    // ],
   })
 
   const TEST_SCHEMA: FormSchemaType = SCHEMAS.wrapper({
@@ -73,6 +105,22 @@ export const FormStory = () => {
     }
 
     return ['universities', 'schools']
+  }
+
+  const [path] = useAtom(usePathAtom)
+  // const [fieldIndexes] = useAtom(useFieldIndexesAtom)
+
+  const hidden22 = (fieldIndex: number) => {
+    // const indexes = Object.values(fieldIndexes)
+    // const condition =
+    // formData.group_1?.[indexes[0]]?.group_2?.[indexes[1]]?.static_input_g2[fieldIndex] == '3'
+    console.log('1 fieldIndexes', fieldIndex)
+
+    // if (condition) {
+    //   return ['static input g22']
+    // }
+
+    return []
   }
 
   const inputs: FormInput[] = [
@@ -222,6 +270,82 @@ export const FormStory = () => {
           placeholder: 'universities',
           columns: 6,
           component: InputComponentsEnum.Text,
+        },
+      ],
+    },
+
+    {
+      name: 'group_1',
+      label: 'Add new group 1',
+      noItemsLabel: 'No group 1 added.',
+      checkPathInBreadcrumb: true,
+      arrowButtonPath: '/g1/g2',
+      breadCrumbOptions: [
+        {
+          label: 'Group 1',
+          path: '/g1',
+        },
+      ],
+      component: InputComponentsEnum.GroupPath,
+      inputs: [
+        {
+          name: 'name_1',
+          label: 'Name 1',
+          component: InputComponentsEnum.Text,
+        },
+        {
+          name: 'group_2',
+          label: 'Add new group 2',
+          noItemsLabel: 'No group 2 added.',
+          checkPathInBreadcrumb: true,
+          arrowButtonPath: '/g1/g2/g3',
+          breadCrumbOptions: [
+            {
+              label: 'Group 1',
+              path: '/g1',
+            },
+            {
+              label: 'Group 2',
+              path: '/g1/g2',
+            },
+          ],
+          component: InputComponentsEnum.GroupPath,
+          inputs: [
+            {
+              name: 'name_2',
+              label: 'Name 2',
+              component: InputComponentsEnum.Text,
+            },
+            {
+              name: 'group_3',
+              label: 'Add new group 3',
+              noItemsLabel: 'No group 3 added.',
+              checkPathInBreadcrumb: true,
+              // arrowButtonPath: '/g1/g2/g3/g4',
+              breadCrumbOptions: [
+                {
+                  label: 'Group 1',
+                  path: '/g1',
+                },
+                {
+                  label: 'Group 2',
+                  path: '/g1/g2',
+                },
+                {
+                  label: 'Group 3',
+                  path: '/g1/g2/g3',
+                },
+              ],
+              component: InputComponentsEnum.GroupPath,
+              inputs: [
+                {
+                  name: 'name_3',
+                  label: 'Name 3',
+                  component: InputComponentsEnum.Text,
+                },
+              ],
+            },
+          ],
         },
       ],
     },

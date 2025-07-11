@@ -8,5 +8,6 @@ export enum InputComponentsEnum {
   Checkbox = 'checkbox',
   Date = 'date',
   Group = 'group',
+  GroupPath = 'GroupPath',
   Custom = 'custom',
 }

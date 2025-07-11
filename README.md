@@ -1,3 +1,6 @@
+add js codes for is Array
+add filtering with api search
+
 # react-utils
 
 how to install

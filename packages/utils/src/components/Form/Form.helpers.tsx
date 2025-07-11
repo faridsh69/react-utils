@@ -3,6 +3,7 @@ import { ChecklistController } from './Controllers/ChecklistController'
 import { CustomController } from './Controllers/CustomComponentController'
 import { DateController } from './Controllers/DateController'
 import { GroupController } from './Controllers/GroupController'
+import { GroupPathController } from './Controllers/GroupPathController'
 import { RadioController } from './Controllers/RadioController'
 import { SelectController } from './Controllers/SelectController'
 import { TextareaController } from './Controllers/TextareaController'
@@ -21,6 +22,7 @@ export const getInputController = (component?: InputComponentsEnum) => {
     [InputComponentsEnum.ToggleButton]: ToggleButtonController,
     [InputComponentsEnum.Date]: DateController,
     [InputComponentsEnum.Group]: GroupController,
+    [InputComponentsEnum.GroupPath]: GroupPathController,
     [InputComponentsEnum.Custom]: CustomController,
   }
 

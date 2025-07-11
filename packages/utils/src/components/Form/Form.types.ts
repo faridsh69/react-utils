@@ -79,6 +79,7 @@ export type FormInput =
   | ({ component: InputComponentsEnum.Select } & CommonInputProps & SelectProps)
   | ({ component: InputComponentsEnum.Date } & CommonInputProps & DatepickerProps)
   | ({ component: InputComponentsEnum.Group } & CommonInputProps & GroupProps)
+  | ({ component: InputComponentsEnum.GroupPath } & CommonInputProps & GroupProps)
   | ({ component: InputComponentsEnum.Custom } & CommonInputProps & CustomProps)
 
 export type FormSchemaType = yup.ObjectSchema<any>

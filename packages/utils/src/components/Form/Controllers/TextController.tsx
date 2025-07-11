@@ -25,7 +25,7 @@ export const TextController = (props: InputControllerProps) => {
     [onChangeInput],
   )
 
-  const TextInput = uikitMapper.TextInput || DefaultTextInput
+  const TextInput = uikitMapper?.TextInput || DefaultTextInput
 
   return (
     <Controller
