@@ -10,8 +10,6 @@ import { Select } from 'components/Select/Select'
 import { Textarea } from 'components/Textarea/Textarea'
 import { TextInput } from 'components/TextInput/TextInput'
 import { ToggleButtons } from 'components/ToggleButtons/ToggleButtons'
-import { usePathAtom } from 'hooks/usePathAtom'
-import { useAtom } from 'jotai'
 
 export const uikitMapper = {
   TextInput,
@@ -107,21 +105,20 @@ export const FormStory = () => {
     return ['universities', 'schools']
   }
 
-  const [path] = useAtom(usePathAtom)
+  // const [path] = useAtom(usePathAtom)
   // const [fieldIndexes] = useAtom(useFieldIndexesAtom)
 
-  const hidden22 = (fieldIndex: number) => {
-    // const indexes = Object.values(fieldIndexes)
-    // const condition =
-    // formData.group_1?.[indexes[0]]?.group_2?.[indexes[1]]?.static_input_g2[fieldIndex] == '3'
-    console.log('1 fieldIndexes', fieldIndex)
+  // const hiddenGroup3 = (fieldIndex: number) => {
+  //   const indexes = Object.values(fieldIndexes)
+  //   const con =
+  //     formData.group_1?.[indexes[0]]?.group_2?.[indexes[1]]?.group_3?.[fieldIndex]?.name_3 == '1'
 
-    // if (condition) {
-    //   return ['static input g22']
-    // }
+  //   if (con) {
+  //     return ['Farid']
+  //   }
 
-    return []
-  }
+  //   return []
+  // }
 
   const inputs: FormInput[] = [
     {
@@ -276,6 +273,7 @@ export const FormStory = () => {
 
     {
       name: 'group_1',
+      fieldName: 'group_1',
       label: 'Add new group 1',
       noItemsLabel: 'No group 1 added.',
       checkPathInBreadcrumb: true,
@@ -295,6 +293,7 @@ export const FormStory = () => {
         },
         {
           name: 'group_2',
+          fieldName: 'group_2',
           label: 'Add new group 2',
           noItemsLabel: 'No group 2 added.',
           checkPathInBreadcrumb: true,
@@ -316,8 +315,10 @@ export const FormStory = () => {
               label: 'Name 2',
               component: InputComponentsEnum.Text,
             },
+
             {
               name: 'group_3',
+              fieldName: 'group_3',
               label: 'Add new group 3',
               noItemsLabel: 'No group 3 added.',
               checkPathInBreadcrumb: true,
@@ -337,10 +338,16 @@ export const FormStory = () => {
                 },
               ],
               component: InputComponentsEnum.GroupPath,
+              // hiddenInputLabelsBasedOnIndex: hiddenGroup3,
               inputs: [
                 {
                   name: 'name_3',
                   label: 'Name 3',
+                  component: InputComponentsEnum.Text,
+                },
+                {
+                  name: 'name_3_conditional',
+                  label: 'Farid',
                   component: InputComponentsEnum.Text,
                 },
               ],
@@ -351,7 +358,7 @@ export const FormStory = () => {
     },
   ]
 
-  console.log('formData', formData)
+  // console.log('formData', formData)
   // groupExeption
 
   return (

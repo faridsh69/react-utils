@@ -63,6 +63,10 @@ type GroupProps = {
   noItemsLabel?: string
   disabled?: boolean
   hiddenInputLabelsBasedOnIndex?: (index: number) => string[]
+  fieldName?: string
+  checkPathInBreadcrumb?: boolean
+  breadCrumbOptions?: any
+  arrowButtonPath?: string
 }
 
 type CustomProps = {
@@ -112,6 +116,10 @@ export type InputControllerProps = {
   noItemsLabel?: string
   errors?: any
   uikitMapper: Partial<UikitMapperType>
+  fieldName?: string
+  checkPathInBreadcrumb?: boolean
+  arrowButtonPath?: string
+  breadCrumbOptions?: any
 }
 
 type harErrorType = { hasError?: boolean }

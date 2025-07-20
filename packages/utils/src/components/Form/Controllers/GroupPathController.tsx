@@ -18,6 +18,7 @@ export const GroupPathController = (props: InputControllerProps) => {
     control,
     onChangeInput,
     name: groupName,
+    fieldName,
     inputs = [],
     label = 'Add new item',
     noItemsLabel = 'No item added yet.',
@@ -62,7 +63,8 @@ export const GroupPathController = (props: InputControllerProps) => {
 
   // rendering path based groups
   const [fieldIndexes, setFieldIndexes] = useAtom(useFieldIndexesAtom)
-  const currentFieldIndex = fieldIndexes[groupName] as number
+  // @ts-ignore
+  const currentFieldIndex = fieldIndexes[fieldName] as number
 
   const currentPath = breadCrumbOptions[breadCrumbOptions.length - 1]?.path
   const [path, setPath] = useAtom(usePathAtom)
@@ -85,7 +87,8 @@ export const GroupPathController = (props: InputControllerProps) => {
     setPath(arrowButtonPath || '')
     setFieldIndexes((p: any) => ({
       ...p,
-      [groupName]: fieldIndex,
+      // @ts-ignore
+      [fieldName]: fieldIndex,
     }))
   }
 
